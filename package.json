@@ -1,6 +1,6 @@
 {
   "name": "sales-tax",
-  "description": "International sales tax calculator for Node (offline, no dependency on an external API). Kept up-to-date.",
+  "description": "International sales tax calculator for Node (offline, except for VAT number validation). Tax rates are kept up-to-date.",
   "version": "1.0.0",
   "homepage": "https://github.com/valeriansaliou/node-sales-tax",
   "license": "MIT",
