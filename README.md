@@ -62,7 +62,7 @@ var canadaQuebecHasSalesTax = SalesTax.hasSalesTax("CA", "QC")  // canadaQuebecH
 var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHasSalesTax === false
 ```
 
-:us: **Check some United States states for sales tax** (returns `true` or `false`):
+:us: **Check some US states for sales tax** (returns `true` or `false`):
 
 ```javascript
 var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
@@ -159,7 +159,7 @@ SalesTax.getSalesTax("ES", null, "12345523")
 
 **Prototype:** `SalesTax.getAmountWithSalesTax(countryCode<string>, stateCode<string?>, amount<number?>, taxNumber<string?>)<Promise<object>>`
 
-:estonia: **Given an Estonian customer without any VAT number, buying for 100.00€ of goods** (eg. a physical person):
+:estonia: **Given an Estonian customer without any VAT number, buying 100.00€ of goods** (eg. a physical person):
 
 ```javascript
 SalesTax.getAmountWithSalesTax("EE", null, 100.00)
@@ -277,9 +277,9 @@ SalesTax.toggleEnabledTaxNumberValidation(true)
 
 The offline tax data is pulled from [VAT, GST and sales tax rates — ey.com](http://www.ey.com/gl/en/services/tax/worldwide-vat--gst-and-sales-tax-guide---rates).
 
-**It is kept up-to-date with the year-by-year tax changes worldwide.**
+**It is kept up-to-date year-by-year with tax changes worldwide.**
 
-Some countries have multiple sales tax, eg. Brazil. In those cases, the returned sales tax is the one on services. Indeed, I consider most users of this module use it for their SaaS business — in other words, service businesses.
+Some countries have multiple sales tax, eg. Brazil. In those cases, the returned sales tax is the one on services. Indeed, I consider most users of this module use it for their SaaS business — _in other words, service businesses._
 
 ## How are tax numbers validated?
 
@@ -293,12 +293,14 @@ You can manually check a VAT number on [VIES VAT number validation](http://ec.eu
 
 ### :us: United States
 
-United States EIN (U.S. Employer Identification Number) are validated against EIN format rules. This allows you to check the tax status of a customer from the US based on the validity of the identification number provided.
+United States EIN (U.S. Employer Identification Number) are validated against EIN format rules.
 
 ### :canada: Canada
 
-Canada BN (Business Number) are validated against BN format rules. This allows you to check the tax status of a customer from Canada based on the validity of the identification number provided.
+Canada BN (Business Number) are validated against BN format rules.
 
 ### :black_flag: Rest of the world
 
-If not listed here, provided tax identification numbers are ignored for non-supported countries. If you need specific validation for a country, feel free to submit a Pull Request.
+If a country or economic community is not listed here, provided tax identification numbers are ignored for those countries (considered as invalid — so do not rely on validation methods as a source of truth).
+
+_If you need tax number validation for a missing country, feel free to submit a Pull Request._
