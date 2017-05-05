@@ -239,7 +239,7 @@ SalesTax.isTaxExempt("MA")
   });
 ```
 
-:morocco: **Given an United States > Delaware-based customer**:
+:us: **Given an United States > Delaware-based customer**:
 
 ```javascript
 SalesTax.isTaxExempt("US", "DE")
