@@ -528,8 +528,17 @@ describe("node-fast-ratelimit", function() {
         });
     });
 
+    it("should check United States > Delaware as tax-exempt", function() {
+      return SalesTax.isTaxExempt("US", "DE")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            isTaxExempt, "State should be tax-exempt"
+          );
+        });
+    });
+
     it("should check valid France tax number as tax-exempt", function() {
-      return SalesTax.isTaxExempt("FR", "87524172699")
+      return SalesTax.isTaxExempt("FR", null, "87524172699")
         .then(function(isTaxExempt) {
           assert.ok(
             isTaxExempt, "Tax number should be tax-exempt"
@@ -538,7 +547,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should check invalid France tax number as non tax-exempt", function() {
-      return SalesTax.isTaxExempt("FR", "NON_EXEMPT_TAX_NUMBER")
+      return SalesTax.isTaxExempt("FR", null, "NON_EXEMPT_TAX_NUMBER")
         .then(function(isTaxExempt) {
           assert.ok(
             !isTaxExempt, "Tax number should not be tax-exempt (invalid)"
@@ -546,8 +555,17 @@ describe("node-fast-ratelimit", function() {
         });
     });
 
+    it("should check United States > California as non tax-exempt", function() {
+      return SalesTax.isTaxExempt("US", "CA")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            !isTaxExempt, "State should not be tax-exempt"
+          );
+        });
+    });
+
     it("should check ignored Canada tax number as non tax-exempt", function() {
-      return SalesTax.isTaxExempt("CA", "IGNORED_TAX_NUMBER")
+      return SalesTax.isTaxExempt("CA", null, "IGNORED_TAX_NUMBER")
         .then(function(isTaxExempt) {
           assert.ok(
             !isTaxExempt, "Tax number should not be tax-exempt (ignored)"

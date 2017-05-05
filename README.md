@@ -219,12 +219,12 @@ SalesTax.validateTaxNumber("ES", "12345523")
 
 ### :white_check_mark: Check if a customer is tax-exempt
 
-**Prototype:** `SalesTax.isTaxExempt(countryCode<string>, taxNumber<string?>)<Promise<boolean>>`
+**Prototype:** `SalesTax.isTaxExempt(countryCode<string>, stateCode<string?>, taxNumber<string?>)<Promise<boolean>>`
 
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
-SalesTax.isTaxExempt("FR", "87524172699")
+SalesTax.isTaxExempt("FR", null, "87524172699")
   .then((isTaxExempt) => {
     // isTaxExempt === true
   });
@@ -236,6 +236,15 @@ SalesTax.isTaxExempt("FR", "87524172699")
 SalesTax.isTaxExempt("MA")
   .then((isTaxExempt) => {
     // isTaxExempt === false
+  });
+```
+
+:morocco: **Given an United States > Delaware-based customer**:
+
+```javascript
+SalesTax.isTaxExempt("US", "DE")
+  .then((isTaxExempt) => {
+    // isTaxExempt === true
   });
 ```
 
