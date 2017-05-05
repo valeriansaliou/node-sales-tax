@@ -1,0 +1,59 @@
+{
+  "name": "sales-tax",
+  "description": "International sales tax calculator for Node (offline, no dependency on an external API). Kept up-to-date.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/valeriansaliou/node-sales-tax",
+  "license": "MIT",
+
+  "author": {
+    "name": "Valerian Saliou",
+    "email": "valerian@valeriansaliou.name",
+    "url": "https://valeriansaliou.name/"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/valeriansaliou/node-sales-tax.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/valeriansaliou/node-sales-tax/issues"
+  },
+
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/valeriansaliou/node-sales-tax/blob/master/LICENSE"
+    }
+  ],
+
+  "main": "lib/sales_tax",
+
+  "engines": {
+    "node": ">= 6.4.0"
+  },
+
+  "scripts": {
+    "test": "check-build && istanbul cover _mocha",
+    "coveralls": "istanbul cover _mocha --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  },
+
+  "devDependencies": {
+    "check-build": "2.8.2",
+    "mocha": "3.3.0",
+    "mocha-lcov-reporter": "1.3.0",
+    "istanbul": "0.4.5",
+    "coveralls": "2.13.1"
+  },
+
+  "keywords": [
+    "sales",
+    "tax",
+    "salestax",
+    "money",
+    "billing",
+    "invoice",
+    "vat",
+    "gst"
+  ]
+}

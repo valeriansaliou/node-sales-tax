@@ -1,0 +1,7 @@
+{
+  "validateIndentation": 2,
+  "disallowMixedSpacesAndTabs": true,
+  "maximumLineLength": 80,
+  "disallowTrailingWhitespace": true,
+  "requireCurlyBraces": null
+}
