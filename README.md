@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/valeriansaliou/node-sales-tax/master.svg)](https://travis-ci.org/valeriansaliou/node-sales-tax) [![Test Coverage](https://img.shields.io/coveralls/valeriansaliou/node-sales-tax/master.svg)](https://coveralls.io/github/valeriansaliou/node-sales-tax?branch=master) [![NPM](https://img.shields.io/npm/v/sales-tax.svg)](https://www.npmjs.com/package/sales-tax) [![Downloads](https://img.shields.io/npm/dt/sales-tax.svg)](https://www.npmjs.com/package/sales-tax)
 
-International sales tax calculator for Node (offline, except for VAT number validation). Kept up-to-date.
+International sales tax calculator for Node (offline, except for VAT number validation). Tax rates are kept up-to-date.
 
 ## Who uses it?
 
