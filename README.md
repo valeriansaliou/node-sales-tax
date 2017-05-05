@@ -91,6 +91,22 @@ SalesTax.getSalesTax("FR", null, "87524172699")
 
 Note: Clever-Cloud is a real living business from France, check [their website there](https://www.clever-cloud.com).
 
+:us: **Given an United States > California customer without any VAT number** (eg. a physical person):
+
+```javascript
+SalesTax.getSalesTax("US", "CA")
+  .then((tax) => {
+    // This customer has to pay 8.25% VAT (as it is a physical person)
+    /* tax ===
+      {
+        type   : "vat",
+        rate   : 0.0825,
+        exempt : false
+      }
+     */
+  });
+```
+
 :latvia: **Given a Latvian customer without any VAT number** (eg. a physical person):
 
 ```javascript
@@ -171,6 +187,15 @@ SalesTax.getAmountWithSalesTax("EE", null, 100.00)
 SalesTax.validateTaxNumber("FR", "87524172699")
   .then((isValid) => {
     // isValid === true
+  });
+```
+
+:us: **Given an United States customer without any VAT number** (eg. a physical person):
+
+```javascript
+SalesTax.validateTaxNumber("US")
+  .then((isValid) => {
+    // isValid === false
   });
 ```
 
