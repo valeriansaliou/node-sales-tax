@@ -15,7 +15,7 @@ International sales tax calculator for Node (offline, except for VAT number vali
 </tr>
 </table>
 
-_👋 You use sales-tax and you want to be listed there? Contact me!_
+_👋 You use sales-tax and you want to be listed there? [Contact me](https://valeriansaliou.name/)!_
 
 ## How to install?
 
