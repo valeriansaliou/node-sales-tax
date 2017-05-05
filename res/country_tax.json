@@ -1,1 +1,581 @@
-{}
+{
+  "AL": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "AR": {
+    "type": "vat",
+    "rate": 0.21
+  },
+
+  "AM": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "AU": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "AT": {
+    "type": "vat",
+    "rate": 0.19
+  },
+
+  "AZ": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "BS": {
+    "type": "vat",
+    "rate": 0.075
+  },
+
+  "BH": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "BB": {
+    "type": "vat",
+    "rate": 0.175
+  },
+
+  "BY": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "BE": {
+    "type": "vat",
+    "rate": 0.21
+  },
+
+  "BO": {
+    "type": "vat",
+    "rate": 0.1494
+  },
+
+  "BW": {
+    "type": "vat",
+    "rate": 0.12
+  },
+
+  "BR": {
+    "type": "vat",
+    "rate": 0.35
+  },
+
+  "BG": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "CA": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "CL": {
+    "type": "vat",
+    "rate": 0.19
+  },
+
+  "CN": {
+    "type": "vat",
+    "rate": 0.17
+  },
+
+  "CO": {
+    "type": "vat",
+    "rate": 0.19
+  },
+
+  "CR": {
+    "type": "vat",
+    "rate": 0.13
+  },
+
+  "HR": {
+    "type": "vat",
+    "rate": 0.25
+  },
+
+  "CW": {
+    "type": "vat",
+    "rate": 0.06
+  },
+
+  "CY": {
+    "type": "vat",
+    "rate": 0.19
+  },
+
+  "CZ": {
+    "type": "vat",
+    "rate": 0.21
+  },
+
+  "DK": {
+    "type": "vat",
+    "rate": 0.25
+  },
+
+  "DO": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "EC": {
+    "type": "vat",
+    "rate": 0.14
+  },
+
+  "EG": {
+    "type": "vat",
+    "rate": 0.14
+  },
+
+  "SV": {
+    "type": "vat",
+    "rate": 0.13
+  },
+
+  "EE": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "FI": {
+    "type": "vat",
+    "rate": 0.24
+  },
+
+  "FR": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "GE": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "DE": {
+    "type": "vat",
+    "rate": 0.19
+  },
+
+  "GH": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "GR": {
+    "type": "vat",
+    "rate": 0.24
+  },
+
+  "GT": {
+    "type": "vat",
+    "rate": 0.12
+  },
+
+  "HN": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "HU": {
+    "type": "vat",
+    "rate": 0.27
+  },
+
+  "IS": {
+    "type": "vat",
+    "rate": 0.24
+  },
+
+  "IN": {
+    "type": "vat",
+    "rate": 0.155
+  },
+
+  "ID": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "IE": {
+    "type": "vat",
+    "rate": 0.23
+  },
+
+  "IM": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "IL": {
+    "type": "vat",
+    "rate": 0.17
+  },
+
+  "IT": {
+    "type": "vat",
+    "rate": 0.22
+  },
+
+  "JP": {
+    "type": "vat",
+    "rate": 0.08
+  },
+
+  "JE": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "JO": {
+    "type": "vat",
+    "rate": 0.16
+  },
+
+  "KZ": {
+    "type": "vat",
+    "rate": 0.12
+  },
+
+  "KE": {
+    "type": "vat",
+    "rate": 0.16
+  },
+
+  "KR": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "XK": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "KW": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "LV": {
+    "type": "vat",
+    "rate": 0.21
+  },
+
+  "LB": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "LT": {
+    "type": "vat",
+    "rate": 0.21
+  },
+
+  "LU": {
+    "type": "vat",
+    "rate": 0.17
+  },
+
+  "MK": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "MG": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "MY": {
+    "type": "vat",
+    "rate": 0.06
+  },
+
+  "MV": {
+    "type": "vat",
+    "rate": 0.06
+  },
+
+  "MT": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "MU": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "MX": {
+    "type": "vat",
+    "rate": 0.16
+  },
+
+  "MD": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "MN": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "MA": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "MM": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "NA": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "NL": {
+    "type": "vat",
+    "rate": 0.21
+  },
+
+  "NZ": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "NI": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "NG": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "NO": {
+    "type": "vat",
+    "rate": 0.25
+  },
+
+  "OM": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "PK": {
+    "type": "vat",
+    "rate": 0.16
+  },
+
+  "PA": {
+    "type": "vat",
+    "rate": 0.07
+  },
+
+  "PG": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "PY": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "PE": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "PH": {
+    "type": "vat",
+    "rate": 0.12
+  },
+
+  "PL": {
+    "type": "vat",
+    "rate": 0.23
+  },
+
+  "PT": {
+    "type": "vat",
+    "rate": 0.23
+  },
+
+  "PR": {
+    "type": "vat",
+    "rate": 0.105
+  },
+
+  "QA": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "RO": {
+    "type": "vat",
+    "rate": 0.19
+  },
+
+  "RU": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "RW": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "LC": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "SA": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "RS": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "SC": {
+    "type": "vat",
+    "rate": 0.15
+  },
+
+  "SG": {
+    "type": "vat",
+    "rate": 0.07
+  },
+
+  "SK": {
+    "type": "vat",
+    "rate": 0.19
+  },
+
+  "SI": {
+    "type": "vat",
+    "rate": 0.22
+  },
+
+  "ZA": {
+    "type": "vat",
+    "rate": 0.14
+  },
+
+  "ES": {
+    "type": "vat",
+    "rate": 0.21
+  },
+
+  "SR": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "SE": {
+    "type": "vat",
+    "rate": 0.25
+  },
+
+  "CH": {
+    "type": "vat",
+    "rate": 0.08
+  },
+
+  "TW": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "TZ": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "TH": {
+    "type": "vat",
+    "rate": 0.07
+  },
+
+  "TT": {
+    "type": "vat",
+    "rate": 0.125
+  },
+
+  "TN": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "TR": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "UG": {
+    "type": "vat",
+    "rate": 0.18
+  },
+
+  "AE": {
+    "type": "vat",
+    "rate": 0.05
+  },
+
+  "GB": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
+  "US": {
+    "type": "vat",
+    "rate": 0.075
+  },
+
+  "UY": {
+    "type": "vat",
+    "rate": 0.22
+  },
+
+  "VE": {
+    "type": "vat",
+    "rate": 0.12
+  },
+
+  "VN": {
+    "type": "vat",
+    "rate": 0.10
+  },
+
+  "ZM": {
+    "type": "vat",
+    "rate": 0.16
+  },
+
+  "ZW": {
+    "type": "vat",
+    "rate": 0.15
+  }
+}

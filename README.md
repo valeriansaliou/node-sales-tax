@@ -26,3 +26,11 @@ Alternatively, you can run `npm install sales-tax --save`.
 ## How to use?
 
 `TODO`
+
+## Where the tax data is pulled from?
+
+The tax data is pulled from [http://www.ey.com/gl/en/services/tax/worldwide-vat--gst-and-sales-tax-guide---rates](VAT, GST and sales tax rates — ey.com).
+
+It is kept up-to-date with the year-by-year tax changes worldwide.
+
+Some countries have multiple sales tax, eg. Brazil. In those cases, the returned sales tax is the one on services. Indeed, I consider most users of this module use it for their SaaS business — in other words, service businesses.
