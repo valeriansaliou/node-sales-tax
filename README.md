@@ -33,7 +33,7 @@ This module may be used to acquire the billable VAT percentage for a given custo
 
 ### :arrow_right: Import the module
 
-Import the module to your code:
+Import the module in your code:
 
 `var SalesTax = require("sales-tax");`
 
