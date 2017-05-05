@@ -14,6 +14,9 @@ var assert = require("assert");
 
 
 describe("node-fast-ratelimit", function() {
+  // Increase timeout as some tests call the network for VAT number checks
+  this.timeout(10000);
+
   describe("hasSalesTax", function() {
     it("should fail checking for a non-existing country", function() {
       assert.ok(
@@ -36,224 +39,256 @@ describe("node-fast-ratelimit", function() {
 
   describe("getSalesTax", function() {
     it("should fail acquiring a non-existing country sales tax", function() {
-      var tax = SalesTax.getSalesTax("DONT_EXIST");
+      return SalesTax.getSalesTax("DONT_EXIST")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "none", "Tax type should be NONE"
+          );
 
-      assert.equal(
-        tax.type, "none", "Tax type should be NONE"
-      );
+          assert.equal(
+            tax.rate, 0.00, "Tax rate should be 0%"
+          );
 
-      assert.equal(
-        tax.rate, 0.00, "Tax rate should be 0%"
-      );
-
-      assert.equal(
-        tax.exempt, false, "Should not be tax-exempt"
-      );
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
     });
 
     it("should succeed acquiring French sales tax (lower-case code)", function() {
-      var tax = SalesTax.getSalesTax("fr");
+      return SalesTax.getSalesTax("fr")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
 
-      assert.equal(
-        tax.type, "vat", "Tax type should be VAT"
-      );
+          assert.equal(
+            tax.rate, 0.20, "Tax rate should be 20%"
+          );
 
-      assert.equal(
-        tax.rate, 0.20, "Tax rate should be 20%"
-      );
-
-      assert.equal(
-        tax.exempt, false, "Should not be tax-exempt"
-      );
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
     });
 
     it("should succeed acquiring French sales tax (upper-case code)", function() {
-      var tax = SalesTax.getSalesTax("FR");
+      return SalesTax.getSalesTax("FR")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
 
-      assert.equal(
-        tax.type, "vat", "Tax type should be VAT"
-      );
+          assert.equal(
+            tax.rate, 0.20, "Tax rate should be 20%"
+          );
 
-      assert.equal(
-        tax.rate, 0.20, "Tax rate should be 20%"
-      );
-
-      assert.equal(
-        tax.exempt, false, "Should not be tax-exempt"
-      );
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
     });
 
     it("should succeed acquiring French sales tax with an invalid tax number", function() {
-      var tax = SalesTax.getSalesTax("FR", "FRINVALID");
+      return SalesTax.getSalesTax("FR", "INVALID_TAX_NUMBER")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
 
-      assert.equal(
-        tax.type, "vat", "Tax type should be VAT"
-      );
+          assert.equal(
+            tax.rate, 0.20, "Tax rate should be 20%"
+          );
 
-      assert.equal(
-        tax.rate, 0.20, "Tax rate should be 20%"
-      );
-
-      assert.equal(
-        tax.exempt, false, "Should not be tax-exempt"
-      );
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
     });
 
     it("should succeed acquiring French sales tax with a tax-exempt tax number", function() {
-      // TODO
-      var tax = SalesTax.getSalesTax("FR", "FRXXXXXXXX");
+      return SalesTax.getSalesTax("FR", "87524172699")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
 
-      assert.equal(
-        tax.type, "vat", "Tax type should be VAT"
-      );
+          assert.equal(
+            tax.rate, 0.00, "Tax rate should be 0% (tax-exempt)"
+          );
 
-      assert.equal(
-        tax.rate, 0.00, "Tax rate should be 0% (tax-exempt)"
-      );
+          assert.equal(
+            tax.exempt, true, "Should be tax-exempt"
+          );
+        });
+    });
 
-      assert.equal(
-        tax.exempt, true, "Should be tax-exempt"
-      );
+    it("should succeed acquiring Canadian sales tax with an ignored tax number", function() {
+      return SalesTax.getSalesTax("CA", "IGNORED_TAX_NUMBER")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.05, "Tax rate should be 5%"
+          );
+
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
     });
   });
 
   describe("getAmountWithSalesTax", function() {
     it("should fail processing a non-existing country amount including sales tax (no tax number)", function() {
-      var tax = SalesTax.getAmountWithSalesTax("DONT_EXIST", 1000.00);
+      return SalesTax.getAmountWithSalesTax("DONT_EXIST", 1000.00)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "none", "Tax type should be NONE"
+          );
 
-      assert.equal(
-        tax.type, "none", "Tax type should be NONE"
-      );
+          assert.equal(
+            tax.rate, 0.00, "Tax rate should be 0%"
+          );
 
-      assert.equal(
-        tax.rate, 0.00, "Tax rate should be 0%"
-      );
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
 
-      assert.equal(
-        tax.exempt, false, "Should not be tax-exempt"
-      );
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
 
-      assert.equal(
-        tax.price, 1000.00, "Price amount should be 1000.00"
-      );
-
-      assert.equal(
-        tax.total, 1000.00, "Total amount should be 1000.00"
-      );
+          assert.equal(
+            tax.total, 1000.00, "Total amount should be 1000.00"
+          );
+        });
     });
 
     it("should succeed processing a French country amount including sales tax (no tax number)", function() {
-      var tax = SalesTax.getAmountWithSalesTax("FR", 1000.00);
+      return SalesTax.getAmountWithSalesTax("FR", 1000.00)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
 
-      assert.equal(
-        tax.type, "vat", "Tax type should be VAT"
-      );
+          assert.equal(
+            tax.rate, 0.20, "Tax rate should be 20%"
+          );
 
-      assert.equal(
-        tax.rate, 0.20, "Tax rate should be 20%"
-      );
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
 
-      assert.equal(
-        tax.exempt, false, "Should not be tax-exempt"
-      );
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
 
-      assert.equal(
-        tax.price, 1000.00, "Price amount should be 1000.00"
-      );
-
-      assert.equal(
-        tax.total, 1200.00, "Total amount should be 1200.00"
-      );
+          assert.equal(
+            tax.total, 1200.00, "Total amount should be 1200.00"
+          );
+        });
     });
 
     it("should succeed processing a French country amount including sales tax (non tax-exempt tax number)", function() {
-      // TODO
-      var tax = SalesTax.getAmountWithSalesTax("FR", 1000.00, "FRXXXXXXXX");
+      return SalesTax.getAmountWithSalesTax("FR", 1000.00, "NON_EXEMPT_TAX_NUMBER")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
 
-      assert.equal(
-        tax.type, "vat", "Tax type should be VAT"
-      );
+          assert.equal(
+            tax.rate, 0.20, "Tax rate should be 20%"
+          );
 
-      assert.equal(
-        tax.rate, 0.20, "Tax rate should be 20%"
-      );
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
 
-      assert.equal(
-        tax.exempt, false, "Should not be tax-exempt"
-      );
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
 
-      assert.equal(
-        tax.price, 1000.00, "Price amount should be 1000.00"
-      );
-
-      assert.equal(
-        tax.total, 1200.00, "Total amount should be 1200.00"
-      );
+          assert.equal(
+            tax.total, 1200.00, "Total amount should be 1200.00"
+          );
+        });
     });
 
     it("should succeed processing a French country amount including sales tax (tax-exempt tax number)", function() {
-      // TODO
-      var tax = SalesTax.getAmountWithSalesTax("FR", 1000.00, "FRXXXXXXXX");
+      return SalesTax.getAmountWithSalesTax("FR", 1000.00, "87524172699")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
 
-      assert.equal(
-        tax.type, "vat", "Tax type should be VAT"
-      );
+          assert.equal(
+            tax.rate, 0.00, "Tax rate should be 0%"
+          );
 
-      assert.equal(
-        tax.rate, 0.00, "Tax rate should be 0%"
-      );
+          assert.equal(
+            tax.exempt, true, "Should be tax-exempt"
+          );
 
-      assert.equal(
-        tax.exempt, true, "Should be tax-exempt"
-      );
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
 
-      assert.equal(
-        tax.price, 1000.00, "Price amount should be 1000.00"
-      );
-
-      assert.equal(
-        tax.total, 1000.00, "Total amount should be 1000.00"
-      );
-    });
+          assert.equal(
+            tax.total, 1000.00, "Total amount should be 1000.00"
+          );
+        });
+      });
   });
 
   describe("validateTaxNumber", function() {
     it("should check French tax number as valid", function() {
-      // TODO
-
-      assert.ok(
-        SalesTax.validateTaxNumber("FRXXXXXXXX"), "Tax number should be valid"
-      );
+      return SalesTax.validateTaxNumber("FR", "87524172699")
+        .then(function(isValid) {
+          assert.ok(
+            isValid, "Tax number should be valid"
+          );
+        });
     });
 
     it("should check French tax number as invalid", function() {
-      assert.ok(
-        !SalesTax.validateTaxNumber("FRINVALID"), "Tax number should be invalid"
-      );
+      return SalesTax.validateTaxNumber("FR", "INVALID_TAX_NUMBER")
+        .then(function(isValid) {
+          assert.ok(
+            !isValid, "Tax number should be invalid"
+          );
+        });
     });
   });
 
   describe("isTaxExempt", function() {
     it("should check valid French tax number as tax-exempt", function() {
-      // TODO
-
-      assert.ok(
-        SalesTax.isTaxExempt("FRXXXXXXXX"), "Tax number should be tax-exempt"
-      );
-    });
-
-    it("should check valid French tax number as non tax-exempt", function() {
-      // TODO
-
-      assert.ok(
-        !SalesTax.isTaxExempt("FRXXXXXXXX"), "Tax number should not be tax-exempt (valid)"
-      );
+      return SalesTax.isTaxExempt("FR", "87524172699")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            isTaxExempt, "Tax number should be tax-exempt"
+          );
+        });
     });
 
     it("should check invalid French tax number as non tax-exempt", function() {
-      assert.ok(
-        !SalesTax.isTaxExempt("FRINVALID"), "Tax number should not be tax-exempt (invalid)"
-      );
+      return SalesTax.isTaxExempt("FR", "NON_EXEMPT_TAX_NUMBER")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            !isTaxExempt, "Tax number should not be tax-exempt (invalid)"
+          );
+        });
+    });
+
+    it("should check ignored Canadian tax number as non tax-exempt", function() {
+      return SalesTax.isTaxExempt("CA", "IGNORED_TAX_NUMBER")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            !isTaxExempt, "Tax number should not be tax-exempt (ignored)"
+          );
+        });
     });
   });
 });
