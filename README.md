@@ -29,13 +29,13 @@ Alternatively, you can run `npm install sales-tax --save`.
 
 This module may be used to acquire the billable VAT percentage for a given customer. You may also use it directly to process the total amount including VAT you should bill; and even to validate a customer's VAT number.
 
-**Important: in order to fetch the sales tax for a customer, you need to know their country. The country must be passed to all library methods, formatted as ISO ALPHA-2 (eg. France is FR, United States is US).**
+**:red_circle: Important: in order to fetch the sales tax for a customer, you need to know their country. The country must be passed to all library methods, formatted as ISO ALPHA-2 (eg. France is FR, United States is US).**
 
 In any case, import the module to your code:
 
 `var SalesTax = require("sales-tax");`
 
-### Check if a country / state has sales tax
+### :white_check_mark: Check if a country / state has sales tax
 
 Check if France has any sales tax (returns `true`):
 
@@ -45,7 +45,7 @@ var brazilHasSalesTax = SalesTax.hasSalesTax("BR")  // brazilHasSalesTax === tru
 var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax === false
 ```
 
-### Get the sales tax for a customer
+### :white_check_mark: Get the sales tax for a customer
 
 **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
@@ -113,7 +113,7 @@ SalesTax.getSalesTax("ES", "12345523")
   });
 ```
 
-### Process the price including sales tax for a customer
+### :white_check_mark: Process the price including sales tax for a customer
 
 **Given an Estonian customer without any VAT number, buying for 100.00€ of goods** (eg. a physical person):
 
@@ -133,7 +133,7 @@ SalesTax.getAmountWithSalesTax("EE", 100.00)
   });
 ```
 
-### Validate tax number for a customer
+### :white_check_mark: Validate tax number for a customer
 
 **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
@@ -162,7 +162,7 @@ SalesTax.validateTaxNumber("ES", "12345523")
   });
 ```
 
-### Check if a customer is tax-exempt
+### :white_check_mark: Check if a customer is tax-exempt
 
 **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
@@ -203,7 +203,7 @@ Some countries have multiple sales tax, eg. Brazil. In those cases, the returned
 
 For now, this library only supports tax number (VAT number) validation for European countries.
 
-### European countries
+### :eu: European countries
 
 European VAT numbers are validated against the official `ec.europa.eu` API, which return whether a given VAT number exists or not. This helps you ensure a customer-provided VAT number is valid (ie. you don't have to bill VAT for this customer).
 
