@@ -37,8 +37,8 @@ Check if France has any sales tax (returns `true`):
 
 ```javascript
 var franceHasSalesTax = SalesTax.hasSalesTax("FR")  // franceHasSalesTax === true
-var brazilHasSalesTax = SalesTax.hasSalesTax("BR")  // franceHasSalesTax === true
-var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // franceHasSalesTax === false
+var brazilHasSalesTax = SalesTax.hasSalesTax("BR")  // brazilHasSalesTax === true
+var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax === false
 ```
 
 ### Get the sales tax for a customer
