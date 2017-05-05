@@ -57,7 +57,9 @@ Check some states for sales tax (returns `true` or `false`):
 
 ```javascript
 var canadaQuebecHasSalesTax = SalesTax.hasSalesTax("CA", "QC")  // canadaQuebecHasSalesTax === true
+var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
 var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHasSalesTax === false
+var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unitedStatesDelawareHasSalesTax === false
 ```
 
 ### :white_check_mark: Get the sales tax for a customer

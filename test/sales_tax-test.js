@@ -67,9 +67,21 @@ describe("node-fast-ratelimit", function() {
       );
     });
 
+    it("should fail checking for United States > Delaware", function() {
+      assert.ok(
+        !SalesTax.hasStateSalesTax("US", "DE"), "State should not have sales tax"
+      );
+    });
+
     it("should succeed checking for Canada > Quebec", function() {
       assert.ok(
         SalesTax.hasStateSalesTax("CA", "QC"), "State should have sales tax"
+      );
+    });
+
+    it("should succeed checking for United States > California", function() {
+      assert.ok(
+        SalesTax.hasStateSalesTax("US", "CA"), "State should have sales tax"
       );
     });
   });
@@ -194,6 +206,57 @@ describe("node-fast-ratelimit", function() {
         });
     });
 
+    it("should succeed acquiring United States sales tax", function() {
+      return SalesTax.getSalesTax("US")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "none", "Tax type should be NONE"
+          );
+
+          assert.equal(
+            tax.rate, 0.00, "Tax rate should be 0%"
+          );
+
+          assert.equal(
+            tax.exempt, true, "Should be tax-exempt"
+          );
+        });
+    });
+
+    it("should succeed acquiring United States > California sales tax", function() {
+      return SalesTax.getSalesTax("US", "CA")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.0825, "Tax rate should be 8.25%"
+          );
+
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
+    });
+
+    it("should succeed acquiring United States > Delaware sales tax", function() {
+      return SalesTax.getSalesTax("US", "DE")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "none", "Tax type should be NONE"
+          );
+
+          assert.equal(
+            tax.rate, 0.00, "Tax rate should be 0%"
+          );
+
+          assert.equal(
+            tax.exempt, true, "Should be tax-exempt"
+          );
+        });
+    });
+
     it("should succeed acquiring Canada sales tax with an ignored tax number", function() {
       return SalesTax.getSalesTax("CA", null, "IGNORED_TAX_NUMBER")
         .then(function(tax) {
@@ -236,7 +299,7 @@ describe("node-fast-ratelimit", function() {
           );
 
           assert.equal(
-            tax.rate, 0.13, "Tax rate should be 14.975%"
+            tax.rate, 0.13, "Tax rate should be 13%"
           );
 
           assert.equal(
