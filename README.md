@@ -37,6 +37,8 @@ Check if France has any sales tax (returns `true`):
 
 ```javascript
 var franceHasSalesTax = SalesTax.hasSalesTax("FR")  // franceHasSalesTax === true
+var brazilHasSalesTax = SalesTax.hasSalesTax("BR")  // franceHasSalesTax === true
+var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // franceHasSalesTax === false
 ```
 
 ### Get the sales tax for a customer
@@ -70,6 +72,22 @@ SalesTax.getSalesTax("LV")
         type   : "vat",
         rate   : 0.21,
         exempt : false
+      }
+     */
+  });
+```
+
+**Given an Hong Kong-based customer** (eg. a physical person):
+
+```javascript
+SalesTax.getSalesTax("HK")
+  .then((tax) => {
+    // Hong Kong has no VAT
+    /* tax ===
+      {
+        type   : "none",
+        rate   : 0.00,
+        exempt : true
       }
      */
   });
@@ -146,6 +164,24 @@ SalesTax.validateTaxNumber("ES", "12345523")
 
 ```javascript
 SalesTax.isTaxExempt("FR", "87524172699")
+  .then((isTaxExempt) => {
+    // isTaxExempt === true
+  });
+```
+
+**Given a Morocco-based customer**:
+
+```javascript
+SalesTax.isTaxExempt("MA")
+  .then((isTaxExempt) => {
+    // isTaxExempt === false
+  });
+```
+
+**Given an Hong Kong-based customer**:
+
+```javascript
+SalesTax.isTaxExempt("HK")
   .then((isTaxExempt) => {
     // isTaxExempt === true
   });
