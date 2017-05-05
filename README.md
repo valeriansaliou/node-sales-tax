@@ -285,7 +285,7 @@ Some countries have multiple sales tax, eg. Brazil. In those cases, the returned
 
 For now, this module only supports tax number (VAT number) validation for European countries.
 
-### :eu: European countries
+### :eu: Europe
 
 European VAT numbers are validated against the official `ec.europa.eu` API, which return whether a given VAT number exists or not. This helps you ensure a customer-provided VAT number is valid (ie. you don't have to bill VAT for this customer).
 
@@ -294,3 +294,7 @@ You can manually check a VAT number on [VIES VAT number validation](http://ec.eu
 ### :us: United States
 
 United States TIN (U.S. Taxpayer Identification Number) are validated against either EIN, ITIN or SSN format rules. This allows you to check the tax status of a customer based on the validity of the identification number provided.
+
+### :black_flag: Rest of the world
+
+If not listed here, provided tax identification numbers are ignored for non-supported countries. If you need specific validation for a country, feel free to submit a Pull Request.
