@@ -39,7 +39,7 @@ Import the module in your code:
 
 ### :white_check_mark: Check if a country / state has sales tax
 
-Check if France has any sales tax (returns `true`):
+Check some countries for sales tax (returns `true` or `false`):
 
 ```javascript
 var franceHasSalesTax = SalesTax.hasSalesTax("FR")  // franceHasSalesTax === true
