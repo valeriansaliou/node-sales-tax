@@ -29,9 +29,11 @@ Alternatively, you can run `npm install sales-tax --save`.
 
 This module may be used to acquire the billable VAT percentage for a given customer. You may also use it directly to process the total amount including VAT you should bill; and even to validate a customer's VAT number.
 
-**:red_circle: Important: in order to fetch the sales tax for a customer, you need to know their country. The country must be passed to all library methods, formatted as ISO ALPHA-2 (eg. France is FR, United States is US).**
+**:red_circle: Important: in order to fetch the sales tax for a customer, you need to know their country. The country must be passed to all module methods, formatted as ISO ALPHA-2 (eg. France is FR, United States is US).**
 
-In any case, import the module to your code:
+### :arrow_right: Import the module
+
+Import the module to your code:
 
 `var SalesTax = require("sales-tax");`
 
@@ -201,7 +203,7 @@ Some countries have multiple sales tax, eg. Brazil. In those cases, the returned
 
 ## How are tax numbers validated?
 
-For now, this library only supports tax number (VAT number) validation for European countries.
+For now, this module only supports tax number (VAT number) validation for European countries.
 
 ### :eu: European countries
 
