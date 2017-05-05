@@ -54,6 +54,26 @@ describe("node-fast-ratelimit", function() {
     });
   });
 
+  describe("hasStateSalesTax", function() {
+    it("should fail checking for a non-existing state", function() {
+      assert.ok(
+        !SalesTax.hasStateSalesTax("CA", "DONT_EXIST"), "State should not have sales tax"
+      );
+    });
+
+    it("should fail checking for Canada > Yukon", function() {
+      assert.ok(
+        !SalesTax.hasStateSalesTax("CA", "YT"), "State should not have sales tax"
+      );
+    });
+
+    it("should succeed checking for Canada > Quebec", function() {
+      assert.ok(
+        SalesTax.hasStateSalesTax("CA", "QC"), "State should have sales tax"
+      );
+    });
+  });
+
   describe("getSalesTax", function() {
     it("should fail acquiring a non-existing country sales tax", function() {
       return SalesTax.getSalesTax("DONT_EXIST")
@@ -141,7 +161,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed acquiring France sales tax with an invalid tax number", function() {
-      return SalesTax.getSalesTax("FR", "INVALID_TAX_NUMBER")
+      return SalesTax.getSalesTax("FR", null, "INVALID_TAX_NUMBER")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -158,7 +178,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed acquiring France sales tax with a tax-exempt tax number", function() {
-      return SalesTax.getSalesTax("FR", "87524172699")
+      return SalesTax.getSalesTax("FR", null, "87524172699")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -175,7 +195,58 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed acquiring Canada sales tax with an ignored tax number", function() {
-      return SalesTax.getSalesTax("CA", "IGNORED_TAX_NUMBER")
+      return SalesTax.getSalesTax("CA", null, "IGNORED_TAX_NUMBER")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "gst", "Tax type should be GST"
+          );
+
+          assert.equal(
+            tax.rate, 0.05, "Tax rate should be 5%"
+          );
+
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
+    });
+
+    it("should succeed acquiring Canada > Quebec sales tax", function() {
+      return SalesTax.getSalesTax("CA", "QC")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "gst+qst", "Tax type should be GST"
+          );
+
+          assert.equal(
+            tax.rate, 0.14975, "Tax rate should be 14.975%"
+          );
+
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
+    });
+
+    it("should succeed acquiring Canada > Ontario sales tax", function() {
+      return SalesTax.getSalesTax("CA", "ON")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "gst+hst", "Tax type should be GST"
+          );
+
+          assert.equal(
+            tax.rate, 0.13, "Tax rate should be 14.975%"
+          );
+
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+        });
+    });
+
+    it("should succeed acquiring Canada > Yukon sales tax", function() {
+      return SalesTax.getSalesTax("CA", "YT")
         .then(function(tax) {
           assert.equal(
             tax.type, "gst", "Tax type should be GST"
@@ -194,7 +265,7 @@ describe("node-fast-ratelimit", function() {
 
   describe("getAmountWithSalesTax", function() {
     it("should fail processing a non-existing country amount including sales tax (no tax number)", function() {
-      return SalesTax.getAmountWithSalesTax("DONT_EXIST", 1000.00)
+      return SalesTax.getAmountWithSalesTax("DONT_EXIST", null, 1000.00)
         .then(function(tax) {
           assert.equal(
             tax.type, "none", "Tax type should be NONE"
@@ -219,7 +290,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed processing France amount including sales tax (no tax number)", function() {
-      return SalesTax.getAmountWithSalesTax("FR", 1000.00)
+      return SalesTax.getAmountWithSalesTax("FR", null, 1000.00)
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -244,7 +315,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed processing France amount including sales tax (non tax-exempt tax number)", function() {
-      return SalesTax.getAmountWithSalesTax("FR", 1000.00, "NON_EXEMPT_TAX_NUMBER")
+      return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "NON_EXEMPT_TAX_NUMBER")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -269,7 +340,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed processing France amount including sales tax (tax-exempt tax number)", function() {
-      return SalesTax.getAmountWithSalesTax("FR", 1000.00, "87524172699")
+      return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "87524172699")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"

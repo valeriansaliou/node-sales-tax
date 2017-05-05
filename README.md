@@ -29,7 +29,7 @@ Alternatively, you can run `npm install sales-tax --save`.
 
 This module may be used to acquire the billable VAT percentage for a given customer. You may also use it directly to process the total amount including VAT you should bill; and even to validate a customer's VAT number.
 
-**:red_circle: Important: in order to fetch the sales tax for a customer, you need to know their country. The country must be passed to all module methods, formatted as ISO ALPHA-2 (eg. France is FR, United States is US).**
+**:red_circle: Important: in order to fetch the sales tax for a customer, you need to know their country (and sometimes state). The country (sometimes state) must be passed to all module methods, formatted as ISO ALPHA-2 (eg. France is FR, United States is US).**
 
 ### :arrow_right: Import the module
 
@@ -37,7 +37,9 @@ Import the module in your code:
 
 `var SalesTax = require("sales-tax");`
 
-### :white_check_mark: Check if a country / state has sales tax
+### :white_check_mark: Check if a country has sales tax
+
+**Prototype:** `SalesTax.hasSalesTax(countryCode<string>)<boolean>`
 
 Check some countries for sales tax (returns `true` or `false`):
 
@@ -47,12 +49,25 @@ var brazilHasSalesTax = SalesTax.hasSalesTax("BR")  // brazilHasSalesTax === tru
 var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax === false
 ```
 
+### :white_check_mark: Check if a state has sales tax (in a country)
+
+**Prototype:** `SalesTax.hasStateSalesTax(countryCode<string>, stateCode<string>)<boolean>`
+
+Check some states for sales tax (returns `true` or `false`):
+
+```javascript
+var canadaQuebecHasSalesTax = SalesTax.hasSalesTax("CA", "QC")  // canadaQuebecHasSalesTax === true
+var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHasSalesTax === false
+```
+
 ### :white_check_mark: Get the sales tax for a customer
+
+**Prototype:** `SalesTax.getSalesTax(countryCode<string>, stateCode<string?>, taxNumber<string?>)<Promise<object>>`
 
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
-SalesTax.getSalesTax("FR", "87524172699")
+SalesTax.getSalesTax("FR", null, "87524172699")
   .then((tax) => {
     // This customer is VAT-exempt (as it is a business)
     /* tax ===
@@ -102,7 +117,7 @@ SalesTax.getSalesTax("HK")
 :es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue individual):
 
 ```javascript
-SalesTax.getSalesTax("ES", "12345523")
+SalesTax.getSalesTax("ES", null, "12345523")
   .then((tax) => {
     // This customer has to pay 21% VAT (VAT number could not be authenticated against the European Commission API)
     /* tax ===
@@ -117,10 +132,12 @@ SalesTax.getSalesTax("ES", "12345523")
 
 ### :white_check_mark: Process the price including sales tax for a customer
 
+**Prototype:** `SalesTax.getAmountWithSalesTax(countryCode<string>, stateCode<string?>, amount<number?>, taxNumber<string?>)<Promise<object>>`
+
 :estonia: **Given an Estonian customer without any VAT number, buying for 100.00€ of goods** (eg. a physical person):
 
 ```javascript
-SalesTax.getAmountWithSalesTax("EE", 100.00)
+SalesTax.getAmountWithSalesTax("EE", null, 100.00)
   .then((amountWithTax) => {
     // This customer has to pay 20% VAT
     /* amountWithTax ===
@@ -136,6 +153,8 @@ SalesTax.getAmountWithSalesTax("EE", 100.00)
 ```
 
 ### :white_check_mark: Validate tax number for a customer
+
+**Prototype:** `SalesTax.validateTaxNumber(countryCode<string>, taxNumber<string?>)<Promise<boolean>>`
 
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
@@ -166,6 +185,8 @@ SalesTax.validateTaxNumber("ES", "12345523")
 
 ### :white_check_mark: Check if a customer is tax-exempt
 
+**Prototype:** `SalesTax.isTaxExempt(countryCode<string>, taxNumber<string?>)<Promise<boolean>>`
+
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
@@ -194,6 +215,8 @@ SalesTax.isTaxExempt("HK")
 ```
 
 ### :white_check_mark: Disable / enable tax number validation
+
+**Prototype:** `SalesTax.toggleEnabledTaxNumberValidation(enabled<boolean>)<undefined>`
 
 **Disable tax number validation** (disable hitting against external APIs and consider all tax numbers as valid):
 

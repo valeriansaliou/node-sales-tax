@@ -76,7 +76,54 @@
 
   "CA": {
     "type": "gst",
-    "rate": 0.05
+    "rate": 0.05,
+
+    "states": {
+      "BC": {
+        "rate": 0.07,
+        "type": "pst"
+      },
+
+      "MB": {
+        "rate": 0.08,
+        "type": "rst"
+      },
+
+      "NB": {
+        "rate": 0.10,
+        "type": "hst"
+      },
+
+      "NL": {
+        "rate": 0.10,
+        "type": "hst"
+      },
+
+      "NS": {
+        "rate": 0.10,
+        "type": "hst"
+      },
+
+      "ON": {
+        "rate": 0.08,
+        "type": "hst"
+      },
+
+      "PE": {
+        "rate": 0.10,
+        "type": "hst"
+      },
+
+      "QC": {
+        "rate": 0.09975,
+        "type": "qst"
+      },
+
+      "SK": {
+        "rate": 0.06,
+        "type": "pst"
+      }
+    }
   },
 
   "CL": {
@@ -551,13 +598,7 @@
 
   "US": {
     "type": "vat",
-    "rate": 0.00,
-
-    "states": {
-      "CA": {
-        "rate": 0.10
-      }
-    }
+    "rate": 0.00
   },
 
   "UY": {
