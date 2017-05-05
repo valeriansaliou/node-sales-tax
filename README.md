@@ -187,9 +187,9 @@ SalesTax.isTaxExempt("HK")
   });
 ```
 
-## Where the tax data is pulled from?
+## Where is the offline tax data is pulled from?
 
-The tax data is pulled from [VAT, GST and sales tax rates — ey.com](http://www.ey.com/gl/en/services/tax/worldwide-vat--gst-and-sales-tax-guide---rates).
+The offline tax data is pulled from [VAT, GST and sales tax rates — ey.com](http://www.ey.com/gl/en/services/tax/worldwide-vat--gst-and-sales-tax-guide---rates).
 
 **It is kept up-to-date with the year-by-year tax changes worldwide.**
 
