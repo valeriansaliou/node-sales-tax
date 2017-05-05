@@ -55,12 +55,17 @@ var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax ===
 
 **Prototype:** `SalesTax.hasStateSalesTax(countryCode<string>, stateCode<string>)<boolean>`
 
-Check some states for sales tax (returns `true` or `false`):
+:canada: Check some Canada states for sales tax (returns `true` or `false`):
 
 ```javascript
 var canadaQuebecHasSalesTax = SalesTax.hasSalesTax("CA", "QC")  // canadaQuebecHasSalesTax === true
-var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
 var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHasSalesTax === false
+```
+
+:us: Check some United States states for sales tax (returns `true` or `false`):
+
+```javascript
+var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
 var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unitedStatesDelawareHasSalesTax === false
 ```
 
