@@ -65,7 +65,7 @@ SalesTax.getSalesTax("FR", "87524172699")
 
 Note: Clever-Cloud is a real living business from France, check [their website there](https://www.clever-cloud.com).
 
-:lv: **Given a Latvian customer without any VAT number** (eg. a physical person):
+:latvia: **Given a Latvian customer without any VAT number** (eg. a physical person):
 
 ```javascript
 SalesTax.getSalesTax("LV")
@@ -81,7 +81,7 @@ SalesTax.getSalesTax("LV")
   });
 ```
 
-:hk: **Given an Hong Kong-based customer** (eg. a physical person):
+:hong_kong: **Given an Hong Kong-based customer** (eg. a physical person):
 
 ```javascript
 SalesTax.getSalesTax("HK")
@@ -144,7 +144,7 @@ SalesTax.validateTaxNumber("FR", "87524172699")
   });
 ```
 
-:lv: **Given a Latvian customer without any VAT number** (eg. a physical person):
+:latvia: **Given a Latvian customer without any VAT number** (eg. a physical person):
 
 ```javascript
 SalesTax.validateTaxNumber("LV")
@@ -173,7 +173,7 @@ SalesTax.isTaxExempt("FR", "87524172699")
   });
 ```
 
-:ma: **Given a Morocco-based customer**:
+:morocco: **Given a Morocco-based customer**:
 
 ```javascript
 SalesTax.isTaxExempt("MA")
@@ -182,7 +182,7 @@ SalesTax.isTaxExempt("MA")
   });
 ```
 
-:hk: **Given an Hong Kong-based customer**:
+:hong_kong: **Given an Hong Kong-based customer**:
 
 ```javascript
 SalesTax.isTaxExempt("HK")
