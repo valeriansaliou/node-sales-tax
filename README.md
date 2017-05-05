@@ -47,7 +47,7 @@ var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax ===
 
 ### :white_check_mark: Get the sales tax for a customer
 
-**Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
 SalesTax.getSalesTax("FR", "87524172699")
@@ -65,7 +65,7 @@ SalesTax.getSalesTax("FR", "87524172699")
 
 Note: Clever-Cloud is a real living business from France, check [their website there](https://www.clever-cloud.com).
 
-**Given a Latvian customer without any VAT number** (eg. a physical person):
+:lv: **Given a Latvian customer without any VAT number** (eg. a physical person):
 
 ```javascript
 SalesTax.getSalesTax("LV")
@@ -81,7 +81,7 @@ SalesTax.getSalesTax("LV")
   });
 ```
 
-**Given an Hong Kong-based customer** (eg. a physical person):
+:hk: **Given an Hong Kong-based customer** (eg. a physical person):
 
 ```javascript
 SalesTax.getSalesTax("HK")
@@ -97,7 +97,7 @@ SalesTax.getSalesTax("HK")
   });
 ```
 
-**Given a Spanish customer who provided an invalid VAT number** (eg. a rogue individual):
+:es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue individual):
 
 ```javascript
 SalesTax.getSalesTax("ES", "12345523")
@@ -115,7 +115,7 @@ SalesTax.getSalesTax("ES", "12345523")
 
 ### :white_check_mark: Process the price including sales tax for a customer
 
-**Given an Estonian customer without any VAT number, buying for 100.00€ of goods** (eg. a physical person):
+:ee: **Given an Estonian customer without any VAT number, buying for 100.00€ of goods** (eg. a physical person):
 
 ```javascript
 SalesTax.getAmountWithSalesTax("EE", 100.00)
@@ -135,7 +135,7 @@ SalesTax.getAmountWithSalesTax("EE", 100.00)
 
 ### :white_check_mark: Validate tax number for a customer
 
-**Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
 SalesTax.validateTaxNumber("FR", "87524172699")
@@ -144,7 +144,7 @@ SalesTax.validateTaxNumber("FR", "87524172699")
   });
 ```
 
-**Given a Latvian customer without any VAT number** (eg. a physical person):
+:lv: **Given a Latvian customer without any VAT number** (eg. a physical person):
 
 ```javascript
 SalesTax.validateTaxNumber("LV")
@@ -153,7 +153,7 @@ SalesTax.validateTaxNumber("LV")
   });
 ```
 
-**Given a Spanish customer who provided an invalid VAT number** (eg. a rogue individual):
+:es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue individual):
 
 ```javascript
 SalesTax.validateTaxNumber("ES", "12345523")
@@ -164,7 +164,7 @@ SalesTax.validateTaxNumber("ES", "12345523")
 
 ### :white_check_mark: Check if a customer is tax-exempt
 
-**Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
 SalesTax.isTaxExempt("FR", "87524172699")
@@ -173,7 +173,7 @@ SalesTax.isTaxExempt("FR", "87524172699")
   });
 ```
 
-**Given a Morocco-based customer**:
+:ma: **Given a Morocco-based customer**:
 
 ```javascript
 SalesTax.isTaxExempt("MA")
@@ -182,7 +182,7 @@ SalesTax.isTaxExempt("MA")
   });
 ```
 
-**Given an Hong Kong-based customer**:
+:hk: **Given an Hong Kong-based customer**:
 
 ```javascript
 SalesTax.isTaxExempt("HK")
