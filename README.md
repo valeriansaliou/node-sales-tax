@@ -4,6 +4,8 @@
 
 International sales tax calculator for Node (offline, except for VAT number validation). Tax rates are kept up-to-date.
 
+You may use it to calculate VAT rates for countries in the European Union (VAT MOSS), GST in Canada, or get VAT for countries such as China, or even Hong Kong (which has no VAT).
+
 ## Who uses it?
 
 <table>

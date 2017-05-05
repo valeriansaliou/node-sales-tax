@@ -59,6 +59,7 @@
     "billing",
     "invoice",
     "vat",
-    "gst"
+    "gst",
+    "vatmoss"
   ]
 }
