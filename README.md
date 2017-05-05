@@ -115,7 +115,7 @@ SalesTax.getSalesTax("ES", "12345523")
 
 ### :white_check_mark: Process the price including sales tax for a customer
 
-:ee: **Given an Estonian customer without any VAT number, buying for 100.00€ of goods** (eg. a physical person):
+:estonia: **Given an Estonian customer without any VAT number, buying for 100.00€ of goods** (eg. a physical person):
 
 ```javascript
 SalesTax.getAmountWithSalesTax("EE", 100.00)
