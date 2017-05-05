@@ -43,7 +43,7 @@ Import the module in your code:
 
 **Prototype:** `SalesTax.hasSalesTax(countryCode<string>)<boolean>`
 
-Check some countries for sales tax (returns `true` or `false`):
+**Check some countries for sales tax** (returns `true` or `false`):
 
 ```javascript
 var franceHasSalesTax = SalesTax.hasSalesTax("FR")  // franceHasSalesTax === true
@@ -55,14 +55,14 @@ var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax ===
 
 **Prototype:** `SalesTax.hasStateSalesTax(countryCode<string>, stateCode<string>)<boolean>`
 
-:canada: Check some Canada states for sales tax (returns `true` or `false`):
+:canada: **Check some Canada states for sales tax** (returns `true` or `false`):
 
 ```javascript
 var canadaQuebecHasSalesTax = SalesTax.hasSalesTax("CA", "QC")  // canadaQuebecHasSalesTax === true
 var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHasSalesTax === false
 ```
 
-:us: Check some United States states for sales tax (returns `true` or `false`):
+:us: **Check some United States states for sales tax** (returns `true` or `false`):
 
 ```javascript
 var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
