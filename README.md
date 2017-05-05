@@ -290,3 +290,7 @@ For now, this module only supports tax number (VAT number) validation for Europe
 European VAT numbers are validated against the official `ec.europa.eu` API, which return whether a given VAT number exists or not. This helps you ensure a customer-provided VAT number is valid (ie. you don't have to bill VAT for this customer).
 
 You can manually check a VAT number on [VIES VAT number validation](http://ec.europa.eu/taxation_customs/vies/vatRequest.html).
+
+### :us: United States
+
+United States TIN (U.S. Taxpayer Identification Number) are validated against either EIN, ITIN or SSN format rules. This allows you to check the tax status of a customer based on the validity of the identification number provided.
