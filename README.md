@@ -193,6 +193,20 @@ SalesTax.isTaxExempt("HK")
   });
 ```
 
+### :white_check_mark: Disable / enable tax number validation
+
+**Disable tax number validation** (disable hitting against external APIs and consider all tax numbers as valid):
+
+```javascript
+SalesTax.toggleEnabledTaxNumberValidation(false)
+```
+
+**Enable tax number validation** (enabled by default — use only if you disabled it previously):
+
+```javascript
+SalesTax.toggleEnabledTaxNumberValidation(true)
+```
+
 ## Where is the offline tax data is pulled from?
 
 The offline tax data is pulled from [VAT, GST and sales tax rates — ey.com](http://www.ey.com/gl/en/services/tax/worldwide-vat--gst-and-sales-tax-guide---rates).

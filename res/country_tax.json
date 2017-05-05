@@ -15,7 +15,7 @@
   },
 
   "AU": {
-    "type": "vat",
+    "type": "gst",
     "rate": 0.10
   },
 
@@ -75,7 +75,7 @@
   },
 
   "CA": {
-    "type": "vat",
+    "type": "gst",
     "rate": 0.05
   },
 
@@ -551,7 +551,13 @@
 
   "US": {
     "type": "vat",
-    "rate": 0.075
+    "rate": 0.00,
+
+    "states": {
+      "CA": {
+        "rate": 0.10
+      }
+    }
   },
 
   "UY": {

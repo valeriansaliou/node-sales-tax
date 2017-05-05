@@ -17,6 +17,11 @@ describe("node-fast-ratelimit", function() {
   // Increase timeout as some tests call the network for VAT number checks
   this.timeout(10000);
 
+  // Ensure tax number validation is enabled before each pass
+  beforeEach(function() {
+    SalesTax.toggleEnabledTaxNumberValidation(true);
+  });
+
   describe("hasSalesTax", function() {
     it("should fail checking for a non-existing country", function() {
       assert.ok(
@@ -173,7 +178,7 @@ describe("node-fast-ratelimit", function() {
       return SalesTax.getSalesTax("CA", "IGNORED_TAX_NUMBER")
         .then(function(tax) {
           assert.equal(
-            tax.type, "vat", "Tax type should be VAT"
+            tax.type, "gst", "Tax type should be GST"
           );
 
           assert.equal(
@@ -304,6 +309,17 @@ describe("node-fast-ratelimit", function() {
         .then(function(isValid) {
           assert.ok(
             !isValid, "Tax number should be invalid"
+          );
+        });
+    });
+
+    it("should check France tax number as valid, even if invalid", function() {
+      SalesTax.toggleEnabledTaxNumberValidation(false);
+
+      return SalesTax.validateTaxNumber("FR", "INVALID_NON_VALIDATED_TAX_NUMBER")
+        .then(function(isValid) {
+          assert.ok(
+            isValid, "Tax number should be valid (even if invalid)"
           );
         });
     });
