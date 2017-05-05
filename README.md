@@ -6,7 +6,7 @@ International sales tax calculator for Node (offline, except for VAT number vali
 
 You may use it to calculate VAT rates for countries in the European Union (VAT MOSS), GST in Canada, or get VAT for countries such as China, or even Hong Kong (which has no VAT).
 
-_You can find the raw sales tax rates JSON file here: [country_tax.json](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/country_tax.json)_
+_You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/sales_tax_rates.json)_
 
 ## Who uses it?
 
