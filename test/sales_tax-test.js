@@ -314,6 +314,56 @@ describe("node-fast-ratelimit", function() {
         });
     });
 
+    it("should succeed processing Canada amount including sales tax (no tax number)", function() {
+      return SalesTax.getAmountWithSalesTax("CA", null, 723.21)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "gst", "Tax type should be GST"
+          );
+
+          assert.equal(
+            tax.rate, 0.05, "Tax rate should be 5%"
+          );
+
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+
+          assert.equal(
+            tax.price, 723.21, "Price amount should be 723.21"
+          );
+
+          assert.equal(
+            tax.total, 759.3705000000001, "Total amount should be 759.3705000000001"
+          );
+        });
+    });
+
+    it("should succeed processing Canada > Ontario amount including sales tax (no tax number)", function() {
+      return SalesTax.getAmountWithSalesTax("CA", "ON", 800.00)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "gst+hst", "Tax type should be GST+HST"
+          );
+
+          assert.equal(
+            tax.rate, 0.13, "Tax rate should be 13%"
+          );
+
+          assert.equal(
+            tax.exempt, false, "Should not be tax-exempt"
+          );
+
+          assert.equal(
+            tax.price, 800.00, "Price amount should be 800.00"
+          );
+
+          assert.equal(
+            tax.total, 903.9999999999999, "Total amount should be 903.9999999999999"
+          );
+        });
+    });
+
     it("should succeed processing France amount including sales tax (non tax-exempt tax number)", function() {
       return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "NON_EXEMPT_TAX_NUMBER")
         .then(function(tax) {
