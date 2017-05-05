@@ -564,11 +564,47 @@ describe("node-fast-ratelimit", function() {
         });
     });
 
-    it("should check ignored Canada tax number as non tax-exempt", function() {
-      return SalesTax.isTaxExempt("CA", null, "IGNORED_TAX_NUMBER")
+    it("should check valid United States > Texas tax number as tax-exempt", function() {
+      return SalesTax.isTaxExempt("US", "TX", "01-1234567")
         .then(function(isTaxExempt) {
           assert.ok(
-            !isTaxExempt, "Tax number should not be tax-exempt (ignored)"
+            isTaxExempt, "Tax number should be tax-exempt"
+          );
+        });
+    });
+
+    it("should check invalid United States > Texas tax number as non tax-exempt", function() {
+      return SalesTax.isTaxExempt("US", "TX", "0112345-67")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            !isTaxExempt, "Tax number should not be tax-exempt (invalid)"
+          );
+        });
+    });
+
+    it("should check Canada > Manitoba as non tax-exempt", function() {
+      return SalesTax.isTaxExempt("CA", "MB")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            !isTaxExempt, "State should not be tax-exempt"
+          );
+        });
+    });
+
+    it("should check valid Canada > Quebec tax number as tax-exempt", function() {
+      return SalesTax.isTaxExempt("CA", "QC", "123456789")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            isTaxExempt, "Tax number should be tax-exempt"
+          );
+        });
+    });
+
+    it("should check invalid Canada > Quebec tax number as non tax-exempt", function() {
+      return SalesTax.isTaxExempt("CA", "QC", "INVALID_TAX_NUMBER")
+        .then(function(isTaxExempt) {
+          assert.ok(
+            !isTaxExempt, "Tax number should not be tax-exempt (invalid)"
           );
         });
     });

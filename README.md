@@ -293,7 +293,11 @@ You can manually check a VAT number on [VIES VAT number validation](http://ec.eu
 
 ### :us: United States
 
-United States TIN (U.S. Taxpayer Identification Number) are validated against either EIN, ITIN or SSN format rules. This allows you to check the tax status of a customer based on the validity of the identification number provided.
+United States EIN (U.S. Employer Identification Number) are validated against EIN format rules. This allows you to check the tax status of a customer from the US based on the validity of the identification number provided.
+
+### :canada: Canada
+
+Canada BN (Business Number) are validated against BN format rules. This allows you to check the tax status of a customer from Canada based on the validity of the identification number provided.
 
 ### :black_flag: Rest of the world
 
