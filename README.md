@@ -19,7 +19,7 @@ _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](htt
 </tr>
 </table>
 
-_👋 You use sales-tax and you want to be listed there? [Contact me](https://valeriansaliou.name/)!_
+_👋 You use sales-tax and you want to be listed there? [Contact me](https://valeriansaliou.name/)_
 
 ## How to install?
 
