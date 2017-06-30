@@ -12,7 +12,7 @@ _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](htt
 
 <table>
 <tr>
-<td align="center"><a href="https://crisp.im/"><img src="https://valeriansaliou.github.io/node-sales-tax/images/crisp.png" height="64" /></a></td>
+<td align="center"><a href="https://crisp.chat/"><img src="https://valeriansaliou.github.io/node-sales-tax/images/crisp.png" height="64" /></a></td>
 </tr>
 <tr>
 <td align="center">Crisp</td>
