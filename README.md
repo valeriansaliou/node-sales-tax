@@ -39,6 +39,10 @@ Import the module in your code:
 
 `var SalesTax = require("sales-tax");`
 
+Ensure that you [specify your origin country](#xxx) before you use the library. This will affect how `international`, `regional` and `national` taxes are handled from your point of view (`regional` usually defines an economic community, eg. the European Union).
+
+Also, ensure that you consume correctly the `charge` values that gets returned. It tells you if the VAT charge should be directly invoiced to the customer via the `direct` tag (you charge the VAT on your end), or if the customer should pay the VAT on their end via the `reverse` tag (see [VAT reverse charge](https://www.vatlive.com/eu-vat-rules/eu-vat-returns/reverse-charge-on-eu-vat/)).
+
 ### :white_check_mark: Check if a country has sales tax
 
 **Prototype:** `SalesTax.hasSalesTax(countryCode<string>)<boolean>`
@@ -83,7 +87,13 @@ SalesTax.getSalesTax("FR", null, "87524172699")
       {
         type   : "vat",
         rate   : 0.00,
-        exempt : true
+        area   : "worldwide",
+        type   : "business",
+
+        charge : {
+          direct  : false,
+          reverse : true
+        }
       }
      */
   });
@@ -91,39 +101,51 @@ SalesTax.getSalesTax("FR", null, "87524172699")
 
 Note: Clever-Cloud is a real living business from France, check [their website there](https://www.clever-cloud.com).
 
-:us: **Given an United States > California customer without any VAT number** (eg. a physical person):
+:us: **Given an United States > California customer without any VAT number** (eg. a consumer):
 
 ```javascript
 SalesTax.getSalesTax("US", "CA")
   .then((tax) => {
-    // This customer has to pay 8.25% VAT (as it is a physical person)
+    // This customer has to pay 8.25% VAT (as it is a consumer)
     /* tax ===
       {
         type   : "vat",
         rate   : 0.0825,
-        exempt : false
+        area   : "worldwide",
+        type   : "consumer",
+
+        charge : {
+          direct  : true,
+          reverse : false
+        }
       }
      */
   });
 ```
 
-:latvia: **Given a Latvian customer without any VAT number** (eg. a physical person):
+:latvia: **Given a Latvian customer without any VAT number** (eg. a consumer):
 
 ```javascript
 SalesTax.getSalesTax("LV")
   .then((tax) => {
-    // This customer has to pay 21% VAT (as it is a physical person)
+    // This customer has to pay 21% VAT (as it is a consumer)
     /* tax ===
       {
         type   : "vat",
         rate   : 0.21,
-        exempt : false
+        area   : "worldwide",
+        type   : "consumer",
+
+        charge : {
+          direct  : true,
+          reverse : false
+        }
       }
      */
   });
 ```
 
-:hong_kong: **Given an Hong Kong-based customer** (eg. a physical person):
+:hong_kong: **Given an Hong Kong-based customer** (eg. a consumer):
 
 ```javascript
 SalesTax.getSalesTax("HK")
@@ -133,13 +155,19 @@ SalesTax.getSalesTax("HK")
       {
         type   : "none",
         rate   : 0.00,
-        exempt : true
+        area   : "worldwide",
+        type   : "consumer",
+
+        charge : {
+          direct  : false,
+          reverse : false
+        }
       }
      */
   });
 ```
 
-:es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue individual):
+:es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue business):
 
 ```javascript
 SalesTax.getSalesTax("ES", null, "12345523")
@@ -149,7 +177,13 @@ SalesTax.getSalesTax("ES", null, "12345523")
       {
         type   : "vat",
         rate   : 0.21,
-        exempt : false
+        area   : "worldwide",
+        type   : "consumer",
+
+        charge : {
+          direct  : true,
+          reverse : false
+        }
       }
      */
   });
@@ -159,7 +193,7 @@ SalesTax.getSalesTax("ES", null, "12345523")
 
 **Prototype:** `SalesTax.getAmountWithSalesTax(countryCode<string>, stateCode<string?>, amount<number?>, taxNumber<string?>)<Promise<object>>`
 
-:estonia: **Given an Estonian customer without any VAT number, buying 100.00€ of goods** (eg. a physical person):
+:estonia: **Given an Estonian customer without any VAT number, buying 100.00€ of goods** (eg. a consumer):
 
 ```javascript
 SalesTax.getAmountWithSalesTax("EE", null, 100.00)
@@ -169,9 +203,15 @@ SalesTax.getAmountWithSalesTax("EE", null, 100.00)
       {
         type   : "vat",
         rate   : 0.20,
-        exempt : false,
         price  : 100.00,
-        total  : 120.00
+        total  : 120.00,
+        area   : "worldwide",
+        type   : "consumer",
+
+        charge : {
+          direct  : true,
+          reverse : false
+        }
       }
      */
   });
@@ -190,7 +230,7 @@ SalesTax.validateTaxNumber("FR", "87524172699")
   });
 ```
 
-:us: **Given an United States customer without any VAT number** (eg. a physical person):
+:us: **Given an United States customer without any VAT number** (eg. a consumer):
 
 ```javascript
 SalesTax.validateTaxNumber("US")
@@ -199,7 +239,7 @@ SalesTax.validateTaxNumber("US")
   });
 ```
 
-:latvia: **Given a Latvian customer without any VAT number** (eg. a physical person):
+:latvia: **Given a Latvian customer without any VAT number** (eg. a consumer):
 
 ```javascript
 SalesTax.validateTaxNumber("LV")
@@ -208,7 +248,7 @@ SalesTax.validateTaxNumber("LV")
   });
 ```
 
-:es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue individual):
+:es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue business):
 
 ```javascript
 SalesTax.validateTaxNumber("ES", "12345523")
@@ -257,20 +297,36 @@ SalesTax.isTaxExempt("HK")
   });
 ```
 
+### :white_check_mark: Specify the country you charge from
+
+**Prototype:** `SalesTax.setTaxOriginCountry(countryCode<string>)<undefined>`
+
+:fr: **Charge customers from France** (thus all VAT get calculated from a French point of view):
+
+```javascript
+SalesTax.setTaxOriginCountry("FR")
+```
+
+**Unset your origin country** (use default origin):
+
+```javascript
+SalesTax.setTaxOriginCountry(null)
+```
+
 ### :white_check_mark: Disable / enable tax number validation
 
 **Prototype:** `SalesTax.toggleEnabledTaxNumberValidation(enabled<boolean>)<undefined>`
 
-**Disable tax number validation** (disable hitting against external APIs and consider all tax numbers as valid):
-
-```javascript
-SalesTax.toggleEnabledTaxNumberValidation(false)
-```
-
-**Enable tax number validation** (enabled by default — use only if you disabled it previously):
+**Enable tax number validation** (enable hitting against external APIs to check whether tax numbers are valid):
 
 ```javascript
 SalesTax.toggleEnabledTaxNumberValidation(true)
+```
+
+**Disable tax number validation** (disabled by default — use only if you enabled it previously):
+
+```javascript
+SalesTax.toggleEnabledTaxNumberValidation(false)
 ```
 
 ## Where is the offline tax data is pulled from?
@@ -285,7 +341,9 @@ Some countries have multiple sales tax, eg. Brazil. In those cases, the returned
 
 ### :eu: Europe
 
-European VAT numbers are validated against the official `ec.europa.eu` API, which return whether a given VAT number exists or not. This helps you ensure a customer-provided VAT number is valid (ie. you don't have to bill VAT for this customer).
+European VAT numbers can be validated against the official `ec.europa.eu` VIES VAT API, which return whether a given VAT number exists or not. This helps you ensure a customer-provided VAT number is valid (ie. you don't have to bill VAT for this customer). This feature, as it may incur significant delays (while querying the VIES VAT API) is disabled by default. There's [a switch to enable it](#white_check_mark-disable--enable-tax-number-validation).
+
+In all cases, the syntax of the European VAT numbers get checked from offline rules. Although, it only checks number syntaxical correctness; thus it is not sufficient to tell if the number exists or not.
 
 You can manually check a VAT number on [VIES VAT number validation](http://ec.europa.eu/taxation_customs/vies/vatRequest.html).
 
