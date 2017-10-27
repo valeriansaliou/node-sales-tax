@@ -19,7 +19,9 @@ describe("node-fast-ratelimit", function() {
 
   // Ensure tax number validation is enabled before each pass
   beforeEach(function() {
+    SalesTax.setTaxOriginCountry("FR");
     SalesTax.toggleEnabledTaxNumberValidation(true);
+    SalesTax.toggleEnabledTaxNumberFraudCheck(false);
   });
 
   describe("hasSalesTax", function() {
@@ -190,7 +192,26 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed acquiring France sales tax with a tax-exempt tax number", function() {
-      return SalesTax.getSalesTax("FR", null, "87524172699")
+      return SalesTax.getSalesTax("FR", null, "FR87524172699")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.00, "Tax rate should be 0% (tax-exempt)"
+          );
+
+          assert.equal(
+            tax.exempt, true, "Should be tax-exempt"
+          );
+        });
+    });
+
+    it("should succeed acquiring France sales tax with a tax-exempt tax number and fraud check", function() {
+      SalesTax.toggleEnabledTaxNumberFraudCheck(true);
+
+      return SalesTax.getSalesTax("FR", null, "FR87524172699")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -453,7 +474,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should succeed processing France amount including sales tax (tax-exempt tax number)", function() {
-      return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "87524172699")
+      return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "FR87524172699")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -480,7 +501,7 @@ describe("node-fast-ratelimit", function() {
 
   describe("validateTaxNumber", function() {
     it("should check France tax number as valid", function() {
-      return SalesTax.validateTaxNumber("FR", "87524172699")
+      return SalesTax.validateTaxNumber("FR", "FR87524172699")
         .then(function(isValid) {
           assert.ok(
             isValid, "Tax number should be valid"
@@ -538,7 +559,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("should check valid France tax number as tax-exempt", function() {
-      return SalesTax.isTaxExempt("FR", null, "87524172699")
+      return SalesTax.isTaxExempt("FR", null, "FR87524172699")
         .then(function(isTaxExempt) {
           assert.ok(
             isTaxExempt, "Tax number should be tax-exempt"

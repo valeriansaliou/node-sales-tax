@@ -80,7 +80,7 @@ var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unite
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
-SalesTax.getSalesTax("FR", null, "87524172699")
+SalesTax.getSalesTax("FR", null, "FR87524172699")
   .then((tax) => {
     // This customer is VAT-exempt (as it is a business)
     /* tax ===
@@ -170,7 +170,7 @@ SalesTax.getSalesTax("HK")
 :es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue business):
 
 ```javascript
-SalesTax.getSalesTax("ES", null, "12345523")
+SalesTax.getSalesTax("ES", null, "ESX12345523")
   .then((tax) => {
     // This customer has to pay 21% VAT (VAT number could not be authenticated against the VIES VAT API)
     /* tax ===
@@ -224,7 +224,7 @@ SalesTax.getAmountWithSalesTax("EE", null, 100.00)
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
-SalesTax.validateTaxNumber("FR", "87524172699")
+SalesTax.validateTaxNumber("FR", "FR87524172699")
   .then((isValid) => {
     // isValid === true
   });
@@ -251,7 +251,7 @@ SalesTax.validateTaxNumber("LV")
 :es: **Given a Spanish customer who provided an invalid VAT number** (eg. a rogue business):
 
 ```javascript
-SalesTax.validateTaxNumber("ES", "12345523")
+SalesTax.validateTaxNumber("ES", "ESX12345523")
   .then((isValid) => {
     // isValid === false
   });
@@ -264,7 +264,7 @@ SalesTax.validateTaxNumber("ES", "12345523")
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
-SalesTax.isTaxExempt("FR", null, "87524172699")
+SalesTax.isTaxExempt("FR", null, "FR87524172699")
   .then((isTaxExempt) => {
     // isTaxExempt === true
   });
@@ -338,6 +338,8 @@ SalesTax.toggleEnabledTaxNumberValidation(false)
 ```javascript
 SalesTax.toggleEnabledTaxNumberFraudCheck(true)
 ```
+
+**Notice: fraud check requires tax number validation to be enabled.**
 
 :thumbsdown: **Disable tax number fraud check** (disabled by default — use only if you enabled it previously):
 
