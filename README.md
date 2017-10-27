@@ -49,6 +49,8 @@ Also, ensure that you consume correctly the `charge` values that get returned. I
 
 **Prototype:** `SalesTax.hasSalesTax(countryCode<string>)<boolean>`
 
+**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
+
 **Check some countries for sales tax** (returns `true` or `false`):
 
 ```javascript
@@ -57,11 +59,11 @@ var brazilHasSalesTax = SalesTax.hasSalesTax("BR")  // brazilHasSalesTax === tru
 var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax === false
 ```
 
-**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
-
 ### :white_check_mark: Check if a state has sales tax (in a country)
 
 **Prototype:** `SalesTax.hasStateSalesTax(countryCode<string>, stateCode<string>)<boolean>`
+
+**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
 
 :canada: **Check some Canada states for sales tax** (returns `true` or `false`):
 
@@ -76,8 +78,6 @@ var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHas
 var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
 var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unitedStatesDelawareHasSalesTax === false
 ```
-
-**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
 
 ### :white_check_mark: Get the sales tax for a customer
 
@@ -321,6 +321,8 @@ SalesTax.validateTaxNumber("ES", "ESX12345523")
 
 **Prototype:** `SalesTax.isTaxExempt(countryCode<string>, stateCode<string?>, taxNumber<string?>)<Promise<boolean>>`
 
+**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
+
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
@@ -356,8 +358,6 @@ SalesTax.isTaxExempt("HK")
     // isTaxExempt === true
   });
 ```
-
-**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
 
 ### :white_check_mark: Specify the country you charge from
 
@@ -395,13 +395,13 @@ SalesTax.toggleEnabledTaxNumberValidation(false)
 
 **Prototype:** `SalesTax.toggleEnabledTaxNumberFraudCheck(enabled<boolean>)<undefined>`
 
+**Notice: fraud check requires tax number validation to be enabled.**
+
 :thumbsup: **Enable tax number fraud check** (enable hitting against external APIs to verify tax numbers against fraud):
 
 ```javascript
 SalesTax.toggleEnabledTaxNumberFraudCheck(true)
 ```
-
-**Notice: fraud check requires tax number validation to be enabled.**
 
 :thumbsdown: **Disable tax number fraud check** (disabled by default — use only if you enabled it previously):
 
