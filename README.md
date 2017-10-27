@@ -55,7 +55,7 @@ Also, ensure that you consume correctly the `charge` values that get returned. I
 SalesTax.setTaxOriginCountry("FR")
 ```
 
-:triangular_flag_on_post: **Unset your origin country** (use default origin):
+:triangular_flag_on_post: **Unset your origin country** (use default origin, full VAT rates will be applied for all countries worldwide — **this is obviously not usable for your invoices**):
 
 ```javascript
 SalesTax.setTaxOriginCountry(null)
