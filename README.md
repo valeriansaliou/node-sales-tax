@@ -359,7 +359,7 @@ Some countries have multiple sales tax, eg. Brazil. In those cases, the returned
 
 European VAT numbers can be fraud-checked against the official `ec.europa.eu` VIES VAT API, which return whether a given VAT number exists or not. This helps you ensure a customer-provided VAT number really exists. This feature, as it may incur significant delays (while querying the VIES VAT API) is disabled by default. There's [a switch to enable it](#white_check_mark-disable--enable-tax-number-fraud-check).
 
-In all cases, the syntax of the European VAT numbers get checked from offline rules. Although, it only checks number syntaxical correctness; thus it is not sufficient to tell if the number exists or not.
+In all cases, the syntax of the European VAT numbers get validated from offline rules. Although, it only checks number syntaxical correctness; thus it is not sufficient to tell if the number exists or not.
 
 You can manually check a VAT number on [VIES VAT number validation](http://ec.europa.eu/taxation_customs/vies/vatRequest.html).
 
