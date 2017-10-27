@@ -1,6 +1,6 @@
 {
   "checkbuild": {
-    "enable": ["jshint", "jscs", "david"],
+    "enable": ["jshint", "jscs"],
     "continueOnError": true,
     "allowFailures": false
   },
@@ -9,10 +9,5 @@
   },
   "jscs": {
     "args": ["lib/**/*.js"]
-  },
-  "david": {
-    "dev": true,
-    "stable": true,
-    "ignore": []
   }
 }
