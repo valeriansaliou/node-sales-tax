@@ -41,7 +41,7 @@ Import the module in your code:
 
 `var SalesTax = require("sales-tax");`
 
-Ensure that you [specify your origin country](#white_check_mark-specify-the-country-you-charge-from) before you use the library. This will affect how `international`, `regional` and `national` area taxes are handled from your point of view (`regional` usually defines an economic community, eg. the European Union).
+Ensure that you [specify your origin country](#white_check_mark-specify-the-country-you-charge-from) before you use the library. This will affect how `international`, `regional` and `national` area taxes are handled from your point of view (`regional` stands for the economic community, eg. the European Union).
 
 Also, ensure that you consume correctly the `charge` values that gets returned. It tells you if the VAT charge should be directly invoiced to the customer via the `direct` tag (you charge the VAT on your end), or if the customer should pay the VAT on their end via the `reverse` tag (see [VAT reverse charge](https://www.vatlive.com/eu-vat-rules/eu-vat-returns/reverse-charge-on-eu-vat/)). If the charge is not `direct`, then the VAT rate will be `0.00` (it is up to the customer to apply their own VAT rate).
 
