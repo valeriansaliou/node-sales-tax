@@ -83,6 +83,8 @@ var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unite
 
 **Prototype:** `SalesTax.getSalesTax(countryCode<string>, stateCode<string?>, taxNumber<string?>)<Promise<object>>`
 
+**Notice: this method is origin-aware. It means it return values relative to your configured tax origin country.**
+
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
@@ -252,6 +254,8 @@ SalesTax.getSalesTax("ES", null, "ESX12345523")
 ### :white_check_mark: Process the price including sales tax for a customer
 
 **Prototype:** `SalesTax.getAmountWithSalesTax(countryCode<string>, stateCode<string?>, amount<number?>, taxNumber<string?>)<Promise<object>>`
+
+**Notice: this method is origin-aware. It means it return values relative to your configured tax origin country.**
 
 :estonia: **Given an Estonian customer without any VAT number, buying 100.00€ of goods** (eg. a consumer):
 
