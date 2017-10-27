@@ -307,7 +307,7 @@ SalesTax.isTaxExempt("HK")
 SalesTax.setTaxOriginCountry("FR")
 ```
 
-**Unset your origin country** (use default origin):
+:triangular_flag_on_post: **Unset your origin country** (use default origin):
 
 ```javascript
 SalesTax.setTaxOriginCountry(null)
@@ -317,13 +317,13 @@ SalesTax.setTaxOriginCountry(null)
 
 **Prototype:** `SalesTax.toggleEnabledTaxNumberValidation(enabled<boolean>)<undefined>`
 
-**Enable tax number validation** (enable hitting against external APIs to check whether tax numbers are valid):
+:thumbsup: **Enable tax number validation** (enable hitting against external APIs to check whether tax numbers are valid):
 
 ```javascript
 SalesTax.toggleEnabledTaxNumberValidation(true)
 ```
 
-**Disable tax number validation** (disabled by default — use only if you enabled it previously):
+:thumbsdown: **Disable tax number validation** (disabled by default — use only if you enabled it previously):
 
 ```javascript
 SalesTax.toggleEnabledTaxNumberValidation(false)
