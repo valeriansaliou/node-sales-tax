@@ -109,7 +109,7 @@ SalesTax.getSalesTax("FR", null, "FR87524172699")
 
 Note: Clever-Cloud is a real living business from France, check [their website there](https://www.clever-cloud.com).
 
-:fr: **Given a French customer VAT number from a French tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number from a :fr: French tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
 // Set this once when initializing the library (to France)
@@ -136,7 +136,7 @@ SalesTax.getSalesTax("FR", null, "FR87524172699")
   });
 ```
 
-:fr: **Given a French customer VAT number from a Latvian tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number from a :latvia: Latvian tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
 // Set this once when initializing the library (to Latvia)
