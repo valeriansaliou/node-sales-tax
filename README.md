@@ -6,6 +6,8 @@ International sales tax calculator for Node (offline, except for VAT number vali
 
 You may use it to calculate VAT rates for countries in the European Union (VAT MOSS), GST in Canada, or get VAT for countries such as China, or even Hong Kong (which has no VAT).
 
+International tax is hard (especially VAT). This library ensures rules are enforced in the code. If you see a rule that is missing or not correctly enforced, please [open an issue](https://github.com/valeriansaliou/node-sales-tax/issues). Also, when you use the library, make sure to [specify your origin country](#white_check_mark-specify-the-country-you-charge-from); as it will return full international tax rates if you don't specify it (ie. the country you invoice your customers from).
+
 _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/sales_tax_rates.json)_
 
 ## Who uses it?
@@ -85,12 +87,12 @@ SalesTax.getSalesTax("FR", null, "FR87524172699")
     // This customer is VAT-exempt (as it is a business)
     /* tax ===
       {
-        type   : "vat",
-        rate   : 0.00,
-        area   : "worldwide",
-        type   : "business",
+        type     : "vat",
+        rate     : 0.00,
+        area     : "worldwide",
+        exchange : "business",
 
-        charge : {
+        charge   : {
           direct  : false,
           reverse : true
         }
@@ -101,6 +103,60 @@ SalesTax.getSalesTax("FR", null, "FR87524172699")
 
 Note: Clever-Cloud is a real living business from France, check [their website there](https://www.clever-cloud.com).
 
+:fr: **Given a French customer VAT number from a French tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+
+```javascript
+// Set this once when initializing the library (to France)
+SalesTax.setTaxOriginCountry("FR")
+
+SalesTax.getSalesTax("FR", null, "FR87524172699")
+  .then((tax) => {
+    // This customer owes VAT in France (as it is a business, and billing is FR-to-FR)
+    // The `direct` tag is set to `true`, thus VAT should be charged
+    // The `area` tag is set to `national` as the exchange is done in France
+    /* tax ===
+      {
+        type     : "vat",
+        rate     : 20.00,
+        area     : "national",
+        exchange : "business",
+
+        charge   : {
+          direct  : true,
+          reverse : false
+        }
+      }
+     */
+  });
+```
+
+:fr: **Given a French customer VAT number from a Latvian tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+
+```javascript
+// Set this once when initializing the library (to Latvia)
+SalesTax.setTaxOriginCountry("LV")
+
+SalesTax.getSalesTax("FR", null, "FR87524172699")
+  .then((tax) => {
+    // This customer owes a VAT reverse charge in their country (France), no VAT is due in Latvia
+    // The `reverse` tag is set to `true`, thus the customer should apply a reverse VAT charge in their country
+    // The `area` tag is set to `regional` as the exchange is done in the European Union
+    /* tax ===
+      {
+        type     : "vat",
+        rate     : 0.00,
+        area     : "regional",
+        exchange : "business",
+
+        charge   : {
+          direct  : false,
+          reverse : true
+        }
+      }
+     */
+  });
+```
+
 :us: **Given an United States > California customer without any VAT number** (eg. a consumer):
 
 ```javascript
@@ -109,12 +165,12 @@ SalesTax.getSalesTax("US", "CA")
     // This customer has to pay 8.25% VAT (as it is a consumer)
     /* tax ===
       {
-        type   : "vat",
-        rate   : 0.0825,
-        area   : "worldwide",
-        type   : "consumer",
+        type     : "vat",
+        rate     : 0.0825,
+        area     : "worldwide",
+        exchange : "consumer",
 
-        charge : {
+        charge   : {
           direct  : true,
           reverse : false
         }
@@ -131,12 +187,12 @@ SalesTax.getSalesTax("LV")
     // This customer has to pay 21% VAT (as it is a consumer)
     /* tax ===
       {
-        type   : "vat",
-        rate   : 0.21,
-        area   : "worldwide",
-        type   : "consumer",
+        type     : "vat",
+        rate     : 0.21,
+        area     : "worldwide",
+        exchange : "consumer",
 
-        charge : {
+        charge   : {
           direct  : true,
           reverse : false
         }
@@ -153,12 +209,12 @@ SalesTax.getSalesTax("HK")
     // Hong Kong has no VAT
     /* tax ===
       {
-        type   : "none",
-        rate   : 0.00,
-        area   : "worldwide",
-        type   : "consumer",
+        type     : "none",
+        rate     : 0.00,
+        area     : "worldwide",
+        exchange : "consumer",
 
-        charge : {
+        charge   : {
           direct  : false,
           reverse : false
         }
@@ -175,12 +231,12 @@ SalesTax.getSalesTax("ES", null, "ESX12345523")
     // This customer has to pay 21% VAT (VAT number could not be authenticated against the VIES VAT API)
     /* tax ===
       {
-        type   : "vat",
-        rate   : 0.21,
-        area   : "worldwide",
-        type   : "consumer",
+        type     : "vat",
+        rate     : 0.21,
+        area     : "worldwide",
+        exchange : "consumer",
 
-        charge : {
+        charge   : {
           direct  : true,
           reverse : false
         }
@@ -201,14 +257,14 @@ SalesTax.getAmountWithSalesTax("EE", null, 100.00)
     // This customer has to pay 20% VAT
     /* amountWithTax ===
       {
-        type   : "vat",
-        rate   : 0.20,
-        price  : 100.00,
-        total  : 120.00,
-        area   : "worldwide",
-        type   : "consumer",
+        type     : "vat",
+        rate     : 0.20,
+        price    : 100.00,
+        total    : 120.00,
+        area     : "worldwide",
+        exchange : "consumer",
 
-        charge : {
+        charge   : {
           direct  : true,
           reverse : false
         }
