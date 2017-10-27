@@ -317,13 +317,13 @@ SalesTax.setTaxOriginCountry(null)
 
 **Prototype:** `SalesTax.toggleEnabledTaxNumberValidation(enabled<boolean>)<undefined>`
 
-:thumbsup: **Enable tax number validation** (check tax number syntax):
+:thumbsup: **Enable tax number validation** (enabled by default — use only if you disabled it previously):
 
 ```javascript
 SalesTax.toggleEnabledTaxNumberValidation(true)
 ```
 
-:thumbsdown: **Disable tax number validation** (enabled by default — use only if you disabled it previously):
+:thumbsdown: **Disable tax number validation** (do not check tax number syntax):
 
 ```javascript
 SalesTax.toggleEnabledTaxNumberValidation(false)
