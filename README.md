@@ -364,45 +364,69 @@ SalesTax.validateTaxNumber("ES", "ESX12345523")
   });
 ```
 
-### :white_check_mark: Check if a customer is tax-exempt
+### :white_check_mark: Get tax exchange status for a customer (exempt + area + exchange)
 
-**Prototype:** `SalesTax.isTaxExempt(countryCode<string>, stateCode<string?>, taxNumber<string?>)<Promise<boolean>>`
+**Prototype:** `SalesTax.getTaxExchangeStatus(countryCode<string>, stateCode<string?>, taxNumber<string?>)<Promise<object>>`
 
-**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
+**Notice: this method is origin-aware. It means it return values relative to your configured tax origin country.**
 
 :fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
 
 ```javascript
-SalesTax.isTaxExempt("FR", null, "FR87524172699")
-  .then((isTaxExempt) => {
-    // isTaxExempt === true
+SalesTax.getTaxExchangeStatus("FR", null, "FR87524172699")
+  .then((exchangeStatus) => {
+    /* exchangeStatus ===
+      {
+        exchange : "business",
+        area     : "worldwide",
+        exempt   : true
+      }
+     */
   });
 ```
 
 :morocco: **Given a Morocco-based customer**:
 
 ```javascript
-SalesTax.isTaxExempt("MA")
-  .then((isTaxExempt) => {
-    // isTaxExempt === false
+SalesTax.getTaxExchangeStatus("MA")
+  .then((exchangeStatus) => {
+    /* exchangeStatus ===
+      {
+        exchange : "consumer",
+        area     : "worldwide",
+        exempt   : false
+      }
+     */
   });
 ```
 
 :us: **Given an United States > Delaware-based customer**:
 
 ```javascript
-SalesTax.isTaxExempt("US", "DE")
-  .then((isTaxExempt) => {
-    // isTaxExempt === true
+SalesTax.getTaxExchangeStatus("US", "DE")
+  .then((exchangeStatus) => {
+    /* exchangeStatus ===
+      {
+        exchange : "consumer",
+        area     : "worldwide",
+        exempt   : true
+      }
+     */
   });
 ```
 
 :hong_kong: **Given an Hong Kong-based customer**:
 
 ```javascript
-SalesTax.isTaxExempt("HK")
-  .then((isTaxExempt) => {
-    // isTaxExempt === true
+SalesTax.getTaxExchangeStatus("HK")
+  .then((exchangeStatus) => {
+    /* exchangeStatus ===
+      {
+        exchange : "consumer",
+        area     : "worldwide",
+        exempt   : true
+      }
+     */
   });
 ```
 
