@@ -210,6 +210,9 @@ SalesTax.getSalesTax("LV")
 :latvia: **Given a Latvian customer without any VAT number from a :fr: French tax origin** (eg. a consumer):
 
 ```javascript
+// Set this once when initializing the library (to France)
+SalesTax.setTaxOriginCountry("FR")
+
 SalesTax.getSalesTax("LV")
   .then((tax) => {
     // This customer owes VAT in Latvia (as it is a consumer, and billing is FR-to-LV)
