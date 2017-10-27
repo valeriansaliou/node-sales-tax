@@ -207,6 +207,30 @@ SalesTax.getSalesTax("LV")
   });
 ```
 
+:latvia: **Given a Latvian customer without any VAT number from a :fr: French tax origin** (eg. a consumer):
+
+```javascript
+SalesTax.getSalesTax("LV")
+  .then((tax) => {
+    // This customer owes VAT in Latvia (as it is a consumer, and billing is FR-to-LV)
+    // The `direct` tag is set to `true`, thus VAT should be charged
+    // The `area` tag is set to `regional` as the exchange is done in the European Union
+    /* tax ===
+      {
+        type     : "vat",
+        rate     : 0.21,
+        area     : "regional",
+        exchange : "consumer",
+
+        charge   : {
+          direct  : true,
+          reverse : false
+        }
+      }
+     */
+  });
+```
+
 :hong_kong: **Given an Hong Kong-based customer** (eg. a consumer):
 
 ```javascript
