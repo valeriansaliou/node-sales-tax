@@ -144,7 +144,7 @@ SalesTax.getSalesTax("HK")
 ```javascript
 SalesTax.getSalesTax("ES", null, "12345523")
   .then((tax) => {
-    // This customer has to pay 21% VAT (VAT number could not be authenticated against the European Commission API)
+    // This customer has to pay 21% VAT (VAT number could not be authenticated against the VIES VAT API)
     /* tax ===
       {
         type   : "vat",
