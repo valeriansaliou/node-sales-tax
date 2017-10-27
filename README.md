@@ -45,6 +45,22 @@ Ensure that you [specify your origin country](#white_check_mark-specify-the-coun
 
 Also, ensure that you consume correctly the `charge` values that get returned. It tells you if the VAT charge should be directly invoiced to the customer via the `direct` tag (you charge the VAT on your end), or if the customer should pay the VAT on their end via the `reverse` tag (see [VAT reverse charge](https://www.vatlive.com/eu-vat-rules/eu-vat-returns/reverse-charge-on-eu-vat/)). If the charge is not `direct`, then the VAT rate will be `0.00` (it is up to the customer to apply their own VAT rate).
 
+### :white_check_mark: Specify the country you charge from
+
+**Prototype:** `SalesTax.setTaxOriginCountry(countryCode<string>)<undefined>`
+
+:fr: **Charge customers from France** (thus all VAT get calculated from a French point of view):
+
+```javascript
+SalesTax.setTaxOriginCountry("FR")
+```
+
+:triangular_flag_on_post: **Unset your origin country** (use default origin):
+
+```javascript
+SalesTax.setTaxOriginCountry(null)
+```
+
 ### :white_check_mark: Check if a country has sales tax
 
 **Prototype:** `SalesTax.hasSalesTax(countryCode<string>)<boolean>`
@@ -388,22 +404,6 @@ SalesTax.isTaxExempt("HK")
   .then((isTaxExempt) => {
     // isTaxExempt === true
   });
-```
-
-### :white_check_mark: Specify the country you charge from
-
-**Prototype:** `SalesTax.setTaxOriginCountry(countryCode<string>)<undefined>`
-
-:fr: **Charge customers from France** (thus all VAT get calculated from a French point of view):
-
-```javascript
-SalesTax.setTaxOriginCountry("FR")
-```
-
-:triangular_flag_on_post: **Unset your origin country** (use default origin):
-
-```javascript
-SalesTax.setTaxOriginCountry(null)
 ```
 
 ### :white_check_mark: Disable / enable tax number validation
