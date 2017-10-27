@@ -43,7 +43,7 @@ Import the module in your code:
 
 Ensure that you [specify your origin country](#white_check_mark-specify-the-country-you-charge-from) before you use the library. This will affect how `international`, `regional` and `national` area taxes are handled from your point of view (`regional` stands for the economic community, eg. the European Union).
 
-Also, ensure that you consume correctly the `charge` values that gets returned. It tells you if the VAT charge should be directly invoiced to the customer via the `direct` tag (you charge the VAT on your end), or if the customer should pay the VAT on their end via the `reverse` tag (see [VAT reverse charge](https://www.vatlive.com/eu-vat-rules/eu-vat-returns/reverse-charge-on-eu-vat/)). If the charge is not `direct`, then the VAT rate will be `0.00` (it is up to the customer to apply their own VAT rate).
+Also, ensure that you consume correctly the `charge` values that get returned. It tells you if the VAT charge should be directly invoiced to the customer via the `direct` tag (you charge the VAT on your end), or if the customer should pay the VAT on their end via the `reverse` tag (see [VAT reverse charge](https://www.vatlive.com/eu-vat-rules/eu-vat-returns/reverse-charge-on-eu-vat/)). If the charge is not `direct`, then the VAT rate will be `0.00` (it is up to the customer to apply their own VAT rate).
 
 ### :white_check_mark: Check if a country has sales tax
 
@@ -56,6 +56,8 @@ var franceHasSalesTax = SalesTax.hasSalesTax("FR")  // franceHasSalesTax === tru
 var brazilHasSalesTax = SalesTax.hasSalesTax("BR")  // brazilHasSalesTax === true
 var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax === false
 ```
+
+**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
 
 ### :white_check_mark: Check if a state has sales tax (in a country)
 
@@ -74,6 +76,8 @@ var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHas
 var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
 var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unitedStatesDelawareHasSalesTax === false
 ```
+
+**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
 
 ### :white_check_mark: Get the sales tax for a customer
 
@@ -352,6 +356,8 @@ SalesTax.isTaxExempt("HK")
     // isTaxExempt === true
   });
 ```
+
+**Notice: this method is origin-neutral. It means it return values regardless of your configured tax origin country.**
 
 ### :white_check_mark: Specify the country you charge from
 
