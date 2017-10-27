@@ -49,7 +49,7 @@ Also, ensure that you consume correctly the `charge` values that get returned. I
 
 **Prototype:** `SalesTax.setTaxOriginCountry(countryCode<string>)<undefined>`
 
-:fr: **Charge customers from France** (thus all VAT get calculated from a French point of view):
+:fr: **Charge customers from France** (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
 
 ```javascript
 SalesTax.setTaxOriginCountry("FR")
