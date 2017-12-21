@@ -47,13 +47,22 @@ Also, ensure that you consume correctly the `charge` values that get returned. I
 
 ### :white_check_mark: Specify the country you charge from
 
-**Prototype:** `SalesTax.setTaxOriginCountry(countryCode<string>)<undefined>`
+**Prototype:** `SalesTax.setTaxOriginCountry(countryCode<string>, useRegionalTax<boolean?>)<undefined>`
 
-:fr: **Charge customers from France** (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
+:fr: **Charge customers from France** if liable to VAT MOSS (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
 
 ```javascript
 SalesTax.setTaxOriginCountry("FR")
 ```
+
+:fr: **Charge customers from France** if not liable to VAT MOSS (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
+
+```javascript
+// Set the 'useRegionalTax' argument to false if not liable to VAT MOSS (eg. not enough turnover in another regional country)
+SalesTax.setTaxOriginCountry("FR", false)
+```
+
+:fr: **Charge customers from France** (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
 
 :triangular_flag_on_post: **Unset your origin country** (use default origin, full VAT rates will be applied for all countries worldwide — **_this is obviously not usable for your invoices_**):
 
