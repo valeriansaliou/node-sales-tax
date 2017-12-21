@@ -62,8 +62,6 @@ SalesTax.setTaxOriginCountry("FR")
 SalesTax.setTaxOriginCountry("FR", false)
 ```
 
-:fr: **Charge customers from France** (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
-
 :triangular_flag_on_post: **Unset your origin country** (use default origin, full VAT rates will be applied for all countries worldwide — **_this is obviously not usable for your invoices_**):
 
 ```javascript
