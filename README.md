@@ -479,6 +479,14 @@ The offline tax data is pulled from [VAT, GST and sales tax rates — ey.com](ht
 
 Some countries have multiple sales tax, eg. Brazil. In those cases, the returned sales tax is the one on services. Indeed, I consider most users of this module use it for their SaaS business — _in other words, service businesses._
 
+## I bill from the EU, but sales tax is still being returned for non-EU countries!
+
+As international tax rules can be **very complex** depending on your business legal structure (eg. if you run a nexus in an US state, you may owe sales tax to this US state, even if you charge from the UK); `sales-tax` does not void returned tax rate for `international` countries.
+
+Thus, when the country is `international` relative to your billing origin country, you need to handle things your own way.
+
+To make things easier for you, `sales-tax` returns an `area` parameter in the `SalesTax.getSalesTax`, that is either `international`, `regional` or `national` (this depends on your configured origin country). For `regional` and `national` areas, you can trust the returned rate. However, you may need to override all `international` area rates and void them all to zero; for instance if you charge from France to the United States, and you know that you do not owe sales tax in the US as you do not run a nexus company in the US.
+
 ## How are tax numbers validated?
 
 ### :eu: Europe
