@@ -10,7 +10,7 @@ International tax is hard (especially VAT). This library ensures rules are enfor
 
 _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/sales_tax_rates.json)_
 
-**🇫🇷 Crafted in Lannion, France.**
+**🇺🇸 Crafted in Portland, Maine, USA.**
 
 ## Who uses it?
 
