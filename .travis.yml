@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-  - '6.9'
+- "6.12"
+- "8.15"
+- node
 script:
   - npm test
 after_success:
