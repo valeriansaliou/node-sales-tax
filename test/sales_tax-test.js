@@ -14,9 +14,6 @@ var assert = require("assert");
 
 
 describe("node-fast-ratelimit", function() {
-  // Increase timeout as some tests call the network for VAT number checks
-  this.timeout(10000);
-
   // Ensure tax number validation is enabled before each pass
   beforeEach(function() {
     SalesTax.setTaxOriginCountry(null, true);
@@ -295,37 +292,6 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number [no tax origin]", function() {
-      return SalesTax.getSalesTax("FR", null, "FR50833085806")
-        .then(function(tax) {
-          assert.equal(
-            tax.type, "vat", "Tax type should be VAT"
-          );
-
-          assert.equal(
-            tax.rate, 0.00, "Tax rate should be 0% (tax-exempt)"
-          );
-
-          assert.equal(
-            tax.area, "worldwide", "Tax area should be WORLDWIDE"
-          );
-
-          assert.equal(
-            tax.exchange, "business", "Tax exchange should be BUSINESS"
-          );
-
-          assert.equal(
-            tax.charge.direct, false, "Should not perform a direct charge"
-          );
-
-          assert.equal(
-            tax.charge.reverse, true, "Should perform a reverse charge"
-          );
-        });
-    });
-
-    it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number and fraud check [no tax origin]", function() {
-      SalesTax.toggleEnabledTaxNumberFraudCheck(true);
-
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
