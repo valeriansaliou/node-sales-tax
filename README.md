@@ -110,10 +110,10 @@ var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unite
 
 **Notice: this method is origin-aware. It means it return values relative to your configured tax origin country.**
 
-:fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number** (eg. here `SARL CRISP IM` with VAT number `FR 50833085806`):
 
 ```javascript
-SalesTax.getSalesTax("FR", null, "FR87524172699")
+SalesTax.getSalesTax("FR", null, "FR50833085806")
   .then((tax) => {
     // This customer is VAT-exempt (as it is a business)
     /* tax ===
@@ -132,15 +132,15 @@ SalesTax.getSalesTax("FR", null, "FR87524172699")
   });
 ```
 
-Note: Clever-Cloud is a real living business from France, check [their website there](https://www.clever-cloud.com).
+Note: Crisp is a real living business from France, check [their website there](https://crisp.chat/en/).
 
-:fr: **Given a French customer VAT number from a :fr: French tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number from a :fr: French tax origin** (eg. here `SARL CRISP IM` with VAT number `FR 50833085806`):
 
 ```javascript
 // Set this once when initializing the library (to France)
 SalesTax.setTaxOriginCountry("FR")
 
-SalesTax.getSalesTax("FR", null, "FR87524172699")
+SalesTax.getSalesTax("FR", null, "FR50833085806")
   .then((tax) => {
     // This customer owes VAT in France (as it is a business, and billing is FR-to-FR)
     // The `direct` tag is set to `true`, thus VAT should be charged
@@ -161,13 +161,13 @@ SalesTax.getSalesTax("FR", null, "FR87524172699")
   });
 ```
 
-:fr: **Given a French customer VAT number from a :latvia: Latvian tax origin** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number from a :latvia: Latvian tax origin** (eg. here `SARL CRISP IM` with VAT number `FR 50833085806`):
 
 ```javascript
 // Set this once when initializing the library (to Latvia)
 SalesTax.setTaxOriginCountry("LV")
 
-SalesTax.getSalesTax("FR", null, "FR87524172699")
+SalesTax.getSalesTax("FR", null, "FR50833085806")
   .then((tax) => {
     // This customer owes a VAT reverse charge in their country (France), no VAT is due in Latvia
     // The `reverse` tag is set to `true`, thus the customer should apply a reverse VAT charge in their country
@@ -337,10 +337,10 @@ SalesTax.getAmountWithSalesTax("EE", null, 100.00)
 
 **Prototype:** `SalesTax.validateTaxNumber(countryCode<string>, taxNumber<string?>)<Promise<boolean>>`
 
-:fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number** (eg. here `SARL CRISP IM` with VAT number `FR 50833085806`):
 
 ```javascript
-SalesTax.validateTaxNumber("FR", "FR87524172699")
+SalesTax.validateTaxNumber("FR", "FR50833085806")
   .then((isValid) => {
     // isValid === true
   });
@@ -379,10 +379,10 @@ SalesTax.validateTaxNumber("ES", "ESX12345523")
 
 **Notice: this method is origin-aware. It means it return values relative to your configured tax origin country.**
 
-:fr: **Given a French customer VAT number** (eg. here `SAS CLEVER CLOUD` with VAT number `FR 87524172699`):
+:fr: **Given a French customer VAT number** (eg. here `SARL CRISP IM` with VAT number `FR 50833085806`):
 
 ```javascript
-SalesTax.getTaxExchangeStatus("FR", null, "FR87524172699")
+SalesTax.getTaxExchangeStatus("FR", null, "FR50833085806")
   .then((exchangeStatus) => {
     /* exchangeStatus ===
       {
