@@ -132,7 +132,7 @@ SalesTax.getSalesTax("FR", null, "FR50833085806")
   });
 ```
 
-Note: Crisp is a real living business from France, check [their website there](https://crisp.chat/en/).
+Note: Crisp is a real living business from France, check [their website there](https://crisp.chat/).
 
 :fr: **Given a French customer VAT number from a :fr: French tax origin** (eg. here `SARL CRISP IM` with VAT number `FR 50833085806`):
 

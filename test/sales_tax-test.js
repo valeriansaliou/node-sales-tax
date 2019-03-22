@@ -266,7 +266,7 @@ describe("node-fast-ratelimit", function() {
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number [French tax origin]", function() {
       SalesTax.setTaxOriginCountry("FR");
 
-      return SalesTax.getSalesTax("FR", null, "FR87524172699")
+      return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -295,7 +295,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number [no tax origin]", function() {
-      return SalesTax.getSalesTax("FR", null, "FR87524172699")
+      return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -326,7 +326,7 @@ describe("node-fast-ratelimit", function() {
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number and fraud check [no tax origin]", function() {
       SalesTax.toggleEnabledTaxNumberFraudCheck(true);
 
-      return SalesTax.getSalesTax("FR", null, "FR87524172699")
+      return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -357,7 +357,7 @@ describe("node-fast-ratelimit", function() {
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number [Spanish tax origin]", function() {
       SalesTax.setTaxOriginCountry("ES");
 
-      return SalesTax.getSalesTax("FR", null, "FR87524172699")
+      return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -419,7 +419,7 @@ describe("node-fast-ratelimit", function() {
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number and no regional tax [Hungary tax origin]", function() {
       SalesTax.setTaxOriginCountry("HR", false);
 
-      return SalesTax.getSalesTax("FR", null, "FR87524172699")
+      return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -947,7 +947,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("🇫🇷 should succeed processing France amount including sales tax (tax-exempt tax number) [no tax origin]", function() {
-      return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "FR87524172699")
+      return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "FR50833085806")
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
@@ -986,7 +986,7 @@ describe("node-fast-ratelimit", function() {
 
   describe("validateTaxNumber", function() {
     it("🇫🇷 should check France tax number as valid", function() {
-      return SalesTax.validateTaxNumber("FR", "FR87524172699")
+      return SalesTax.validateTaxNumber("FR", "FR50833085806")
         .then(function(isValid) {
           assert.ok(
             isValid, "Tax number should be valid"
@@ -1077,7 +1077,7 @@ describe("node-fast-ratelimit", function() {
     });
 
     it("🇫🇷 should check valid France tax number as tax-exempt", function() {
-      return SalesTax.getTaxExchangeStatus("FR", null, "FR87524172699")
+      return SalesTax.getTaxExchangeStatus("FR", null, "FR50833085806")
         .then(function(exchangeStatus) {
           assert.ok(
             exchangeStatus.exchange, "business", "Tax exchange should be BUSINESS"
