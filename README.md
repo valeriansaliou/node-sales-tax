@@ -475,7 +475,7 @@ SalesTax.toggleEnabledTaxNumberFraudCheck(false)
 
 ## Where is the offline tax data is pulled from?
 
-The offline tax data is pulled from [VAT, GST and sales tax rates — ey.com](https://www.ey.com/gl/en/services/tax/worldwide-vat--gst-and-sales-tax-guide-2019---rates) (2019 rates).
+The offline tax data is pulled from [Value-added tax (VAT) rates — PwC](http://taxsummaries.pwc.com/ID/Value-added-tax-(VAT)-rates) (last updated: 24th May 2019).
 
 **It is kept up-to-date year-by-year with tax changes worldwide.**
 
