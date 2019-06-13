@@ -346,6 +346,11 @@
     "rate": 0.17
   },
 
+  "MC": {
+    "type": "vat",
+    "rate": 0.20
+  },
+
   "MK": {
     "type": "vat",
     "rate": 0.18
