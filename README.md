@@ -43,7 +43,7 @@ Import the module in your code:
 
 `var SalesTax = require("sales-tax");`
 
-Ensure that you [specify your origin country](#white_check_mark-specify-the-country-you-charge-from) before you use the library. This will affect how `international`, `regional` and `national` area taxes are handled from your point of view (`regional` stands for the economic community, eg. the European Union).
+Ensure that you [specify your origin country](#white_check_mark-specify-the-country-you-charge-from) before you use the library. This will affect how `worldwide`, `regional` and `national` area taxes are handled from your point of view (`regional` stands for the economic community, eg. the European Union).
 
 Also, ensure that you consume correctly the `charge` values that get returned. It tells you if the VAT charge should be directly invoiced to the customer via the `direct` tag (you charge the VAT on your end), or if the customer should pay the VAT on their end via the `reverse` tag (see [VAT reverse charge](https://www.vatlive.com/eu-vat-rules/eu-vat-returns/reverse-charge-on-eu-vat/)). If the charge is not `direct`, then the VAT rate will be `0.00` (it is up to the customer to apply their own VAT rate).
 
@@ -51,13 +51,13 @@ Also, ensure that you consume correctly the `charge` values that get returned. I
 
 **Prototype:** `SalesTax.setTaxOriginCountry(countryCode<string>, useRegionalTax<boolean?>)<undefined>`
 
-:fr: **Charge customers from France** if liable to VAT MOSS (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
+:fr: **Charge customers from France** if liable to VAT MOSS (thus `worldwide`, `regional` and `national` VAT gets calculated from a French point of view):
 
 ```javascript
 SalesTax.setTaxOriginCountry("FR")
 ```
 
-:fr: **Charge customers from France** if not liable to VAT MOSS (thus `international`, `regional` and `national` VAT gets calculated from a French point of view):
+:fr: **Charge customers from France** if not liable to VAT MOSS (thus `worldwide`, `regional` and `national` VAT gets calculated from a French point of view):
 
 ```javascript
 // Set the 'useRegionalTax' argument to false if not liable to VAT MOSS (eg. not enough turnover in another regional country)
@@ -483,11 +483,11 @@ Some countries have multiple sales tax, eg. Brazil. In those cases, the returned
 
 ## I bill from the EU, but sales tax is still being returned for non-EU countries!
 
-As international tax rules can be **very complex** depending on your business legal structure (eg. if you run a nexus in an US state, you may owe sales tax to this US state, even if you charge from the UK); `sales-tax` does not void returned tax rate for `international` countries.
+As international tax rules can be **very complex** depending on your business legal structure (eg. if you run a nexus in an US state, you may owe sales tax to this US state, even if you charge from the UK); `sales-tax` does not void returned tax rate for `worldwide` countries.
 
-Thus, when the country is `international` relative to your billing origin country, you need to handle things your own way.
+Thus, when the country is `worldwide` relative to your billing origin country, you need to handle things your own way.
 
-To make things easier for you, `sales-tax` returns an `area` parameter in the `SalesTax.getSalesTax`, that is either `international`, `regional` or `national` (this depends on your configured origin country). For `regional` and `national` areas, you can trust the returned rate. However, you may need to override all `international` area rates and void them all to zero; for instance if you charge from France to the United States, and you know that you do not owe sales tax in the US as you do not run a nexus company in the US.
+To make things easier for you, `sales-tax` returns an `area` parameter in the `SalesTax.getSalesTax`, that is either `worldwide`, `regional` or `national` (this depends on your configured origin country). For `regional` and `national` areas, you can trust the returned rate. However, you may need to override all `worldwide` area rates and void them all to zero; for instance if you charge from France to the United States, and you know that you do not owe sales tax in the US as you do not run a nexus company in the US.
 
 ## How are tax numbers validated?
 
