@@ -93,15 +93,15 @@ var hongKongHasSalesTax = SalesTax.hasSalesTax("HK")  // hongKongHasSalesTax ===
 :canada: **Check some Canada states for sales tax** (returns `true` or `false`):
 
 ```javascript
-var canadaQuebecHasSalesTax = SalesTax.hasSalesTax("CA", "QC")  // canadaQuebecHasSalesTax === true
-var canadaYukonHasSalesTax = SalesTax.hasSalesTax("CA", "YT")  // canadaYukonHasSalesTax === false
+var canadaQuebecHasSalesTax = SalesTax.hasStateSalesTax("CA", "QC")  // canadaQuebecHasSalesTax === true
+var canadaYukonHasSalesTax = SalesTax.hasStateSalesTax("CA", "YT")  // canadaYukonHasSalesTax === false
 ```
 
 :us: **Check some US states for sales tax** (returns `true` or `false`):
 
 ```javascript
-var unitedStatesCaliforniaHasSalesTax = SalesTax.hasSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
-var unitedStatesDelawareHasSalesTax = SalesTax.hasSalesTax("US", "DE")  // unitedStatesDelawareHasSalesTax === false
+var unitedStatesCaliforniaHasSalesTax = SalesTax.hasStateSalesTax("US", "CA")  // unitedStatesCaliforniaHasSalesTax === true
+var unitedStatesDelawareHasSalesTax = SalesTax.hasStateSalesTax("US", "DE")  // unitedStatesDelawareHasSalesTax === false
 ```
 
 ### :white_check_mark: Get the sales tax for a customer
