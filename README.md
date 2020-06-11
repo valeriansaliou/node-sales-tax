@@ -481,6 +481,28 @@ The offline tax data is pulled from [Value-added tax (VAT) rates — PwC](http:/
 
 Some countries have multiple sales tax, eg. Brazil. In those cases, the returned sales tax is the one on services. Indeed, I consider most users of this module use it for their SaaS business — _in other words, service businesses._
 
+## What happens if a country or state schedules a tax rate change?
+
+As tax rate changes happen to some countries in the word on a yearly basis, `sales-tax` automatically uses the current tax rate relative to current date and time.
+
+At a technical level, tax rate changes for a country can be easily scheduled by moving the current tax rate in a `before` object, which then stores the country tax rate before defined date, and then the new tax rate is stored in the main object. As a library user, you do not have to schedule tax rate changes, `sales-tax` handles it for you. Please make sure you always keep `sales-tax` up-to-date with the latest NPM version, as those tax rate changes are stored in an offline JSON file, which requires a manual library update.
+
+_For instance, Germany changed their VAT rate from 19% down to 16% as of 1st July 2020. The [tax rates JSON file](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/sales_tax_rates.json) can be modified as such:_
+
+```json
+"DE": {
+  "type": "vat",
+  "rate": 0.16,
+
+  "before": {
+    "2020-06-30T22:00:00.000Z": {
+      "type": "vat",
+      "rate": 0.19
+    }
+  }
+}
+```
+
 ## I bill from the EU, but sales tax is still being returned for non-EU countries!
 
 As international tax rules can be **very complex** depending on your business legal structure (eg. if you run a nexus in an US state, you may owe sales tax to this US state, even if you charge from the UK); `sales-tax` does not void returned tax rate for `worldwide` countries.
