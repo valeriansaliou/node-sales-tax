@@ -733,7 +733,7 @@ describe("node-fast-ratelimit", function() {
           );
 
           assert.equal(
-            tax.rate, 0.19, "Tax rate should be 19%"
+            tax.rate, 0.16, "Tax rate should be 16%"
           );
 
           assert.equal(
@@ -757,7 +757,7 @@ describe("node-fast-ratelimit", function() {
           );
 
           assert.equal(
-            tax.total, 1190.00, "Total amount should be 1190.00"
+            tax.total, 1160.00, "Total amount should be 1160.00"
           );
         });
     });
