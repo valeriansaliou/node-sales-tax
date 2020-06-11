@@ -8,9 +8,9 @@
 
 ### Tax Rate Updates
 
-* Germany went from 19% to 16% (temporary) [[@valeriansaliou](https://github.com/valeriansaliou)].
-* Kenya went from 16% to 14% [[@adrai](https://github.com/adrai)].
-* Saudi Arabia went from 5% to 15% [[@adrai](https://github.com/adrai)].
+* **Germany**: 19% to 16% (1st July 2020 to 31st December 2020) [[@valeriansaliou](https://github.com/valeriansaliou)].
+* **Kenya**: 16% to 14% (1st April 2020) [[@adrai](https://github.com/adrai)].
+* **Saudi Arabia**: 5% to 15% (1st July 2020) [[@adrai](https://github.com/adrai)].
 
 ## 2.0.0 (2017-10-27)
 
