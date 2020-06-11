@@ -14,11 +14,20 @@ var assert = require("assert");
 
 
 describe("node-fast-ratelimit", function() {
-  // Ensure tax number validation is enabled before each pass
+  // Acquire references to monkey-patched methods
+  var methodReferences = {
+    getCurrentDate : SalesTax.__getCurrentDate
+  };
+
+  // Reset library before each pass
   beforeEach(function() {
+    // Ensure tax number validation is enabled before each pass
     SalesTax.setTaxOriginCountry(null, true);
     SalesTax.toggleEnabledTaxNumberValidation(true);
     SalesTax.toggleEnabledTaxNumberFraudCheck(false);
+
+    // Restore monkey-patched methods before each pass
+    SalesTax.__getCurrentDate = methodReferences.getCurrentDate;
   });
 
   describe("hasSalesTax", function() {
@@ -723,7 +732,12 @@ describe("node-fast-ratelimit", function() {
         });
     });
 
-    it("🇩🇪 should succeed processing Germany amount including sales tax (no tax number) [Maltese tax origin]", function() {
+    it("🇩🇪 should succeed processing Germany amount including sales tax with current rate (no tax number) [Maltese tax origin]", function() {
+      // Monkey-patch current date method, as to simulate post-update date
+      SalesTax.__getCurrentDate = function() {
+        return (new Date("2020-07-01T10:00:00.000Z"));
+      };
+
       SalesTax.setTaxOriginCountry("MT");
 
       return SalesTax.getAmountWithSalesTax("DE", null, 1000.00)
@@ -758,6 +772,50 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.total, 1160.00, "Total amount should be 1160.00"
+          );
+        });
+    });
+
+    it("🇩🇪 should succeed processing Germany amount including sales tax with legacy rate (no tax number) [Maltese tax origin]", function() {
+      // Monkey-patch current date method, as to simulate pre-update date
+      SalesTax.__getCurrentDate = function() {
+        return (new Date("2020-06-20T10:00:00.000Z"));
+      };
+
+      SalesTax.setTaxOriginCountry("MT");
+
+      return SalesTax.getAmountWithSalesTax("DE", null, 1000.00)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.19, "Tax rate should be 19%"
+          );
+
+          assert.equal(
+            tax.area, "regional", "Tax area should be REGIONAL"
+          );
+
+          assert.equal(
+            tax.exchange, "consumer", "Tax exchange should be CONSUMER"
+          );
+
+          assert.equal(
+            tax.charge.direct, true, "Should perform a direct charge"
+          );
+
+          assert.equal(
+            tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
+
+          assert.equal(
+            tax.total, 1190.00, "Total amount should be 1190.00"
           );
         });
     });
