@@ -485,7 +485,7 @@ Some countries have multiple sales tax, eg. Brazil. In those cases, the returned
 
 As tax rate changes happen to some countries in the word on a yearly basis, `sales-tax` automatically uses the current tax rate relative to current date and time, ie. whenever you call the library functions.
 
-At a technical level, tax rate changes for a country can be easily scheduled from the [tax rates JSON file](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/sales_tax_rates.json) by moving the current tax rate in a `before` object, which then stores the country tax rate before defined date, and then the new tax rate is stored in the main object. As a library user, you do not have to schedule tax rate changes, `sales-tax` handles it for you. Please make sure you always keep `sales-tax` up-to-date with the latest NPM version, as those tax rate changes are stored in an offline JSON file, which requires a manual library update.
+At a technical level, tax rate changes for a country can be easily scheduled from the [tax rates JSON file](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/sales_tax_rates.json) by moving the current tax rate in a `before` object, which then stores the country tax rate before enforcement date, and then the future tax rate is stored in the main object. Note that as a library user, you do not have to schedule tax rate changes, `sales-tax` handles it for you. Please make sure you always keep `sales-tax` up-to-date with the latest NPM version, as those tax rate changes are stored in an offline JSON file, which requires a manual library update.
 
 _For instance, Germany changed their VAT rate from 19% down to 16% as of 1st July 2020:_
 
