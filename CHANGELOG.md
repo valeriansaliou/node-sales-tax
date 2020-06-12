@@ -1,8 +1,14 @@
 # Changelog
 
+## 2.2.0 (2020-06-12)
+
+### Non-Breaking Changes
+
+* Return a detailed view of all sub-tax rates used when calling `getSalesTax()` and `getAmountWithSalesTax()` (this is useful eg. for Canada, which has multiple tax rates ie. state and country taxes) [[@maktouch](https://github.com/maktouch), [@valeriansaliou](https://github.com/valeriansaliou), [6e5b9be](https://github.com/valeriansaliou/node-sales-tax/commit/6e5b9be2df632ca6e4b97286a690529fffae3b98), [#27](https://github.com/valeriansaliou/node-sales-tax/pull/27)].
+
 ## 2.1.0 (2020-06-11)
 
-### Minor Changes
+### Non-Breaking Changes
 
 * Add a way to schedule tax rate updates for a country or state in a future date [[@valeriansaliou](https://github.com/valeriansaliou), [accda53](https://github.com/valeriansaliou/node-sales-tax/commit/accda53ce1d89ac48f2a1c77d9a58b04d143cc36)].
 
