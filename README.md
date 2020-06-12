@@ -126,7 +126,9 @@ SalesTax.getSalesTax("FR", null, "FR50833085806")
         charge   : {
           direct  : false,
           reverse : true
-        }
+        },
+
+        details  : []
       }
      */
   });
@@ -148,14 +150,21 @@ SalesTax.getSalesTax("FR", null, "FR50833085806")
     /* tax ===
       {
         type     : "vat",
-        rate     : 20.00,
+        rate     : 0.20,
         area     : "national",
         exchange : "business",
 
         charge   : {
           direct  : true,
           reverse : false
-        }
+        },
+
+        details  : [
+          {
+            type : "vat",
+            rate : 0.20
+          }
+        ]
       }
      */
   });
@@ -182,7 +191,9 @@ SalesTax.getSalesTax("FR", null, "FR50833085806")
         charge   : {
           direct  : false,
           reverse : true
-        }
+        },
+
+        details  : []
       }
      */
   });
@@ -204,7 +215,48 @@ SalesTax.getSalesTax("US", "CA")
         charge   : {
           direct  : true,
           reverse : false
-        }
+        },
+
+        details  : [
+          {
+            type : "vat",
+            rate : 0.0825
+          }
+        ]
+      }
+     */
+  });
+```
+
+:canada: **Given a Canada > Ontario customer without any VAT number** (eg. a consumer):
+
+```javascript
+SalesTax.getSalesTax("CA", "ON")
+  .then((tax) => {
+    // This customer has to pay 5% GST + 8% HST (as it is a consumer)
+    /* tax ===
+      {
+        type     : "gst+hst",
+        rate     : 0.13,
+        area     : "worldwide",
+        exchange : "consumer",
+
+        charge   : {
+          direct  : true,
+          reverse : false
+        },
+
+        details  : [
+          {
+            type : "gst",
+            rate : 0.05
+          },
+
+          {
+            type : "hst",
+            rate : 0.08
+          }
+        ]
       }
      */
   });
@@ -226,7 +278,14 @@ SalesTax.getSalesTax("LV")
         charge   : {
           direct  : true,
           reverse : false
-        }
+        },
+
+        details  : [
+          {
+            type : "vat",
+            rate : 0.21
+          }
+        ]
       }
      */
   });
@@ -253,7 +312,14 @@ SalesTax.getSalesTax("LV")
         charge   : {
           direct  : true,
           reverse : false
-        }
+        },
+
+        details  : [
+          {
+            type : "vat",
+            rate : 0.21
+          }
+        ]
       }
      */
   });
@@ -275,7 +341,9 @@ SalesTax.getSalesTax("HK")
         charge   : {
           direct  : false,
           reverse : false
-        }
+        },
+
+        details  : []
       }
      */
   });
@@ -297,7 +365,14 @@ SalesTax.getSalesTax("ES", null, "ESX12345523")
         charge   : {
           direct  : true,
           reverse : false
-        }
+        },
+
+        details  : [
+          {
+            type : "vat",
+            rate : 0.21
+          }
+        ]
       }
      */
   });
@@ -327,7 +402,15 @@ SalesTax.getAmountWithSalesTax("EE", null, 100.00)
         charge   : {
           direct  : true,
           reverse : false
-        }
+        },
+
+        details  : [
+          {
+            type   : "vat",
+            rate   : 0.20,
+            amount : 20.00
+          }
+        ]
       }
      */
   });

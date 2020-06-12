@@ -121,6 +121,10 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
+          );
         });
     });
 
@@ -149,6 +153,10 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
           );
         });
     });
@@ -179,6 +187,18 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
+          );
         });
     });
 
@@ -207,6 +227,18 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
           );
         });
     });
@@ -237,6 +269,18 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
+          );
         });
     });
 
@@ -265,6 +309,18 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
           );
         });
     });
@@ -297,6 +353,18 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
+          );
         });
     });
 
@@ -325,6 +393,10 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, true, "Should perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
           );
         });
     });
@@ -357,6 +429,10 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, true, "Should perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
+          );
         });
     });
 
@@ -387,6 +463,18 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.21, "Tax details #1 rate should be 21%"
           );
         });
     });
@@ -419,6 +507,10 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, true, "Should perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
+          );
         });
     });
 
@@ -450,6 +542,18 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
+          );
         });
     });
 
@@ -478,6 +582,10 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
           );
         });
     });
@@ -508,6 +616,18 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.0825, "Tax details #1 rate should be 8.25%"
+          );
         });
     });
 
@@ -536,6 +656,10 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
           );
         });
     });
@@ -566,6 +690,18 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "gst", "Tax details #1 type should be GST"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
+          );
         });
     });
 
@@ -573,7 +709,7 @@ describe("node-fast-ratelimit", function() {
       return SalesTax.getSalesTax("CA", "QC")
         .then(function(tax) {
           assert.equal(
-            tax.type, "gst+qst", "Tax type should be GST"
+            tax.type, "gst+qst", "Tax type should be GST+QST"
           );
 
           assert.equal(
@@ -595,6 +731,26 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
           );
+
+          assert.equal(
+            tax.details.length, 2, "Tax details should contain 2 tax rates"
+          );
+
+          assert.equal(
+            tax.details[0].type, "gst", "Tax details #1 type should be GST"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
+          );
+
+          assert.equal(
+            tax.details[1].type, "qst", "Tax details #2 type should be QST"
+          );
+
+          assert.equal(
+            tax.details[1].rate, 0.09975, "Tax details #2 rate should be 9.975%"
+          );
         });
     });
 
@@ -602,7 +758,7 @@ describe("node-fast-ratelimit", function() {
       return SalesTax.getSalesTax("CA", "ON")
         .then(function(tax) {
           assert.equal(
-            tax.type, "gst+hst", "Tax type should be GST"
+            tax.type, "gst+hst", "Tax type should be GST+HST"
           );
 
           assert.equal(
@@ -623,6 +779,26 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 2, "Tax details should contain 2 tax rates"
+          );
+
+          assert.equal(
+            tax.details[0].type, "gst", "Tax details #1 type should be GST"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
+          );
+
+          assert.equal(
+            tax.details[1].type, "hst", "Tax details #2 type should be HST"
+          );
+
+          assert.equal(
+            tax.details[1].rate, 0.08, "Tax details #2 rate should be 8%"
           );
         });
     });
@@ -652,6 +828,18 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "gst", "Tax details #1 type should be GST"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
           );
         });
     });
@@ -692,6 +880,10 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.total, 1000.00, "Total amount should be 1000.00"
           );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
+          );
         });
     });
 
@@ -728,6 +920,22 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.total, 1200.00, "Total amount should be 1200.00"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 200.00, "Tax details #1 amount should be 200.00"
           );
         });
     });
@@ -773,6 +981,22 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.total, 1190.00, "Total amount should be 1190.00"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.19, "Tax details #1 rate should be 19%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 190.00, "Tax details #1 amount should be 190.00"
+          );
         });
     });
 
@@ -816,6 +1040,22 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.total, 1160.00, "Total amount should be 1160.00"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.16, "Tax details #1 rate should be 16%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 160.00, "Tax details #1 amount should be 160.00"
           );
         });
     });
@@ -861,6 +1101,22 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.total, 1190.00, "Total amount should be 1190.00"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.19, "Tax details #1 rate should be 19%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 190.00, "Tax details #1 amount should be 190.00"
+          );
         });
     });
 
@@ -900,6 +1156,22 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.total, 590.00, "Total amount should be 590.00"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.18, "Tax details #1 rate should be 18%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 90.00, "Tax details #1 amount should be 90.00"
+          );
         });
     });
 
@@ -936,6 +1208,22 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.total, 759.3705000000001, "Total amount should be 759.3705000000001"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "gst", "Tax details #1 type should be GST"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 36.160500000000006, "Tax details #1 amount should be 36.160500000000006"
           );
         });
     });
@@ -974,6 +1262,34 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.total, 903.9999999999999, "Total amount should be 903.9999999999999"
           );
+
+          assert.equal(
+            tax.details.length, 2, "Tax details should contain 2 tax rates"
+          );
+
+          assert.equal(
+            tax.details[0].type, "gst", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 40.00, "Tax details #1 amount should be 40.00"
+          );
+
+          assert.equal(
+            tax.details[1].type, "hst", "Tax details #2 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[1].rate, 0.08, "Tax details #2 rate should be 8%"
+          );
+
+          assert.equal(
+            tax.details[1].amount, 64.00, "Tax details #2 amount should be 64.00"
+          );
         });
     });
 
@@ -1011,6 +1327,22 @@ describe("node-fast-ratelimit", function() {
           assert.equal(
             tax.total, 1200.00, "Total amount should be 1200.00"
           );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 200.00, "Tax details #1 amount should be 200.00"
+          );
         });
     });
 
@@ -1047,6 +1379,10 @@ describe("node-fast-ratelimit", function() {
 
           assert.equal(
             tax.total, 1000.00, "Total amount should be 1000.00"
+          );
+
+          assert.equal(
+            tax.details.length, 0, "Tax details should be empty"
           );
         });
       });
