@@ -25,6 +25,12 @@ _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](htt
 
 _👋 You use sales-tax and you want to be listed there? [Contact me](https://valeriansaliou.name/)._
 
+## Last changes
+
+The version history can be found on the [CHANGELOG.md file](https://github.com/valeriansaliou/node-sales-tax/blob/master/CHANGELOG.md).
+
+_As this library is SemVer-compatible, any breaking change would be released as a MAJOR version only. Non-breaking changes and features are released as MINOR. Tax rate updates are released as PATCH._
+
 ## How to install?
 
 Include `sales-tax` in your `package.json` dependencies.
