@@ -27,9 +27,9 @@ _👋 You use sales-tax and you want to be listed there? [Contact me](https://va
 
 ## Last changes
 
-The version history can be found on the [CHANGELOG.md file](https://github.com/valeriansaliou/node-sales-tax/blob/master/CHANGELOG.md).
+The version history can be found on the [CHANGELOG.md](https://github.com/valeriansaliou/node-sales-tax/blob/master/CHANGELOG.md) file.
 
-_As this library is SemVer-compatible, any breaking change would be released as a MAJOR version only. Non-breaking changes and features are released as MINOR. Tax rate updates are released as PATCH._
+_As this library is SemVer-compatible, any breaking change would be released as a MAJOR version only. Non-breaking changes and features are released as MINOR. Tax rate updates and bug fixes are released as PATCH (tax rate updates may as well be bundled under a MINOR release, if it comes with other new features)._
 
 ## How to install?
 
