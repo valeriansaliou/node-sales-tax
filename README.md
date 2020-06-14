@@ -21,7 +21,7 @@ _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](htt
 </tr>
 <tr>
 <td align="center">Crisp</td>
-<td align="center">locize</td>
+<td align="center">Locize</td>
 </tr>
 </table>
 
