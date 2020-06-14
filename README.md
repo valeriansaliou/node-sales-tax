@@ -17,9 +17,13 @@ _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](htt
 <table>
 <tr>
 <td align="center"><a href="https://crisp.chat/"><img src="https://valeriansaliou.github.io/node-sales-tax/images/crisp.png" height="64" /></a></td>
+<td align="center"><a href="https://locize.com/"><img src="https://github.com/fastify/aws-lambda-fastify/raw/master/images/logos/locize.png" height="64" /></a></td>
+<td align="center"><a href="https://localistars.com/"><img src="https://github.com/fastify/aws-lambda-fastify/raw/master/images/logos/localistars.png" height="64" /></a></td>
 </tr>
 <tr>
 <td align="center">Crisp</td>
+<td align="center">locize</td>
+<td align="center">localistars</td>
 </tr>
 </table>
 
