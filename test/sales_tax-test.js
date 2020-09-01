@@ -1120,6 +1120,186 @@ describe("node-fast-ratelimit", function() {
         });
     });
 
+    it("🇮🇪 should succeed processing Ireland amount including sales tax with restored rate (no tax number) [Maltese tax origin]", function() {
+      // Monkey-patch current date method, as to simulate post-update date
+      SalesTax.__getCurrentDate = function() {
+        return (new Date("2021-03-01T10:00:00.000Z"));
+      };
+
+      SalesTax.setTaxOriginCountry("MT");
+
+      return SalesTax.getAmountWithSalesTax("IE", null, 1000.00)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.23, "Tax rate should be 23%"
+          );
+
+          assert.equal(
+            tax.area, "regional", "Tax area should be REGIONAL"
+          );
+
+          assert.equal(
+            tax.exchange, "consumer", "Tax exchange should be CONSUMER"
+          );
+
+          assert.equal(
+            tax.charge.direct, true, "Should perform a direct charge"
+          );
+
+          assert.equal(
+            tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
+
+          assert.equal(
+            tax.total, 1230.00, "Total amount should be 1230.00"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.23, "Tax details #1 rate should be 23%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 230.00, "Tax details #1 amount should be 230.00"
+          );
+        });
+    });
+
+    it("🇮🇪 should succeed processing Ireland amount including sales tax with temporary rate (no tax number) [Maltese tax origin]", function() {
+      // Monkey-patch current date method, as to simulate post-update date
+      SalesTax.__getCurrentDate = function() {
+        return (new Date("2020-09-01T10:00:00.000Z"));
+      };
+
+      SalesTax.setTaxOriginCountry("MT");
+
+      return SalesTax.getAmountWithSalesTax("IE", null, 1000.00)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.21, "Tax rate should be 21%"
+          );
+
+          assert.equal(
+            tax.area, "regional", "Tax area should be REGIONAL"
+          );
+
+          assert.equal(
+            tax.exchange, "consumer", "Tax exchange should be CONSUMER"
+          );
+
+          assert.equal(
+            tax.charge.direct, true, "Should perform a direct charge"
+          );
+
+          assert.equal(
+            tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
+
+          assert.equal(
+            tax.total, 1210.00, "Total amount should be 1210.00"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.21, "Tax details #1 rate should be 16%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 210.00, "Tax details #1 amount should be 160.00"
+          );
+        });
+    });
+
+    it("🇮🇪 should succeed processing Ireland amount including sales tax with legacy rate (no tax number) [Maltese tax origin]", function() {
+      // Monkey-patch current date method, as to simulate pre-update date
+      SalesTax.__getCurrentDate = function() {
+        return (new Date("2020-08-20T10:00:00.000Z"));
+      };
+
+      SalesTax.setTaxOriginCountry("MT");
+
+      return SalesTax.getAmountWithSalesTax("IE", null, 1000.00)
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.23, "Tax rate should be 23%"
+          );
+
+          assert.equal(
+            tax.area, "regional", "Tax area should be REGIONAL"
+          );
+
+          assert.equal(
+            tax.exchange, "consumer", "Tax exchange should be CONSUMER"
+          );
+
+          assert.equal(
+            tax.charge.direct, true, "Should perform a direct charge"
+          );
+
+          assert.equal(
+            tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.price, 1000.00, "Price amount should be 1000.00"
+          );
+
+          assert.equal(
+            tax.total, 1230.00, "Total amount should be 1230.00"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.23, "Tax details #1 rate should be 19%"
+          );
+
+          assert.equal(
+            tax.details[0].amount, 230.00, "Tax details #1 amount should be 190.00"
+          );
+        });
+    });
+
     it("🇲🇹 should succeed processing Malta amount including sales tax (no tax number) [Maltese tax origin]", function() {
       SalesTax.setTaxOriginCountry("MT");
 
