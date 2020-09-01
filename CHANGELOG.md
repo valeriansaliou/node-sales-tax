@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.1 (2020-09-01)
+
+### Tax Rate Updates
+
+* **Ireland**: 23% to 21% (1st September 2020 to 28th February 2021) [[@gierschv](https://github.com/gierschv)].
+
 ## 2.2.0 (2020-06-12)
 
 ### Non-Breaking Changes
