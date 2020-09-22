@@ -1612,11 +1612,11 @@ describe("node-fast-ratelimit", function() {
     it("🇲🇦 should check Morocco as non tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("MA")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1629,11 +1629,11 @@ describe("node-fast-ratelimit", function() {
     it("🇭🇰 should check Hong Kong as tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("HK")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1646,11 +1646,11 @@ describe("node-fast-ratelimit", function() {
     it("🇺🇸 should check United States > Delaware as tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("US", "DE")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1663,11 +1663,11 @@ describe("node-fast-ratelimit", function() {
     it("🇫🇷 should check valid France tax number as tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("FR", null, "FR50833085806")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "business", "Tax exchange should be BUSINESS"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1680,11 +1680,11 @@ describe("node-fast-ratelimit", function() {
     it("🇫🇷 should check invalid France tax number as non tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("FR", null, "NON_EXEMPT_TAX_NUMBER")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1697,11 +1697,11 @@ describe("node-fast-ratelimit", function() {
     it("🇺🇸 should check United States > California as non tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("US", "CA")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1714,11 +1714,11 @@ describe("node-fast-ratelimit", function() {
     it("🇺🇸 should check valid United States > Texas tax number as tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("US", "TX", "01-1234567")
         .then(function(exchangeStatus) {
-          assert.ok(
-            exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
+          assert.equal(
+            exchangeStatus.exchange, "business", "Tax exchange should be BUSINESS"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1731,11 +1731,11 @@ describe("node-fast-ratelimit", function() {
     it("🇺🇸 should check invalid United States > Texas tax number as non tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("US", "TX", "0112345-67")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1748,11 +1748,11 @@ describe("node-fast-ratelimit", function() {
     it("🇨🇦 should check Canada > Manitoba as non tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("CA", "MB")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1765,11 +1765,11 @@ describe("node-fast-ratelimit", function() {
     it("🇨🇦 should check valid Canada > Quebec tax number as tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("CA", "QC", "123456789")
         .then(function(exchangeStatus) {
-          assert.ok(
-            exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
+          assert.equal(
+            exchangeStatus.exchange, "business", "Tax exchange should be BUSINESS"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -1782,11 +1782,11 @@ describe("node-fast-ratelimit", function() {
     it("🇨🇦 should check invalid Canada > Quebec tax number as non tax-exempt", function() {
       return SalesTax.getTaxExchangeStatus("CA", "QC", "INVALID_TAX_NUMBER")
         .then(function(exchangeStatus) {
-          assert.ok(
+          assert.equal(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
           );
 
-          assert.ok(
+          assert.equal(
             exchangeStatus.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
