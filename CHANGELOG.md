@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.2 (2020-10-21)
+
+### Tax Rate Updates
+
+* **Canada**: tax rates have been updated for some states [[@stephankaag](https://github.com/stephankaag), [#32](https://github.com/valeriansaliou/node-sales-tax/pull/32)].
+
 ## 2.2.1 (2020-09-01)
 
 ### Tax Rate Updates
