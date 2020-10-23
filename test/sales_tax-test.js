@@ -758,9 +758,9 @@ describe("node-fast-ratelimit", function() {
       return SalesTax.getSalesTax("CA", "ON")
         .then(function(tax) {
           assert.equal(
-            tax.type, "gst+hst", "Tax type should be GST+HST"
+            tax.type, "hst", "Tax type should be HST"
           );
-
+          
           assert.equal(
             tax.rate, 0.13, "Tax rate should be 13%"
           );
@@ -782,23 +782,15 @@ describe("node-fast-ratelimit", function() {
           );
 
           assert.equal(
-            tax.details.length, 2, "Tax details should contain 2 tax rates"
+            tax.details.length, 1, "Tax details should contain one tax rate"
           );
 
           assert.equal(
-            tax.details[0].type, "gst", "Tax details #1 type should be GST"
+            tax.details[0].type, "hst", "The only tax detail type should be HST"
           );
 
           assert.equal(
-            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
-          );
-
-          assert.equal(
-            tax.details[1].type, "hst", "Tax details #2 type should be HST"
-          );
-
-          assert.equal(
-            tax.details[1].rate, 0.08, "Tax details #2 rate should be 8%"
+            tax.details[0].rate, 0.13, "Tax details rate for HST should be 13%"
           );
         });
     });
@@ -1412,7 +1404,7 @@ describe("node-fast-ratelimit", function() {
       return SalesTax.getAmountWithSalesTax("CA", "ON", 800.00)
         .then(function(tax) {
           assert.equal(
-            tax.type, "gst+hst", "Tax type should be GST+HST"
+            tax.type, "hst", "Tax type should be HST"
           );
 
           assert.equal(
@@ -1444,31 +1436,19 @@ describe("node-fast-ratelimit", function() {
           );
 
           assert.equal(
-            tax.details.length, 2, "Tax details should contain 2 tax rates"
+            tax.details.length, 1, "Tax details should contain one tax rate"
           );
 
           assert.equal(
-            tax.details[0].type, "gst", "Tax details #1 type should be VAT"
+            tax.details[0].type, "hst", "The only tax detail type should be HST"
           );
 
           assert.equal(
-            tax.details[0].rate, 0.05, "Tax details #1 rate should be 5%"
+            tax.details[0].rate, 0.13, "Tax details rate for HST should be 13%"
           );
 
           assert.equal(
-            tax.details[0].amount, 40.00, "Tax details #1 amount should be 40.00"
-          );
-
-          assert.equal(
-            tax.details[1].type, "hst", "Tax details #2 type should be VAT"
-          );
-
-          assert.equal(
-            tax.details[1].rate, 0.08, "Tax details #2 rate should be 8%"
-          );
-
-          assert.equal(
-            tax.details[1].amount, 64.00, "Tax details #2 amount should be 64.00"
+            tax.details[0].amount, 104.00, "Tax details amount for HST should be 40.00"
           );
         });
     });
