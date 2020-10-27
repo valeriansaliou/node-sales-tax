@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.3 (2020-10-27)
+
+### Tax Rate Fixes
+
+* **Canada**: fix updated tax rates for some states, as calculation errors were introduced in `v2.2.2` due to the GST offset not being taken into account when HST is used [[@valeriansaliou](https://github.com/valeriansaliou), [57b0620](https://github.com/valeriansaliou/node-sales-tax/commit/57b0620817ea261e60a3a4e89d0f825aa8d6ff63)].
+
 ## 2.2.2 (2020-10-21)
 
 ### Tax Rate Updates
