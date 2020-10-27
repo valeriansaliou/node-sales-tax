@@ -264,8 +264,8 @@
   },
 
   "IN": {
-    "type": "vat",
-    "rate": 0.155
+    "type": "gst",
+    "rate": 0.18
   },
 
   "ID": {

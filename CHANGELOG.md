@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.4 (2020-10-27)
+
+### Tax Rate Updates
+
+* **India**: VAT has been moved to GST (now 18%) [[@valeriansaliou](https://github.com/valeriansaliou), [#31](https://github.com/valeriansaliou/node-sales-tax/issues/31)].
+
 ## 2.2.3 (2020-10-27)
 
 ### Tax Rate Fixes
