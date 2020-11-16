@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.5 (2020-11-16)
+
+### Bug Fixes
+
+* Fix an issue where a country sales tax that is cancelled by a negative regional tax would still result in the details object being populated with the exempted country tax (eg. a tax-exempt region in Spain like Gran Canaria), while this details object should have been empty [[@lfalck](https://github.com/lfalck), [#36](https://github.com/valeriansaliou/node-sales-tax/pull/36)].
+
 ## 2.2.4 (2020-10-27)
 
 ### Tax Rate Updates
