@@ -1566,83 +1566,83 @@ describe("node-fast-ratelimit", function() {
           );
         });
       });
-      
+
       it("🇪🇸 should succeed processing Spain > Las Palmas amount including sales tax (no tax number) [no tax origin]", function() {
         return SalesTax.getAmountWithSalesTax("ES", "GC", 1000.00)
           .then(function(tax) {
             assert.equal(
               tax.type, "vat", "Tax type should be VAT"
             );
-  
+
             assert.equal(
               tax.rate, 0.00, "Tax rate should be 0%"
             );
-  
+
             assert.equal(
               tax.area, "worldwide", "Tax area should be WORLDWIDE"
             );
-  
+
             assert.equal(
               tax.exchange, "consumer", "Tax exchange should be CONSUMER"
             );
-    
+
             assert.equal(
-              tax.charge.direct, true, "Should perform a direct charge"
+              tax.charge.direct, false, "Should perform a direct charge"
             );
-  
+
             assert.equal(
               tax.charge.reverse, false, "Should not perform a reverse charge"
             );
-  
+
             assert.equal(
               tax.price, 1000.00, "Price amount should be 1000.00"
             );
-  
+
             assert.equal(
               tax.total, 1000.00, "Total amount should be 1000.00"
             );
-  
+
             assert.equal(
               tax.details.length, 0, "Tax details should be empty"
             );
           });
         });
-  
+
       it("🇪🇸 should succeed processing Spain > Huesca amount including sales tax (no tax number) [no tax origin]", function() {
         return SalesTax.getAmountWithSalesTax("ES", "HU", 1000.00)
           .then(function(tax) {
             assert.equal(
               tax.type, "vat", "Tax type should be VAT"
             );
-  
+
             assert.equal(
               tax.rate, 0.21, "Tax rate should be 21%"
             );
-  
+
             assert.equal(
               tax.area, "worldwide", "Tax area should be WORLDWIDE"
             );
-  
+
             assert.equal(
               tax.exchange, "consumer", "Tax exchange should be CONSUMER"
             );
-    
+
             assert.equal(
               tax.charge.direct, true, "Should perform a direct charge"
             );
-  
+
             assert.equal(
               tax.charge.reverse, false, "Should not perform a reverse charge"
             );
-  
+
             assert.equal(
               tax.price, 1000.00, "Price amount should be 1000.00"
             );
-  
+
             assert.equal(
               tax.total, 1210.00, "Total amount should be 1000.00"
             );
-  
+
             assert.equal(
               tax.details[0].amount, 210.00, "Tax details #1 amount should be 200.00"
             );
