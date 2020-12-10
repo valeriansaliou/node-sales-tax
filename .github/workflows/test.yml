@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Verify versions
-        run: node --version && npm --version
+        run: node --version && npm --version && node -p process.versions.v8
 
       - name: Cache build artifacts
         id: cache-node
