@@ -1,6 +1,6 @@
 test/
 coverage/
+.github/
 .jshintrc
 .jscsrc
 .checkbuild
-.travis.yml
