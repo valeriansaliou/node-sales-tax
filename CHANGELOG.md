@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.6 (2021-02-12)
+
+### Tax Rate Updates
+
+* **Great Britain**: pulled out of the VAT MOSS scheme, as it is not a member of the European Union anymore as of 31st December 2020 [[@valeriansaliou](https://github.com/valeriansaliou), [#26](https://github.com/valeriansaliou/node-sales-tax/issues/26)].
+
 ## 2.2.5 (2020-11-16)
 
 ### Bug Fixes
