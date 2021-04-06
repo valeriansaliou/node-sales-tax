@@ -19,11 +19,13 @@ _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](htt
 <td align="center"><a href="https://crisp.chat/"><img src="https://valeriansaliou.github.io/node-sales-tax/images/crisp.png" width="64" /></a></td>
 <td align="center"><a href="https://locize.com/"><img src="https://valeriansaliou.github.io/node-sales-tax/images/locize.png" width="64" /></a></td>
 <td align="center"><a href="https://turnshift.app/"><img src="https://valeriansaliou.github.io/node-sales-tax/images/turnshift.png" width="64" /></a></td>
+<td align="center"><a href="https://tally.so/"><img src="https://valeriansaliou.github.io/node-sales-tax/images/tally.png" width="64" /></a></td>
 </tr>
 <tr>
 <td align="center">Crisp</td>
 <td align="center">Locize</td>
 <td align="center">TurnShift</td>
+<td align="center">Tally</td>
 </tr>
 </table>
 
