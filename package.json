@@ -32,6 +32,7 @@
   "dependencies": {
     "validate-vat": "0.5.0",
     "jsvat": "1.2.2",
+    "request": "2.88.2",
     "ein-validator": "1.0.0",
     "es6-promise-polyfill": "1.2.0"
   },

@@ -13,7 +13,7 @@ var SalesTax = require("../");
 var assert = require("assert");
 
 
-describe("node-fast-ratelimit", function() {
+describe("node-sales-tax", function() {
   // Acquire references to monkey-patched methods
   var methodReferences = {
     getCurrentDate : SalesTax.__getCurrentDate
@@ -24,7 +24,7 @@ describe("node-fast-ratelimit", function() {
     // Ensure tax number validation is enabled before each pass
     SalesTax.setTaxOriginCountry(null, true);
     SalesTax.toggleEnabledTaxNumberValidation(true);
-    SalesTax.toggleEnabledTaxNumberFraudCheck(false);
+    SalesTax.toggleEnabledTaxNumberFraudCheck(true);
 
     // Restore monkey-patched methods before each pass
     SalesTax.__getCurrentDate = methodReferences.getCurrentDate;
@@ -1685,6 +1685,24 @@ describe("node-fast-ratelimit", function() {
         .then(function(isValid) {
           assert.ok(
             isValid, "Tax number should be valid (even if invalid)"
+          );
+        });
+    });
+
+    it("🇬🇧 should check United Kingdom tax number as valid", function() {
+      return SalesTax.validateTaxNumber("GB", "GB867935561")
+        .then(function(isValid) {
+          assert.ok(
+            isValid, "Tax number should be valid"
+          );
+        });
+    });
+
+    it("🇬🇧 should check United Kingdom tax number as invalid", function() {
+      return SalesTax.validateTaxNumber("GB", "INVALID_TAX_NUMBER")
+        .then(function(isValid) {
+          assert.ok(
+            !isValid, "Tax number should be invalid"
           );
         });
     });
