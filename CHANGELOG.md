@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.3.0 (2021-04-20)
+
+### Non-Breaking Changes
+
+* **Great Britain**: GB VAT numbers are now fraud-checked against HMRC APIs [[@valeriansaliou](https://github.com/valeriansaliou), [b8352f8](https://github.com/valeriansaliou/node-sales-tax/commit/b8352f8ee389ed45bdbcafe6cbc40b18efef74e4), [#40](https://github.com/valeriansaliou/node-sales-tax/issues/40)].
+
 ## 2.2.6 (2021-02-12)
 
 ### Tax Rate Updates
