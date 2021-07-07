@@ -608,6 +608,8 @@ Thus, when the country is `worldwide` relative to your billing origin country, y
 
 To make things easier for you, `sales-tax` returns an `area` parameter in the `SalesTax.getSalesTax`, that is either `worldwide`, `regional` or `national` (this depends on your configured origin country). For `regional` and `national` areas, you can trust the returned rate. However, you may need to override all `worldwide` area rates and void them all to zero; for instance if you charge from France to the United States, and you know that you do not owe sales tax in the US as you do not run a nexus company in the US.
 
+⚠️ Note that this would also apply to non-EU businesses charging customers outside of their jurisdiction. For instance, an Australian business would not charge VAT for customers outside of the country, yet it would charge VAT for all Australian customers. Yet, VAT might be returned by `sales-tax` for such international charges (ie. `worldwide` area). Therefore, such a `worldwide` area VAT should be voided if you consider that this does not apply to you, while `national` or `regional` area VAT should be used as normal. Always check with your accountant when in doubt.
+
 ## How are tax numbers validated?
 
 ### :eu: Europe
