@@ -843,6 +843,47 @@ describe("node-sales-tax", function() {
           );
         });
     });
+
+    it("🇵🇹 should succeed acquiring Açores state sales tax [no tax origin]", function() {
+      return SalesTax.getSalesTax("PT","20")
+        .then(function(tax) {
+          assert.equal(
+            tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.rate, 0.18, "Tax rate should be 18%"
+          );
+
+          assert.equal(
+            tax.area, "worldwide", "Tax area should be WORLDWIDE"
+          );
+
+          assert.equal(
+            tax.exchange, "consumer", "Tax exchange should be CONSUMER"
+          );
+
+          assert.equal(
+            tax.charge.direct, true, "Should perform a direct charge"
+          );
+
+          assert.equal(
+            tax.charge.reverse, false, "Should not perform a reverse charge"
+          );
+
+          assert.equal(
+            tax.details.length, 1, "Tax details should contain 1 tax rate"
+          );
+
+          assert.equal(
+            tax.details[0].type, "vat", "Tax details #1 type should be VAT"
+          );
+
+          assert.equal(
+            tax.details[0].rate, 0.18, "Tax details #1 rate should be 18%"
+          );
+        });
+    });
   });
 
   describe("getAmountWithSalesTax", function() {

@@ -502,7 +502,17 @@
 
   "PT": {
     "type": "vat",
-    "rate": 0.23
+    "rate": 0.23,
+    "states": {
+      "20": {
+        "rate": -0.05,
+        "type": "vat"
+      },
+      "30": {
+        "rate": -0.01,
+        "type": "vat"
+      }
+    }
   },
 
   "PR": {
