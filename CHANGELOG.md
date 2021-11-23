@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.4.0 (2021-11-23)
+
+### Breaking Changes
+
+* Drop support for NodeJS versions that do not support native `Promise`. This should not impact anyone anyway, because the `package.json` already restricts NodeJS version to `"node": ">= 6.4.0"`. All target NodeJS versions therefore have native `Promise` support [[@valeriansaliou](https://github.com/valeriansaliou), [1b7c53e](https://github.com/valeriansaliou/node-sales-tax/commit/1b7c53e423aea319a4928333c67fbbe2bbd308db)].
+
+### Bug Fixes
+
+* Fix broken EU VAT numbers fraud-checks due to changed Europa VAT APIs data schema (from `ec.europa.eu`) [[@valeriansaliou](https://github.com/valeriansaliou), [ec05b71](https://github.com/valeriansaliou/node-sales-tax/commit/ec05b71a780855c1997a89ebb54329a0265821e6), [#45](https://github.com/valeriansaliou/node-sales-tax/issues/45)].
+
 ## 2.3.0 (2021-04-20)
 
 ### Non-Breaking Changes
