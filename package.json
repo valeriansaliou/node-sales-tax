@@ -30,11 +30,10 @@
     "test": "check-build && istanbul cover _mocha"
   },
   "dependencies": {
-    "validate-vat": "0.5.0",
-    "jsvat": "1.2.2",
     "request": "2.88.2",
-    "ein-validator": "1.0.0",
-    "es6-promise-polyfill": "1.2.0"
+    "validate-vat": "0.8.0",
+    "jsvat": "1.2.4",
+    "ein-validator": "1.0.1"
   },
   "devDependencies": {
     "check-build": "2.8.2",
