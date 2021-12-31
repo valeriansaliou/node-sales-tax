@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.5.0 (2021-12-31)
+
+### Tax Rate Updates
+
+* **The Bahamas**: 7.5% to 12% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Botswana**: 12% to 14% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Brazil**: 35% to 17% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **China**: 16% to 13% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Ecuador**: 14% to 12% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Kenya**: 14% to 16% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Lebanon**: 10% to 11% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Nigeria**: 5% to 7.5% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Pakistan**: 16% to 17% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Puerto Rico**: 10.5% to 11.5% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Saint Lucia**: 15% to 12.5% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+* **Tunisia**: 18% to 19% [[@PhilosophicalPsycho](https://github.com/PhilosophicalPsycho), [#47](https://github.com/valeriansaliou/node-sales-tax/pull/47)].
+
 ## 2.4.0 (2021-11-23)
 
 ### Breaking Changes
