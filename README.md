@@ -568,7 +568,7 @@ SalesTax.toggleEnabledTaxNumberFraudCheck(true)
 SalesTax.toggleEnabledTaxNumberFraudCheck(false)
 ```
 
-## Where is the offline tax data is pulled from?
+## Where is the offline tax data pulled from?
 
 The offline tax data is pulled from [Value-added tax (VAT) rates — PwC](http://taxsummaries.pwc.com/ID/Value-added-tax-(VAT)-rates) (last updated: 24th May 2019).
 
