@@ -441,7 +441,7 @@
   },
 
   "NZ": {
-    "type": "vat",
+    "type": "gst",
     "rate": 0.15
   },
 
