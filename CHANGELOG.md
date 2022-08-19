@@ -2,6 +2,8 @@
 
 ## 2.6.0 (2022-08-19)
 
+### Tax Rate Updates
+
 * **New Mexico, United States**: 5.125% to 5% [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)].
 * **Botswana**: 14% to 12% (1st August 2022 to 1st February 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)].
 * **Anguilla**: 13% GST [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)].
