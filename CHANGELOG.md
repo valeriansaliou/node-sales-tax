@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.6.0 (2022-08-19)
+
+* **New Mexico, United States**: 5.125% to 5% [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Botswana**: 14% to 12% (1st August 2022 to 1st February 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Anguilla**: 13% GST [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Aruba**: 12.5% VAT (on 1st January 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Indonesia**: 10% to 11% [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Sri Lanka**: 12% VAT [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Maldives**: 6% to 8% (on 1st January 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Singapore**: 7% to 8% (on 1st January 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Singapore**: 8% to 9% (on 1st January 2024) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Suriname**: 10% to 15% (on 1st January 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Uzbekistan**: 15% to 12% (on 1st January 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+* **Thailand**: 7% to 10% (on 1st September 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [701781c](https://github.com/valeriansaliou/node-sales-tax/commit/701781c0843799948077e8f112807b2bfc41431e)
+
 ## 2.5.0 (2021-12-31)
 
 ### Tax Rate Updates
