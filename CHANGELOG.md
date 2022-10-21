@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.7.0 (2022-10-21)
+
+### Non-Breaking Changes
+
+* Update the `jsvat` offline VAT number format validator to its latest version [[@valeriansaliou](https://github.com/valeriansaliou), [403b38e](https://github.com/valeriansaliou/node-sales-tax/commit/403b38e7edc7b5db76a9b2c237d8e8601bc3206f)].
+
+### Bug Fixes
+
+* Fix broken EU VAT numbers fraud-checks due to (_once again_) changed Europa VAT APIs data schema (from `ec.europa.eu`) [[@valeriansaliou](https://github.com/valeriansaliou), [403b38e](https://github.com/valeriansaliou/node-sales-tax/commit/403b38e7edc7b5db76a9b2c237d8e8601bc3206f)].
+
 ## 2.6.0 (2022-08-19)
 
 ### Tax Rate Updates
