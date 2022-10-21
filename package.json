@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "request": "2.88.2",
-    "validate-vat": "0.8.0",
-    "jsvat": "1.2.4",
+    "validate-vat": "0.9.0",
+    "jsvat": "2.5.3",
     "ein-validator": "1.0.1"
   },
   "devDependencies": {
