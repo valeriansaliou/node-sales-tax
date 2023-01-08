@@ -1,0 +1,28 @@
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+name: Build and Release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Verify versions
+        run: node --version && npm --version && node -p process.versions.v8
+
+      - name: Release package
+        run: npm publish --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

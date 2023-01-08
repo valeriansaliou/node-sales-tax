@@ -31,7 +31,7 @@ jobs:
           path: |
             ~/.npm
             node_modules
-          key: ${{ runner.os }}-node-${{ matrix.node-version }}
+          key: test-${{ runner.os }}-node-${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
