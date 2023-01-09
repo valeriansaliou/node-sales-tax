@@ -1,4 +1,11 @@
-# Changelog
+Changelog
+=========
+
+## 2.7.1 (2023-01-09)
+
+### New Features
+
+* Automate the package release process via GitHub Actions (ie. `npm publish`) [[@valeriansaliou](https://github.com/valeriansaliou)].
 
 ## 2.7.0 (2022-10-21)
 
