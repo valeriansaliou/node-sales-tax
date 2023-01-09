@@ -5,7 +5,7 @@ Changelog
 
 ### New Features
 
-* Automate the package release process via GitHub Actions (ie. `npm publish`) [[@valeriansaliou](https://github.com/valeriansaliou)].
+* Automate the package release process via GitHub Actions (ie. `npm publish`) [[@valeriansaliou](https://github.com/valeriansaliou), [73b8247](https://github.com/valeriansaliou/node-sales-tax/commit/73b8247d5dfd350c54ed576297dafa20c15b7fa3)].
 
 ## 2.7.0 (2022-10-21)
 
