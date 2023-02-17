@@ -1,5 +1,8 @@
 Changelog
 =========
+## 2.7.3 (2023-02-17)
+* replace istanbul to nyc, update mocha, replace lint 
+
 ## 2.7.2 (2023-02-17)
 
 * remove 'request' module since they are deprecated.
