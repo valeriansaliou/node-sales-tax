@@ -39,9 +39,17 @@ _As this library is SemVer-compatible, any breaking change would be released as 
 
 ## How to install?
 
-Include `sales-tax` in your `package.json` dependencies.
+Include `sales-tax` in your `package.json` dependencies:
 
-Alternatively, you can run `npm install sales-tax --save`.
+```bash
+npm install --save sales-tax
+```
+
+If you are using TypeScript, type definitions are available:
+
+```bash
+npm install --save-dev @types/sales-tax
+```
 
 ## How to use?
 
