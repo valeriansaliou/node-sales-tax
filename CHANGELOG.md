@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.8.0 (2023-03-02)
+
+### Tax Rate Updates
+
+* **Switzerland**: 7.7% to 8.1% (1st January 2024) [[@adrai](https://github.com/adrai), [#55](https://github.com/valeriansaliou/node-sales-tax/pull/55)].
+
 ## 2.7.1 (2023-01-09)
 
 ### New Features
