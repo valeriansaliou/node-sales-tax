@@ -45,11 +45,7 @@ Include `sales-tax` in your `package.json` dependencies:
 npm install --save sales-tax
 ```
 
-If you are using TypeScript, type definitions are available:
-
-```bash
-npm install --save-dev @types/sales-tax
-```
+If you are using TypeScript, type definitions are automatically imported.
 
 ## How to use?
 

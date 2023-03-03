@@ -22,12 +22,13 @@
       "url": "https://github.com/valeriansaliou/node-sales-tax/blob/master/LICENSE"
     }
   ],
-  "main": "lib/sales_tax",
+  "main": "lib/sales_tax.js",
+  "types": "types/sales_tax.d.ts",
   "engines": {
     "node": ">= 6.4.0"
   },
   "scripts": {
-    "test": "check-build && istanbul cover _mocha"
+    "test": "check-build && tsc && istanbul cover _mocha"
   },
   "dependencies": {
     "request": "2.88.2",
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "check-build": "2.8.2",
+    "typescript": "4.9.x",
     "mocha": "3.3.0",
     "mocha-lcov-reporter": "1.3.0",
     "istanbul": "0.4.5"
