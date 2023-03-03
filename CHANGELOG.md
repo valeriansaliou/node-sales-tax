@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.9.0 (2023-03-03)
+
+### New Features
+
+* Add TypeScript type definitions [[@valeriansaliou](https://github.com/valeriansaliou), [0f5f245](https://github.com/valeriansaliou/node-sales-tax/commit/0f5f245d89ce1afd633931ad0ad092d1bcebcfaf)].
+
 ## 2.8.0 (2023-03-02)
 
 ### Tax Rate Updates
