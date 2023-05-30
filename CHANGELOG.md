@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.10.0 (2023-05-30)
+
+### Tax Rate Updates
+
+* **Luxembourg**: 17% to 16% (1st January 2023 to 31st December 2023) [[@pszxzsd](https://github.com/pszxzsd), [#56](https://github.com/valeriansaliou/node-sales-tax/pull/56)].
+
 ## 2.9.0 (2023-03-03)
 
 ### New Features
