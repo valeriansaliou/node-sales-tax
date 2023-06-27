@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.11.0 (2023-06-27)
+
+### Tax Rate Updates
+
+* **Ghana**: 12.5% to 15% (1st January 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [5c8f0b1](https://github.com/valeriansaliou/node-sales-tax/commit/5c8f0b1bdbade8d6830cf35cde3f5d631dad214a)].
+
 ## 2.10.0 (2023-05-30)
 
 ### Tax Rate Updates
