@@ -56,6 +56,11 @@
     "rate": 0.18
   },
 
+  "BA": {
+    "type": "vat",
+    "rate": 0.17
+  },
+
   "BB": {
     "type": "vat",
     "rate": 0.175
@@ -262,7 +267,7 @@
   "ES": {
     "type": "vat",
     "rate": 0.21,
-    
+
     "states": {
       "CE": {
         "rate": -0.21,
@@ -731,6 +736,11 @@
   "TZ": {
     "type": "vat",
     "rate": 0.18
+  },
+
+  "UA": {
+    "type": "vat",
+    "rate": 0.20
   },
 
   "UG": {
