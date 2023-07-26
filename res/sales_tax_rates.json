@@ -306,6 +306,12 @@
     "rate": 0.14
   },
 
+  "ER": {
+    "type": "vat",
+    "currency": "ERN",
+    "rate": 0.05
+  },
+
   "ES": {
     "type": "vat",
     "currency": "EUR",
@@ -1170,7 +1176,7 @@
 
   "ZW": {
     "type": "vat",
-    "currency": "ZWL",
+    "currency": "USD",
     "rate": 0.15
   }
 }
