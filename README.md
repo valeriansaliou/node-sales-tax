@@ -574,7 +574,9 @@ SalesTax.toggleEnabledTaxNumberFraudCheck(false)
 
 ## Where is the offline tax data pulled from?
 
-- The offline tax data is pulled from [Value-added tax (VAT) rates — PwC](http://taxsummaries.pwc.com/ID/Value-added-tax-(VAT)-rates) (last updated: 27th June 2023).
+The offline data contained in the `sales-tax` library comes from different sources:
+
+- Tax data is pulled from [Value-added tax (VAT) rates — PwC](http://taxsummaries.pwc.com/ID/Value-added-tax-(VAT)-rates) (last updated: 27th June 2023).
 - Country currencies are pulled from: [Detailed Territory-Currency Information — Unicode](https://www.unicode.org/cldr/charts/42/supplemental/detailed_territory_currency_information.html) (last updated: 27th July 2023).
 
 **It is kept up-to-date year-by-year with tax changes worldwide.**
