@@ -39,9 +39,13 @@ _As this library is SemVer-compatible, any breaking change would be released as 
 
 ## How to install?
 
-Include `sales-tax` in your `package.json` dependencies.
+Include `sales-tax` in your `package.json` dependencies:
 
-Alternatively, you can run `npm install sales-tax --save`.
+```bash
+npm install --save sales-tax
+```
+
+If you are using TypeScript, type definitions are automatically imported.
 
 ## How to use?
 
@@ -570,7 +574,7 @@ SalesTax.toggleEnabledTaxNumberFraudCheck(false)
 
 ## Where is the offline tax data pulled from?
 
-The offline tax data is pulled from [Value-added tax (VAT) rates — PwC](http://taxsummaries.pwc.com/ID/Value-added-tax-(VAT)-rates) (last updated: 24th May 2019).
+The offline tax data is pulled from [Value-added tax (VAT) rates — PwC](http://taxsummaries.pwc.com/ID/Value-added-tax-(VAT)-rates) (last updated: 27th June 2023).
 
 **It is kept up-to-date year-by-year with tax changes worldwide.**
 

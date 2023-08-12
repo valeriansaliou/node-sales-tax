@@ -5,6 +5,30 @@ Changelog
 * remove 'request' module since they are deprecated.
 * include 'node-fetch' instead of 'request' and change the syntax for it.
 
+## 2.11.0 (2023-06-27)
+
+### Tax Rate Updates
+
+* **Ghana**: 12.5% to 15% (1st January 2023) [[@valeriansaliou](https://github.com/valeriansaliou), [5c8f0b1](https://github.com/valeriansaliou/node-sales-tax/commit/5c8f0b1bdbade8d6830cf35cde3f5d631dad214a)].
+
+## 2.10.0 (2023-05-30)
+
+### Tax Rate Updates
+
+* **Luxembourg**: 17% to 16% (1st January 2023 to 31st December 2023) [[@pszxzsd](https://github.com/pszxzsd), [#56](https://github.com/valeriansaliou/node-sales-tax/pull/56)].
+
+## 2.9.0 (2023-03-03)
+
+### New Features
+
+* Add TypeScript type definitions [[@valeriansaliou](https://github.com/valeriansaliou), [0f5f245](https://github.com/valeriansaliou/node-sales-tax/commit/0f5f245d89ce1afd633931ad0ad092d1bcebcfaf)].
+
+## 2.8.0 (2023-03-02)
+
+### Tax Rate Updates
+
+* **Switzerland**: 7.7% to 8.1% (1st January 2024) [[@adrai](https://github.com/adrai), [#55](https://github.com/valeriansaliou/node-sales-tax/pull/55)].
+
 ## 2.7.1 (2023-01-09)
 
 ### New Features
