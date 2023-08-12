@@ -10,6 +10,7 @@ declare namespace SalesTax {
   interface SalesTaxResult {
     type: string;
     rate: number;
+    currency: string | null;
     area: "worldwide" | "national" | "regional";
     exchange: "business" | "consumer";
 

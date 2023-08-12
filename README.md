@@ -136,6 +136,7 @@ SalesTax.getSalesTax("FR", null, "FR50833085806")
       {
         type     : "vat",
         rate     : 0.00,
+        currency : "EUR",
         area     : "worldwide",
         exchange : "business",
 
@@ -167,6 +168,7 @@ SalesTax.getSalesTax("FR", null, "FR50833085806")
       {
         type     : "vat",
         rate     : 0.20,
+        currency : "EUR",
         area     : "national",
         exchange : "business",
 
@@ -201,6 +203,7 @@ SalesTax.getSalesTax("FR", null, "FR50833085806")
       {
         type     : "vat",
         rate     : 0.00,
+        currency : "EUR",
         area     : "regional",
         exchange : "business",
 
@@ -225,6 +228,7 @@ SalesTax.getSalesTax("US", "CA")
       {
         type     : "vat",
         rate     : 0.0825,
+        currency : "USD",
         area     : "worldwide",
         exchange : "consumer",
 
@@ -254,6 +258,7 @@ SalesTax.getSalesTax("CA", "ON")
       {
         type     : "gst+hst",
         rate     : 0.13,
+        currency : "CAD",
         area     : "worldwide",
         exchange : "consumer",
 
@@ -288,6 +293,7 @@ SalesTax.getSalesTax("LV")
       {
         type     : "vat",
         rate     : 0.21,
+        currency : "EUR",
         area     : "worldwide",
         exchange : "consumer",
 
@@ -322,6 +328,7 @@ SalesTax.getSalesTax("LV")
       {
         type     : "vat",
         rate     : 0.21,
+        currency : "EUR",
         area     : "regional",
         exchange : "consumer",
 
@@ -351,6 +358,7 @@ SalesTax.getSalesTax("HK")
       {
         type     : "none",
         rate     : 0.00,
+        currency : null,
         area     : "worldwide",
         exchange : "consumer",
 
@@ -375,6 +383,7 @@ SalesTax.getSalesTax("ES", null, "ESX12345523")
       {
         type     : "vat",
         rate     : 0.21,
+        currency : "EUR",
         area     : "worldwide",
         exchange : "consumer",
 
@@ -410,6 +419,7 @@ SalesTax.getAmountWithSalesTax("EE", null, 100.00)
       {
         type     : "vat",
         rate     : 0.20,
+        currency : "EUR",
         price    : 100.00,
         total    : 120.00,
         area     : "worldwide",
@@ -597,11 +607,13 @@ _For instance, Germany changed their VAT rate from 19% down to 16% as of 1st Jul
 "DE": {
   "type": "vat",
   "rate": 0.16,
+  "currency": "EUR",
 
   "before": {
     "2020-06-30T22:00:00.000Z": {
       "type": "vat",
-      "rate": 0.19
+      "rate": 0.19,
+      "currency": "EUR"
     }
   }
 }

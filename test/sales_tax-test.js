@@ -107,6 +107,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, null, "Currency should be empty"
+          );
+
+          assert.equal(
             tax.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -140,6 +144,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, null, "Currency should be empty"
+          );
+
+          assert.equal(
             tax.area, "worldwide", "Tax area should be WORLDWIDE"
           );
 
@@ -167,13 +175,13 @@ describe("node-sales-tax", function() {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
           );
-
-          assert.equal(
-            tax.currency, "MAD", "Currency should be MAD"
-          );
           
           assert.equal(
             tax.rate, 0.20, "Tax rate should be 20%"
+          );
+
+          assert.equal(
+            tax.currency, "MAD", "Currency should be MAD"
           );
 
           assert.equal(
@@ -214,11 +222,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.20, "Tax rate should be 20%"
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -259,11 +267,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.20, "Tax rate should be 20%"
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -304,11 +312,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.20, "Tax rate should be 20%"
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -351,11 +359,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.20, "Tax rate should be 20% (national market)"
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20% (national market)"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -396,11 +404,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.00, "Tax rate should be 0% (tax-exempt)"
           );
 
           assert.equal(
-            tax.rate, 0.00, "Tax rate should be 0% (tax-exempt)"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -435,11 +443,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.00, "Tax rate should be 0% (reverse charge on regional market)"
           );
 
           assert.equal(
-            tax.rate, 0.00, "Tax rate should be 0% (reverse charge on regional market)"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -474,11 +482,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.21, "Tax rate should be 21% (no regional tax, use national tax)"
           );
 
           assert.equal(
-            tax.rate, 0.21, "Tax rate should be 21% (no regional tax, use national tax)"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -519,13 +527,13 @@ describe("node-sales-tax", function() {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
           );
-
-          assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
-          );
           
           assert.equal(
             tax.rate, 0.00, "Tax rate should be 0%"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -560,11 +568,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.20, "Tax rate should be 20% (national market, no regional tax)"
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20% (national market, no regional tax)"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -605,11 +613,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "USD", "Currency should be USD"
+            tax.rate, 0.00, "Tax rate should be 0%"
           );
 
           assert.equal(
-            tax.rate, 0.00, "Tax rate should be 0%"
+            tax.currency, "USD", "Currency should be USD"
           );
 
           assert.equal(
@@ -642,11 +650,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "USD", "Currency should be USD"
+            tax.rate, 0.0825, "Tax rate should be 8.25%"
           );
 
           assert.equal(
-            tax.rate, 0.0825, "Tax rate should be 8.25%"
+            tax.currency, "USD", "Currency should be USD"
           );
 
           assert.equal(
@@ -687,11 +695,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "USD", "Currency should be USD"
+            tax.rate, 0.00, "Tax rate should be 0%"
           );
 
           assert.equal(
-            tax.rate, 0.00, "Tax rate should be 0%"
+            tax.currency, "USD", "Currency should be USD"
           );
 
           assert.equal(
@@ -724,11 +732,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "CAD", "Currency should be CAD"
+            tax.rate, 0.05, "Tax rate should be 5%"
           );
 
           assert.equal(
-            tax.rate, 0.05, "Tax rate should be 5%"
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -769,11 +777,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "CAD", "Currency should be CAD"
+            tax.rate, 0.14975, "Tax rate should be 14.975%"
           );
 
           assert.equal(
-            tax.rate, 0.14975, "Tax rate should be 14.975%"
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -822,11 +830,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "CAD", "Currency should be CAD"
+            tax.rate, 0.13, "Tax rate should be 13%"
           );
 
           assert.equal(
-            tax.rate, 0.13, "Tax rate should be 13%"
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -875,11 +883,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "CAD", "Currency should be CAD"
+            tax.rate, 0.05, "Tax rate should be 5%"
           );
 
           assert.equal(
-            tax.rate, 0.05, "Tax rate should be 5%"
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -922,11 +930,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "", "Currency should be empty"
+            tax.rate, 0.00, "Tax rate should be 0%"
           );
 
           assert.equal(
-            tax.rate, 0.00, "Tax rate should be 0%"
+            tax.currency, null, "Currency should be empty"
           );
 
           assert.equal(
@@ -967,11 +975,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.20, "Tax rate should be 20%"
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1031,11 +1039,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.19, "Tax rate should be 19%"
           );
 
           assert.equal(
-            tax.rate, 0.19, "Tax rate should be 19%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1095,11 +1103,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.16, "Tax rate should be 16%"
           );
 
           assert.equal(
-            tax.rate, 0.16, "Tax rate should be 16%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1159,11 +1167,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.19, "Tax rate should be 19%"
           );
 
           assert.equal(
-            tax.rate, 0.19, "Tax rate should be 19%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1223,11 +1231,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.23, "Tax rate should be 23%"
           );
 
           assert.equal(
-            tax.rate, 0.23, "Tax rate should be 23%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1287,11 +1295,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.21, "Tax rate should be 21%"
           );
 
           assert.equal(
-            tax.rate, 0.21, "Tax rate should be 21%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1351,11 +1359,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.23, "Tax rate should be 23%"
           );
 
           assert.equal(
-            tax.rate, 0.23, "Tax rate should be 23%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1410,11 +1418,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.18, "Tax rate should be 18%"
           );
 
           assert.equal(
-            tax.rate, 0.18, "Tax rate should be 18%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1467,11 +1475,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "CAD", "Currency should be CAD"
+            tax.rate, 0.05, "Tax rate should be 5%"
           );
 
           assert.equal(
-            tax.rate, 0.05, "Tax rate should be 5%"
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -1524,11 +1532,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "CAD", "Currency should be CAD"
+            tax.rate, 0.13, "Tax rate should be 13%"
           );
 
           assert.equal(
-            tax.rate, 0.13, "Tax rate should be 13%"
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -1593,11 +1601,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.20, "Tax rate should be 20%"
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1650,11 +1658,11 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.currency, "EUR", "Currency should be EUR"
+            tax.rate, 0.00, "Tax rate should be 0%"
           );
 
           assert.equal(
-            tax.rate, 0.00, "Tax rate should be 0%"
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1695,11 +1703,11 @@ describe("node-sales-tax", function() {
             );
 
             assert.equal(
-              tax.currency, "EUR", "Currency should be EUR"
+              tax.rate, 0.00, "Tax rate should be 0%"
             );
 
             assert.equal(
-              tax.rate, 0.00, "Tax rate should be 0%"
+              tax.currency, "EUR", "Currency should be EUR"
             );
 
             assert.equal(
@@ -1740,11 +1748,11 @@ describe("node-sales-tax", function() {
             );
 
             assert.equal(
-              tax.currency, "EUR", "Currency should be EUR"
+              tax.rate, 0.21, "Tax rate should be 21%"
             );
 
             assert.equal(
-              tax.rate, 0.21, "Tax rate should be 21%"
+              tax.currency, "EUR", "Currency should be EUR"
             );
 
             assert.equal(
