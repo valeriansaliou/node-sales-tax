@@ -3,8 +3,16 @@ Changelog
 
 ## 2.12.0 (2023-08-12)
 
-* Replace deprecated `request` dependency with `node-fetch` [[@wootra](https://github.com/wootra), [#53](https://github.com/valeriansaliou/node-sales-tax/pull/53)].
+### New Features
+
 * Return a `currency` attribute in all sales tax response objects [[@mindflowgo](https://github.com/mindflowgo), [#61](https://github.com/valeriansaliou/node-sales-tax/pull/61)].
+
+### Non-Breaking Changes
+
+* Replace deprecated `request` dependency with `node-fetch` [[@wootra](https://github.com/wootra), [#53](https://github.com/valeriansaliou/node-sales-tax/pull/53)].
+
+### Tax Rate Updates
+
 * Add tax entries for: Bosnia, Ukraine and Eritrea [[@mindflowgo](https://github.com/mindflowgo), [#61](https://github.com/valeriansaliou/node-sales-tax/pull/61)].
 
 ## 2.11.0 (2023-06-27)
