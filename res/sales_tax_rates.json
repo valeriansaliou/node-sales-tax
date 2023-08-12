@@ -1,110 +1,149 @@
 {
+  "AE": {
+    "type": "vat",
+    "currency": "AED",
+    "rate": 0.05
+  },
+
   "AI": {
     "type": "gst",
+    "currency": "XCD",
     "rate": 0.13
   },
 
   "AL": {
     "type": "vat",
-    "rate": 0.20
-  },
-
-  "AR": {
-    "type": "vat",
-    "rate": 0.21
+    "currency": "ALL",
+    "rate": 0.2
   },
 
   "AM": {
     "type": "vat",
-    "rate": 0.20
+    "currency": "AMD",
+    "rate": 0.2
   },
 
-  "AU": {
-    "type": "gst",
-    "rate": 0.10
+  "AO": {
+    "type": "vat",
+    "currency": "AOA",
+    "rate": 0.14
+  },
+
+  "AR": {
+    "type": "vat",
+    "currency": "ARS",
+    "rate": 0.21
   },
 
   "AT": {
     "type": "vat",
-    "rate": 0.20
+    "currency": "EUR",
+    "rate": 0.2
   },
 
-  "AZ": {
-    "type": "vat",
-    "rate": 0.18
+  "AU": {
+    "type": "gst",
+    "currency": "AUD",
+    "rate": 0.1
   },
 
   "AW": {
     "type": "vat",
+    "currency": "AWG",
     "rate": 0.125,
 
     "before": {
       "2022-12-31T22:00:00.000Z": {
         "type": "vat",
-        "rate": 0.00
+        "currency": "AWG",
+        "rate": 0
       }
     }
   },
 
-  "BS": {
+  "AZ": {
     "type": "vat",
-    "rate": 0.12
+    "currency": "AZN",
+    "rate": 0.18
   },
 
-  "BH": {
+  "BA": {
     "type": "vat",
-    "rate": 0.05
+    "currency": "BAM",
+    "rate": 0.17
   },
 
   "BB": {
     "type": "vat",
+    "currency": "BBD",
     "rate": 0.175
-  },
-
-  "BY": {
-    "type": "vat",
-    "rate": 0.20
   },
 
   "BE": {
     "type": "vat",
+    "currency": "EUR",
     "rate": 0.21
+  },
+
+  "BG": {
+    "type": "vat",
+    "currency": "BGN",
+    "rate": 0.2
+  },
+
+  "BH": {
+    "type": "vat",
+    "currency": "BHD",
+    "rate": 0.05
   },
 
   "BO": {
     "type": "vat",
+    "currency": "BOB",
     "rate": 0.1494
+  },
+
+  "BR": {
+    "type": "vat",
+    "currency": "BRL",
+    "rate": 0.17
+  },
+
+  "BS": {
+    "type": "vat",
+    "currency": "BSD",
+    "rate": 0.12
   },
 
   "BW": {
     "type": "vat",
+    "currency": "BWP",
     "rate": 0.14,
 
     "before": {
       "2023-01-31T22:00:00.000Z": {
         "type": "vat",
+        "currency": "BWP",
         "rate": 0.12
       },
 
       "2022-07-31T22:00:00.000Z": {
         "type": "vat",
+        "currency": "BWP",
         "rate": 0.14
       }
     }
   },
 
-  "BR": {
+  "BY": {
     "type": "vat",
-    "rate": 0.17
-  },
-
-  "BG": {
-    "type": "vat",
-    "rate": 0.20
+    "currency": "BYN",
+    "rate": 0.2
   },
 
   "CA": {
     "type": "gst",
+    "currency": "CAD",
     "rate": 0.05,
 
     "states": {
@@ -115,21 +154,21 @@
 
       "MB": {
         "rate": 0.07,
-        "type": "rst"
+        "type": "pst"
       },
 
       "NB": {
-        "rate": 0.10,
+        "rate": 0.1,
         "type": "hst"
       },
 
       "NL": {
-        "rate": 0.10,
+        "rate": 0.1,
         "type": "hst"
       },
 
       "NS": {
-        "rate": 0.10,
+        "rate": 0.1,
         "type": "hst"
       },
 
@@ -139,7 +178,7 @@
       },
 
       "PE": {
-        "rate": 0.10,
+        "rate": 0.1,
         "type": "hst"
       },
 
@@ -155,502 +194,136 @@
     }
   },
 
+  "CH": {
+    "type": "vat",
+    "currency": "CHF",
+    "rate": 0.081,
+
+    "before": {
+      "2023-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "CHF",
+        "rate": 0.077
+      }
+    }
+  },
+
   "CL": {
     "type": "vat",
+    "currency": "CLP",
     "rate": 0.19
   },
 
   "CN": {
     "type": "vat",
+    "currency": "CNY",
     "rate": 0.13
   },
 
   "CO": {
     "type": "vat",
+    "currency": "COP",
     "rate": 0.19
   },
 
   "CR": {
     "type": "vat",
+    "currency": "CRC",
     "rate": 0.13
-  },
-
-  "HR": {
-    "type": "vat",
-    "rate": 0.25
   },
 
   "CW": {
     "type": "vat",
+    "currency": "ANG",
     "rate": 0.06
   },
 
   "CY": {
     "type": "vat",
+    "currency": "EUR",
     "rate": 0.19
   },
 
   "CZ": {
     "type": "vat",
+    "currency": "CZK",
     "rate": 0.21
-  },
-
-  "DK": {
-    "type": "vat",
-    "rate": 0.25
-  },
-
-  "DO": {
-    "type": "vat",
-    "rate": 0.18
-  },
-
-  "DZ": {
-    "type": "vat",
-    "rate": 0.19
-  },
-
-  "EC": {
-    "type": "vat",
-    "rate": 0.12
-  },
-
-  "EG": {
-    "type": "vat",
-    "rate": 0.14
-  },
-
-  "SV": {
-    "type": "vat",
-    "rate": 0.13
-  },
-
-  "EE": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "FI": {
-    "type": "vat",
-    "rate": 0.24
-  },
-
-  "FR": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "GE": {
-    "type": "vat",
-    "rate": 0.18
   },
 
   "DE": {
     "type": "vat",
+    "currency": "EUR",
     "rate": 0.19,
 
     "before": {
       "2020-12-31T22:00:00.000Z": {
         "type": "vat",
+        "currency": "EUR",
         "rate": 0.16
       },
 
       "2020-06-30T22:00:00.000Z": {
         "type": "vat",
+        "currency": "EUR",
         "rate": 0.19
       }
     }
   },
 
-  "GH": {
+  "DK": {
     "type": "vat",
-    "rate": 0.15
-  },
-
-  "GR": {
-    "type": "vat",
-    "rate": 0.24
-  },
-
-  "GT": {
-    "type": "vat",
-    "rate": 0.12
-  },
-
-  "HN": {
-    "type": "vat",
-    "rate": 0.15
-  },
-
-  "HU": {
-    "type": "vat",
-    "rate": 0.27
-  },
-
-  "IS": {
-    "type": "vat",
-    "rate": 0.24
-  },
-
-  "IN": {
-    "type": "gst",
-    "rate": 0.18
-  },
-
-  "ID": {
-    "type": "vat",
-    "rate": 0.11
-  },
-
-  "IE": {
-    "type": "vat",
-    "rate": 0.23,
-
-    "before": {
-      "2021-02-28T22:00:00.000Z": {
-        "type": "vat",
-        "rate": 0.21
-      },
-
-      "2020-08-31T22:00:00.000Z": {
-        "type": "vat",
-        "rate": 0.23
-      }
-    }
-  },
-
-  "IM": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "IL": {
-    "type": "vat",
-    "rate": 0.17
-  },
-
-  "IT": {
-    "type": "vat",
-    "rate": 0.22
-  },
-
-  "JP": {
-    "type": "vat",
-    "rate": 0.08
-  },
-
-  "JE": {
-    "type": "vat",
-    "rate": 0.05
-  },
-
-  "JO": {
-    "type": "vat",
-    "rate": 0.16
-  },
-
-  "KZ": {
-    "type": "vat",
-    "rate": 0.12
-  },
-
-  "KE": {
-    "type": "vat",
-    "rate": 0.16
-  },
-
-  "KR": {
-    "type": "vat",
-    "rate": 0.10
-  },
-
-  "XK": {
-    "type": "vat",
-    "rate": 0.18
-  },
-
-  "KW": {
-    "type": "vat",
-    "rate": 0.05
-  },
-
-  "LI": {
-    "type": "vat",
-    "rate": 0.077
-  },
-
-  "LV": {
-    "type": "vat",
-    "rate": 0.21
-  },
-
-  "LB": {
-    "type": "vat",
-    "rate": 0.11
-  },
-
-  "LK": {
-    "type": "vat",
-    "rate": 0.12
-  },
-
-  "LT": {
-    "type": "vat",
-    "rate": 0.21
-  },
-
-  "LU": {
-    "type": "vat",
-    "rate": 0.17,
-
-    "before": {
-      "2023-12-31T22:00:00.000Z": {
-        "type": "vat",
-        "rate": 0.16
-      },
-
-      "2022-12-31T22:00:00.000Z": {
-        "type": "vat",
-        "rate": 0.17
-      }
-    }
-  },
-
-  "MC": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "MK": {
-    "type": "vat",
-    "rate": 0.18
-  },
-
-  "MG": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "MY": {
-    "type": "vat",
-    "rate": 0.10
-  },
-
-  "MV": {
-    "type": "gst",
-    "rate": 0.08,
-
-    "before": {
-      "2022-12-31T22:00:00.000Z": {
-        "type": "gst",
-        "rate": 0.06
-      }
-    }
-  },
-
-  "MT": {
-    "type": "vat",
-    "rate": 0.18
-  },
-
-  "MU": {
-    "type": "vat",
-    "rate": 0.15
-  },
-
-  "MX": {
-    "type": "vat",
-    "rate": 0.16
-  },
-
-  "MD": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "MN": {
-    "type": "vat",
-    "rate": 0.10
-  },
-
-  "MA": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "MM": {
-    "type": "vat",
-    "rate": 0.05
-  },
-
-  "NA": {
-    "type": "vat",
-    "rate": 0.15
-  },
-
-  "NL": {
-    "type": "vat",
-    "rate": 0.21
-  },
-
-  "NZ": {
-    "type": "gst",
-    "rate": 0.15
-  },
-
-  "NI": {
-    "type": "vat",
-    "rate": 0.15
-  },
-
-  "NG": {
-    "type": "vat",
-    "rate": 0.075
-  },
-
-  "NO": {
-    "type": "vat",
+    "currency": "DKK",
     "rate": 0.25
   },
 
-  "OM": {
+  "DO": {
     "type": "vat",
-    "rate": 0.05
-  },
-
-  "PK": {
-    "type": "vat",
-    "rate": 0.17
-  },
-
-  "PA": {
-    "type": "vat",
-    "rate": 0.07
-  },
-
-  "PG": {
-    "type": "vat",
-    "rate": 0.10
-  },
-
-  "PY": {
-    "type": "vat",
-    "rate": 0.10
-  },
-
-  "PE": {
-    "type": "vat",
+    "currency": "DOP",
     "rate": 0.18
   },
 
-  "PH": {
+  "DZ": {
     "type": "vat",
-    "rate": 0.12
-  },
-
-  "PL": {
-    "type": "vat",
-    "rate": 0.23
-  },
-
-  "PT": {
-    "type": "vat",
-    "rate": 0.23
-  },
-
-  "PR": {
-    "type": "vat",
-    "rate": 0.115
-  },
-
-  "QA": {
-    "type": "vat",
-    "rate": 0.05
-  },
-
-  "RO": {
-    "type": "vat",
+    "currency": "DZD",
     "rate": 0.19
   },
 
-  "RU": {
+  "EC": {
     "type": "vat",
-    "rate": 0.20
+    "currency": "USD",
+    "rate": 0.12
   },
 
-  "RW": {
+  "EE": {
     "type": "vat",
-    "rate": 0.18
+    "currency": "EUR",
+    "rate": 0.2
   },
 
-  "LC": {
+  "EG": {
     "type": "vat",
-    "rate": 0.125
+    "currency": "EGP",
+    "rate": 0.14
   },
 
-  "SA": {
+  "ER": {
     "type": "vat",
-    "rate": 0.15
-  },
-
-  "RS": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "SC": {
-    "type": "vat",
-    "rate": 0.15
-  },
-
-  "SG": {
-    "type": "gst",
-    "rate": 0.09,
-
-    "before": {
-      "2023-12-31T22:00:00.000Z": {
-        "type": "gst",
-        "rate": 0.08
-      },
-
-      "2022-12-31T22:00:00.000Z": {
-        "type": "gst",
-        "rate": 0.07
-      }
-    }
-  },
-
-  "SK": {
-    "type": "vat",
-    "rate": 0.20
-  },
-
-  "SI": {
-    "type": "vat",
-    "rate": 0.22
-  },
-
-  "ZA": {
-    "type": "vat",
-    "rate": 0.15
+    "currency": "ERN",
+    "rate": 0.05
   },
 
   "ES": {
     "type": "vat",
+    "currency": "EUR",
     "rate": 0.21,
 
     "states": {
-      "GC": {
-        "rate": -0.21,
-        "type": "vat"
-      },
-
-      "TF": {
-        "rate": -0.21,
-        "type": "vat"
-      },
-
       "CE": {
+        "rate": -0.21,
+        "type": "vat"
+      },
+
+      "GC": {
         "rate": -0.21,
         "type": "vat"
       },
@@ -658,345 +331,814 @@
       "ML": {
         "rate": -0.21,
         "type": "vat"
+      },
+
+      "TF": {
+        "rate": -0.21,
+        "type": "vat"
       }
     }
   },
 
-  "SR": {
+  "FI": {
     "type": "vat",
-    "rate": 0.15,
-
-    "before": {
-      "2022-12-31T22:00:00.000Z": {
-        "type": "vat",
-        "rate": 0.10
-      }
-    }
+    "currency": "EUR",
+    "rate": 0.24
   },
 
-  "SE": {
+  "FR": {
     "type": "vat",
+    "currency": "EUR",
+    "rate": 0.2
+  },
+
+  "GB": {
+    "type": "vat",
+    "currency": "GBP",
+    "rate": 0.2
+  },
+
+  "GE": {
+    "type": "vat",
+    "currency": "GEL",
+    "rate": 0.18
+  },
+
+  "GH": {
+    "type": "vat",
+    "currency": "GHS",
+    "rate": 0.15
+  },
+
+  "GR": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.24
+  },
+
+  "GT": {
+    "type": "vat",
+    "currency": "GTQ",
+    "rate": 0.12
+  },
+
+  "HN": {
+    "type": "vat",
+    "currency": "HNL",
+    "rate": 0.15
+  },
+
+  "HR": {
+    "type": "vat",
+    "currency": "EUR",
     "rate": 0.25
   },
 
-  "CH": {
+  "HU": {
     "type": "vat",
-    "rate": 0.081,
+    "currency": "HUF",
+    "rate": 0.27
+  },
+
+  "ID": {
+    "type": "vat",
+    "currency": "IDR",
+    "rate": 0.11
+  },
+
+  "IE": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.23,
+
+    "before": {
+      "2021-02-28T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "EUR",
+        "rate": 0.21
+      },
+
+      "2020-08-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "EUR",
+        "rate": 0.23
+      }
+    }
+  },
+
+  "IL": {
+    "type": "vat",
+    "currency": "ILS",
+    "rate": 0.17
+  },
+
+  "IM": {
+    "type": "vat",
+    "currency": "GBP",
+    "rate": 0.2
+  },
+
+  "IN": {
+    "type": "gst",
+    "currency": "INR",
+    "rate": 0.18
+  },
+
+  "IS": {
+    "type": "vat",
+    "currency": "ISK",
+    "rate": 0.24
+  },
+
+  "IT": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.22
+  },
+
+  "JE": {
+    "type": "vat",
+    "currency": "GBP",
+    "rate": 0.05
+  },
+
+  "JO": {
+    "type": "vat",
+    "currency": "JOD",
+    "rate": 0.16
+  },
+
+  "JP": {
+    "type": "vat",
+    "currency": "JPY",
+    "rate": 0.08
+  },
+
+  "KE": {
+    "type": "vat",
+    "currency": "KES",
+    "rate": 0.16
+  },
+
+  "KR": {
+    "type": "vat",
+    "currency": "KRW",
+    "rate": 0.1
+  },
+
+  "KW": {
+    "type": "vat",
+    "currency": "KWD",
+    "rate": 0.05
+  },
+
+  "KZ": {
+    "type": "vat",
+    "currency": "KZT",
+    "rate": 0.12
+  },
+
+  "LB": {
+    "type": "vat",
+    "currency": "LBP",
+    "rate": 0.11
+  },
+
+  "LC": {
+    "type": "vat",
+    "currency": "XCD",
+    "rate": 0.125
+  },
+
+  "LI": {
+    "type": "vat",
+    "currency": "CHF",
+    "rate": 0.077
+  },
+
+  "LK": {
+    "type": "vat",
+    "currency": "LKR",
+    "rate": 0.12
+  },
+
+  "LT": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.21
+  },
+
+  "LU": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.17,
 
     "before": {
       "2023-12-31T22:00:00.000Z": {
         "type": "vat",
-        "rate": 0.077
+        "currency": "EUR",
+        "rate": 0.16
+      },
+
+      "2022-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "EUR",
+        "rate": 0.17
       }
     }
   },
 
-  "TW": {
+  "LV": {
     "type": "vat",
-    "rate": 0.05
+    "currency": "EUR",
+    "rate": 0.21
   },
 
-  "TZ": {
+  "MA": {
     "type": "vat",
+    "currency": "MAD",
+    "rate": 0.2
+  },
+
+  "MC": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.2
+  },
+
+  "MD": {
+    "type": "vat",
+    "currency": "MDL",
+    "rate": 0.2
+  },
+
+  "MG": {
+    "type": "vat",
+    "currency": "MGA",
+    "rate": 0.2
+  },
+
+  "MK": {
+    "type": "vat",
+    "currency": "MKD",
     "rate": 0.18
   },
 
-  "TH": {
+  "MM": {
     "type": "vat",
-    "rate": 0.10,
+    "currency": "MMK",
+    "rate": 0.05
+  },
+
+  "MN": {
+    "type": "vat",
+    "currency": "MNT",
+    "rate": 0.1
+  },
+
+  "MT": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.18
+  },
+
+  "MU": {
+    "type": "vat",
+    "currency": "MUR",
+    "rate": 0.15
+  },
+
+  "MV": {
+    "type": "gst",
+    "currency": "MVR",
+    "rate": 0.08,
 
     "before": {
-      "2023-08-31T22:00:00.000Z": {
-        "type": "vat",
+      "2022-12-31T22:00:00.000Z": {
+        "type": "gst",
+        "currency": "MVR",
+        "rate": 0.06
+      }
+    }
+  },
+
+  "MX": {
+    "type": "vat",
+    "currency": "MXN",
+    "rate": 0.16
+  },
+
+  "MY": {
+    "type": "vat",
+    "currency": "MYR",
+    "rate": 0.1
+  },
+
+  "NA": {
+    "type": "vat",
+    "currency": "NAD",
+    "rate": 0.15
+  },
+
+  "NG": {
+    "type": "vat",
+    "currency": "NGN",
+    "rate": 0.075
+  },
+
+  "NI": {
+    "type": "vat",
+    "currency": "NIO",
+    "rate": 0.15
+  },
+
+  "NL": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.21
+  },
+
+  "NO": {
+    "type": "vat",
+    "currency": "NOK",
+    "rate": 0.25
+  },
+
+  "NZ": {
+    "type": "gst",
+    "currency": "NZD",
+    "rate": 0.15
+  },
+
+  "OM": {
+    "type": "vat",
+    "currency": "OMR",
+    "rate": 0.05
+  },
+
+  "PA": {
+    "type": "vat",
+    "currency": "USD",
+    "rate": 0.07
+  },
+
+  "PE": {
+    "type": "vat",
+    "currency": "PEN",
+    "rate": 0.18
+  },
+
+  "PG": {
+    "type": "vat",
+    "currency": "PGK",
+    "rate": 0.1
+  },
+
+  "PH": {
+    "type": "vat",
+    "currency": "PHP",
+    "rate": 0.12
+  },
+
+  "PK": {
+    "type": "vat",
+    "currency": "PKR",
+    "rate": 0.17
+  },
+
+  "PL": {
+    "type": "vat",
+    "currency": "PLN",
+    "rate": 0.23
+  },
+
+  "PR": {
+    "type": "vat",
+    "currency": "USD",
+    "rate": 0.115
+  },
+
+  "PT": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.23
+  },
+
+  "PY": {
+    "type": "vat",
+    "currency": "PYG",
+    "rate": 0.1
+  },
+
+  "QA": {
+    "type": "vat",
+    "currency": "QAR",
+    "rate": 0.05
+  },
+
+  "RO": {
+    "type": "vat",
+    "currency": "RON",
+    "rate": 0.19
+  },
+
+  "RS": {
+    "type": "vat",
+    "currency": "RSD",
+    "rate": 0.2
+  },
+
+  "RU": {
+    "type": "vat",
+    "currency": "RUB",
+    "rate": 0.2
+  },
+
+  "RW": {
+    "type": "vat",
+    "currency": "RWF",
+    "rate": 0.18
+  },
+
+  "SA": {
+    "type": "vat",
+    "currency": "SAR",
+    "rate": 0.15
+  },
+
+  "SC": {
+    "type": "vat",
+    "currency": "SCR",
+    "rate": 0.15
+  },
+
+  "SE": {
+    "type": "vat",
+    "currency": "SEK",
+    "rate": 0.25
+  },
+
+  "SG": {
+    "type": "gst",
+    "currency": "SGD",
+    "rate": 0.09,
+
+    "before": {
+      "2023-12-31T22:00:00.000Z": {
+        "type": "gst",
+        "currency": "SGD",
+        "rate": 0.08
+      },
+
+      "2022-12-31T22:00:00.000Z": {
+        "type": "gst",
+        "currency": "SGD",
         "rate": 0.07
       }
     }
   },
 
-  "TT": {
+  "SI": {
     "type": "vat",
-    "rate": 0.125
+    "currency": "EUR",
+    "rate": 0.22
+  },
+
+  "SK": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.2
+  },
+
+  "SR": {
+    "type": "vat",
+    "currency": "SRD",
+    "rate": 0.15,
+
+    "before": {
+      "2022-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "SRD",
+        "rate": 0.1
+      }
+    }
+  },
+
+  "SV": {
+    "type": "vat",
+    "currency": "USD",
+    "rate": 0.13
+  },
+
+  "TH": {
+    "type": "vat",
+    "currency": "THB",
+    "rate": 0.1,
+
+    "before": {
+      "2023-08-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "THB",
+        "rate": 0.07
+      }
+    }
   },
 
   "TN": {
     "type": "vat",
+    "currency": "TND",
     "rate": 0.19
   },
 
   "TR": {
     "type": "vat",
+    "currency": "TRY",
     "rate": 0.18
+  },
+
+  "TT": {
+    "type": "vat",
+    "currency": "TTD",
+    "rate": 0.125
+  },
+
+  "TW": {
+    "type": "vat",
+    "currency": "TWD",
+    "rate": 0.05
+  },
+
+  "TZ": {
+    "type": "vat",
+    "currency": "TZS",
+    "rate": 0.18
+  },
+
+  "UA": {
+    "type": "vat",
+    "currency": "UAH",
+    "rate": 0.20
   },
 
   "UG": {
     "type": "vat",
+    "currency": "UGX",
     "rate": 0.18
-  },
-
-  "AE": {
-    "type": "vat",
-    "rate": 0.05
-  },
-
-  "AO": {
-    "type": "vat",
-    "rate": 0.14
-  },
-
-  "GB": {
-    "type": "vat",
-    "rate": 0.20
   },
 
   "US": {
     "type": "none",
-    "rate": 0.00,
+    "currency": "USD",
+    "rate": 0,
 
     "states": {
-      "HI": {
-        "rate": 0.04,
-        "type": "vat"
-      },
+        "AL": {
+          "rate": 0.04,
+          "type": "vat"
+        },
 
-      "MA": {
-        "rate": 0.0625,
-        "type": "vat"
-      },
+        "AR": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "RI": {
-        "rate": 0.07,
-        "type": "vat"
-      },
+        "AZ": {
+          "rate": 0.066,
+          "type": "vat"
+        },
 
-      "CT": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "CA": {
+          "rate": 0.0825,
+          "type": "vat"
+        },
 
-      "NJ": {
-        "rate": 0.07,
-        "type": "vat"
-      },
+        "CO": {
+          "rate": 0.029,
+          "type": "vat"
+        },
 
-      "MD": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "CT": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "DC": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "DC": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "WA": {
-        "rate": 0.065,
-        "type": "vat"
-      },
+        "FL": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "CA": {
-        "rate": 0.0825,
-        "type": "vat"
-      },
+        "GA": {
+          "rate": 0.04,
+          "type": "vat"
+        },
 
-      "NV": {
-        "rate": 0.0685,
-        "type": "vat"
-      },
+        "HI": {
+          "rate": 0.04,
+          "type": "vat"
+        },
 
-      "ID": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "IA": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "WY": {
-        "rate": 0.04,
-        "type": "vat"
-      },
+        "ID": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "UT": {
-        "rate": 0.0595,
-        "type": "vat"
-      },
+        "IL": {
+          "rate": 0.0625,
+          "type": "vat"
+        },
 
-      "AZ": {
-        "rate": 0.066,
-        "type": "vat"
-      },
+        "IN": {
+          "rate": 0.07,
+          "type": "vat"
+        },
 
-      "CO": {
-        "rate": 0.029,
-        "type": "vat"
-      },
+        "KS": {
+          "rate": 0.063,
+          "type": "vat"
+        },
 
-      "NM": {
-        "rate": 0.05,
-        "type": "vat"
-      },
+        "KY": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "ND": {
-        "rate": 0.05,
-        "type": "vat"
-      },
+        "LA": {
+          "rate": 0.04,
+          "type": "vat"
+        },
 
-      "SD": {
-        "rate": 0.04,
-        "type": "vat"
-      },
+        "MA": {
+          "rate": 0.0625,
+          "type": "vat"
+        },
 
-      "NE": {
-        "rate": 0.055,
-        "type": "vat"
-      },
+        "MD": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "KS": {
-        "rate": 0.063,
-        "type": "vat"
-      },
+        "ME": {
+          "rate": 0.05,
+          "type": "vat"
+        },
 
-      "OK": {
-        "rate": 0.045,
-        "type": "vat"
-      },
+        "MI": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "TX": {
-        "rate": 0.0625,
-        "type": "vat"
-      },
+        "MN": {
+          "rate": 0.06875,
+          "type": "vat"
+        },
 
-      "MN": {
-        "rate": 0.06875,
-        "type": "vat"
-      },
+        "MO": {
+          "rate": 0.04225,
+          "type": "vat"
+        },
 
-      "IA": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "MS": {
+          "rate": 0.07,
+          "type": "vat"
+        },
 
-      "MO": {
-        "rate": 0.04225,
-        "type": "vat"
-      },
+        "NC": {
+          "rate": 0.0575,
+          "type": "vat"
+        },
 
-      "AR": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "ND": {
+          "rate": 0.05,
+          "type": "vat"
+        },
 
-      "LA": {
-        "rate": 0.04,
-        "type": "vat"
-      },
+        "NE": {
+          "rate": 0.055,
+          "type": "vat"
+        },
 
-      "WI": {
-        "rate": 0.05,
-        "type": "vat"
-      },
+        "NJ": {
+          "rate": 0.07,
+          "type": "vat"
+        },
 
-      "IL": {
-        "rate": 0.0625,
-        "type": "vat"
-      },
+        "NM": {
+          "rate": 0.05,
+          "type": "vat"
+        },
 
-      "MI": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "NV": {
+          "rate": 0.0685,
+          "type": "vat"
+        },
 
-      "IN": {
-        "rate": 0.07,
-        "type": "vat"
-      },
+        "NY": {
+          "rate": 0.04,
+          "type": "vat"
+        },
 
-      "OH": {
-        "rate": 0.055,
-        "type": "vat"
-      },
+        "OH": {
+          "rate": 0.055,
+          "type": "vat"
+        },
 
-      "KY": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "OK": {
+          "rate": 0.045,
+          "type": "vat"
+        },
 
-      "TN": {
-        "rate": 0.07,
-        "type": "vat"
-      },
+        "PA": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "MS": {
-        "rate": 0.07,
-        "type": "vat"
-      },
+        "RI": {
+          "rate": 0.07,
+          "type": "vat"
+        },
 
-      "AL": {
-        "rate": 0.04,
-        "type": "vat"
-      },
+        "SC": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "GA": {
-        "rate": 0.04,
-        "type": "vat"
-      },
+        "SD": {
+          "rate": 0.04,
+          "type": "vat"
+        },
 
-      "FL": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "TN": {
+          "rate": 0.07,
+          "type": "vat"
+        },
 
-      "ME": {
-        "rate": 0.05,
-        "type": "vat"
-      },
+        "TX": {
+          "rate": 0.0625,
+          "type": "vat"
+        },
 
-      "VT": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "UT": {
+          "rate": 0.0595,
+          "type": "vat"
+        },
 
-      "NY": {
-        "rate": 0.04,
-        "type": "vat"
-      },
+        "VA": {
+          "rate": 0.05,
+          "type": "vat"
+        },
 
-      "PA": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "VT": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "WV": {
-        "rate": 0.06,
-        "type": "vat"
-      },
+        "WA": {
+          "rate": 0.065,
+          "type": "vat"
+        },
 
-      "VA": {
-        "rate": 0.05,
-        "type": "vat"
-      },
+        "WI": {
+          "rate": 0.05,
+          "type": "vat"
+        },
 
-      "NC": {
-        "rate": 0.0575,
-        "type": "vat"
-      },
+        "WV": {
+          "rate": 0.06,
+          "type": "vat"
+        },
 
-      "SC": {
-        "rate": 0.06,
-        "type": "vat"
+        "WY": {
+          "rate": 0.04,
+          "type": "vat"
+        }
       }
-    }
   },
 
   "UY": {
     "type": "vat",
+    "currency": "UYU",
     "rate": 0.22
   },
 
   "UZ": {
     "type": "vat",
+    "currency": "UZS",
     "rate": 0.12,
 
     "before": {
       "2022-12-31T22:00:00.000Z": {
         "type": "vat",
+        "currency": "UZS",
         "rate": 0.15
       }
     }
@@ -1004,21 +1146,37 @@
 
   "VE": {
     "type": "vat",
+    "currency": "VES",
     "rate": 0.16
   },
 
   "VN": {
     "type": "vat",
-    "rate": 0.10
+    "currency": "VND",
+    "rate": 0.1
+  },
+
+  "XK": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.18
+  },
+
+  "ZA": {
+    "type": "vat",
+    "currency": "ZAR",
+    "rate": 0.15
   },
 
   "ZM": {
     "type": "vat",
+    "currency": "ZMW",
     "rate": 0.16
   },
 
   "ZW": {
     "type": "vat",
+    "currency": "USD",
     "rate": 0.15
   }
 }

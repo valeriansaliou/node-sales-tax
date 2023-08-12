@@ -10,6 +10,8 @@ International tax is hard (especially VAT). This library ensures rules are enfor
 
 _You can find the raw sales tax rates JSON file here: [sales_tax_rates.json](https://github.com/valeriansaliou/node-sales-tax/blob/master/res/sales_tax_rates.json)_
 
+_[Up to date currencies](https://www.unicode.org/cldr/charts/42/supplemental/detailed_territory_currency_information.html), [sales taxes](http://tradingeconomics.com/country-list/sales-tax-rate)_
+
 **🇺🇸 Crafted in Portland, Maine, USA.**
 
 ## Who uses it?

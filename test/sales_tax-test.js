@@ -169,6 +169,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "MAD", "Currency should be MAD"
+          );
+          
+          assert.equal(
             tax.rate, 0.20, "Tax rate should be 20%"
           );
 
@@ -207,6 +211,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -251,6 +259,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.20, "Tax rate should be 20%"
           );
 
@@ -289,6 +301,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -335,6 +351,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.20, "Tax rate should be 20% (national market)"
           );
 
@@ -376,6 +396,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.00, "Tax rate should be 0% (tax-exempt)"
           );
 
@@ -411,6 +435,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.00, "Tax rate should be 0% (reverse charge on regional market)"
           );
 
@@ -443,6 +471,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -489,6 +521,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+          
+          assert.equal(
             tax.rate, 0.00, "Tax rate should be 0%"
           );
 
@@ -521,6 +557,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -565,6 +605,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "USD", "Currency should be USD"
+          );
+
+          assert.equal(
             tax.rate, 0.00, "Tax rate should be 0%"
           );
 
@@ -595,6 +639,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "USD", "Currency should be USD"
           );
 
           assert.equal(
@@ -639,6 +687,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "USD", "Currency should be USD"
+          );
+
+          assert.equal(
             tax.rate, 0.00, "Tax rate should be 0%"
           );
 
@@ -669,6 +721,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "gst", "Tax type should be GST"
+          );
+
+          assert.equal(
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -710,6 +766,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "gst+qst", "Tax type should be GST+QST"
+          );
+
+          assert.equal(
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -762,6 +822,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "CAD", "Currency should be CAD"
+          );
+
+          assert.equal(
             tax.rate, 0.13, "Tax rate should be 13%"
           );
 
@@ -811,6 +875,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "CAD", "Currency should be CAD"
+          );
+
+          assert.equal(
             tax.rate, 0.05, "Tax rate should be 5%"
           );
 
@@ -854,6 +922,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "", "Currency should be empty"
+          );
+
+          assert.equal(
             tax.rate, 0.00, "Tax rate should be 0%"
           );
 
@@ -892,6 +964,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -955,6 +1031,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.19, "Tax rate should be 19%"
           );
 
@@ -1012,6 +1092,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1075,6 +1159,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.19, "Tax rate should be 19%"
           );
 
@@ -1132,6 +1220,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1195,6 +1287,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.21, "Tax rate should be 21%"
           );
 
@@ -1255,6 +1351,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.23, "Tax rate should be 23%"
           );
 
@@ -1307,6 +1407,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
+          );
+
+          assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
           );
 
           assert.equal(
@@ -1363,6 +1467,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "CAD", "Currency should be CAD"
+          );
+
+          assert.equal(
             tax.rate, 0.05, "Tax rate should be 5%"
           );
 
@@ -1413,6 +1521,10 @@ describe("node-sales-tax", function() {
         .then(function(tax) {
           assert.equal(
             tax.type, "gst+hst", "Tax type should be GST+HST"
+          );
+
+          assert.equal(
+            tax.currency, "CAD", "Currency should be CAD"
           );
 
           assert.equal(
@@ -1481,6 +1593,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.20, "Tax rate should be 20%"
           );
 
@@ -1534,6 +1650,10 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
+            tax.currency, "EUR", "Currency should be EUR"
+          );
+
+          assert.equal(
             tax.rate, 0.00, "Tax rate should be 0%"
           );
 
@@ -1575,6 +1695,10 @@ describe("node-sales-tax", function() {
             );
 
             assert.equal(
+              tax.currency, "EUR", "Currency should be EUR"
+            );
+
+            assert.equal(
               tax.rate, 0.00, "Tax rate should be 0%"
             );
 
@@ -1613,6 +1737,10 @@ describe("node-sales-tax", function() {
           .then(function(tax) {
             assert.equal(
               tax.type, "vat", "Tax type should be VAT"
+            );
+
+            assert.equal(
+              tax.currency, "EUR", "Currency should be EUR"
             );
 
             assert.equal(
