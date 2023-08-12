@@ -1,5 +1,9 @@
 Changelog
 =========
+## 2.7.2 (2023-02-17)
+
+* remove 'request' module since they are deprecated.
+* include 'node-fetch' instead of 'request' and change the syntax for it.
 
 ## 2.11.0 (2023-06-27)
 
