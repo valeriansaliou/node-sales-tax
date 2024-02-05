@@ -568,7 +568,7 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.rate, 0.20, "Tax rate should be 20% (national market, no regional tax)"
+            tax.rate, 0.22, "Tax rate should be 22% (national market, no regional tax)"
           );
 
           assert.equal(
@@ -600,7 +600,7 @@ describe("node-sales-tax", function() {
           );
 
           assert.equal(
-            tax.details[0].rate, 0.20, "Tax details #1 rate should be 20%"
+            tax.details[0].rate, 0.22, "Tax details #1 rate should be 22%"
           );
         });
     });
