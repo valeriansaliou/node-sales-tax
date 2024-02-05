@@ -297,7 +297,8 @@
   "EE": {
     "type": "vat",
     "currency": "EUR",
-    "rate": 0.22
+    "rate": 0.22,
+
     "before": {
       "2023-12-31T22:00:00.000Z": {
         "type": "vat",
