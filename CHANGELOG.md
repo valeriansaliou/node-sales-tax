@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.13.0 (2024-02-05)
+
+### Tax Rate Updates
+
+* **Estonia**: 20% to 22% (1st January 2024) [[@DanielRaouf](https://github.com/DanielRaouf), [#63](https://github.com/valeriansaliou/node-sales-tax/pull/63)].
+
 ## 2.12.0 (2023-08-12)
 
 ### New Features
