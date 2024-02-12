@@ -1825,6 +1825,15 @@ describe("node-sales-tax", function() {
         });
     });
 
+    it("🇬🇷 should check Greece tax number as valid", function() {
+      return SalesTax.validateTaxNumber("GR", "EL094019245")
+        .then(function(isValid) {
+          assert.ok(
+            isValid, "Tax number should be valid"
+          );
+        });
+    });
+
     it("🇬🇧 should check United Kingdom tax number as valid", function() {
       return SalesTax.validateTaxNumber("GB", "GB867935561")
         .then(function(isValid) {
