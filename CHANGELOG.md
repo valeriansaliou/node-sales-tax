@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.13.1 (2024-02-12)
+
+### Bug Fixes
+
+* Fix broken EU VAT numbers fraud-checks for certain countries, where the official country code does not match the Eurostat country code (eg. Greece) [[@intarsz](https://github.com/intarsz), [#64](https://github.com/valeriansaliou/node-sales-tax/pull/64)].
+
 ## 2.13.0 (2024-02-05)
 
 ### Tax Rate Updates
