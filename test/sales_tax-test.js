@@ -175,7 +175,7 @@ describe("node-sales-tax", function() {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
           );
-          
+
           assert.equal(
             tax.rate, 0.20, "Tax rate should be 20%"
           );
@@ -527,7 +527,7 @@ describe("node-sales-tax", function() {
           assert.equal(
             tax.type, "vat", "Tax type should be VAT"
           );
-          
+
           assert.equal(
             tax.rate, 0.00, "Tax rate should be 0%"
           );
@@ -1841,6 +1841,15 @@ describe("node-sales-tax", function() {
             isValid, "Tax number should be valid"
           );
         });
+    });
+
+    it("🇬🇧 should check United Kingdom - Northern Ireland tax number as valid", function() {
+      return SalesTax.validateTaxNumber("GB", "XI252257178")
+          .then(function(isValid) {
+              assert.ok(
+                  isValid, "Tax number should be valid"
+              );
+          });
     });
 
     it("🇬🇧 should check United Kingdom tax number as invalid", function() {
