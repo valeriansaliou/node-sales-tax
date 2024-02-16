@@ -479,7 +479,7 @@
   "JP": {
     "type": "vat",
     "currency": "JPY",
-    "rate": 0.08
+    "rate": 0.1
   },
 
   "KE": {
@@ -861,7 +861,7 @@
   "TR": {
     "type": "vat",
     "currency": "TRY",
-    "rate": 0.18
+    "rate": 0.2
   },
 
   "TT": {
