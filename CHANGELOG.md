@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## 2.14.0 (2024-02-16)
+
+### Tax Rate Updates
+
+* **Japan**: 8% to 10% [[@intarsz](https://github.com/intarsz), [#65](https://github.com/valeriansaliou/node-sales-tax/pull/65)].
+* **Turkey**: 18% to 20% [[@intarsz](https://github.com/intarsz), [#65](https://github.com/valeriansaliou/node-sales-tax/pull/65)].
+
 ## 2.13.1 (2024-02-12)
 
 ### Bug Fixes
