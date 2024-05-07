@@ -8,7 +8,6 @@
     "escape",
     "Buffer",
     "console",
-    "module",
-    "fetch"
+    "module"
   ]
 }
