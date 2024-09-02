@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.15.0 (2024-09-02)
+
+### Tax Rate Updates
+
+* **Finland**: 24% to 25.5% (1st September 2024) [[@brennofaneco](https://github.com/brennofaneco), [#69](https://github.com/valeriansaliou/node-sales-tax/pull/69)].
+
 ## 2.14.0 (2024-02-16)
 
 ### Tax Rate Updates
