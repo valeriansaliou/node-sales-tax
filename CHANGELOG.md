@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.16.0 (2024-09-18)
+
+### Bug Fixes
+
+* Switched from `node-fetch` to `cross-fetch` to address an incompatible dependency issue starting in NodeJS 22 [[@mlecoq](https://github.com/mlecoq), [#67](https://github.com/valeriansaliou/node-sales-tax/pull/67)].
+
 ## 2.15.0 (2024-09-02)
 
 ### Tax Rate Updates
