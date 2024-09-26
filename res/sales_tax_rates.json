@@ -333,7 +333,7 @@
 
       "GC": {
         "rate": -0.07,
-        "type": "vat"
+        "type": "igic"
       },
 
       "ML": {
@@ -343,7 +343,7 @@
 
       "TF": {
         "rate": -0.07,
-        "type": "vat"
+        "type": "igic"
       }
     }
   },
