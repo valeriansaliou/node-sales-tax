@@ -1719,7 +1719,7 @@ describe("node-sales-tax", function() {
             );
 
             assert.equal(
-              tax.charge.direct, false, "Should perform a direct charge"
+              tax.charge.direct, true, "Should perform a direct charge"
             );
 
             assert.equal(
@@ -1735,7 +1735,7 @@ describe("node-sales-tax", function() {
             );
 
             assert.equal(
-              tax.details.length, 0, "Tax details should be empty"
+              tax.details.length, 1, "Tax details should contain 1 tax rate"
             );
           });
         });
