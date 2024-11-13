@@ -5,6 +5,12 @@
     "rate": 0.05
   },
 
+  "AD": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.045
+  },
+
   "AI": {
     "type": "gst",
     "currency": "XCD",
