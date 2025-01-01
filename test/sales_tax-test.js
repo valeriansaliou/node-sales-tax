@@ -1851,6 +1851,34 @@ describe("node-sales-tax", function() {
           );
         });
     });
+
+    it("🇬🇭 should validate correct Ghana TIN", function() {
+      return SalesTax.validateTaxNumber("GH", "C0123456789")
+        .then(function(isValid) {
+          assert.ok(isValid, "Valid Ghana TIN should be accepted");
+        });
+    });
+  
+    it("🇬🇭 should validate correct Ghana Card", function() {
+      return SalesTax.validateTaxNumber("GH", "GHA-002343458-4")
+        .then(function(isValid) {
+          assert.ok(isValid, "Valid Ghana Card should be accepted");
+        });
+    });
+  
+    it("🇬🇭 should reject invalid Ghana TIN", function() {
+      return SalesTax.validateTaxNumber("GH", "X0123456789")
+        .then(function(isValid) {
+          assert.ok(!isValid, "Invalid Ghana TIN should be rejected");
+        });
+    });
+  
+    it("🇬🇭 should reject invalid Ghana Card", function() {
+      return SalesTax.validateTaxNumber("GH", "GHA-12345-1")
+        .then(function(isValid) {
+          assert.ok(!isValid, "Invalid Ghana Card should be rejected");
+        });
+    });
   });
 
   describe("getTaxExchangeStatus", function() {

@@ -647,6 +647,23 @@ United States EIN (U.S. Employer Identification Number) are validated against EI
 
 Canada BN (Business Number) are validated against BN format rules.
 
+### :ghana: Ghana
+
+Ghana tax identification numbers are validated against two formats:
+
+1. TIN (Tax Identification Number)
+   - Must start with either 'C' or 'P'
+   - Followed by exactly 10 digits
+   - Example: C0123456789
+
+2. Ghana Card
+   - Format: GHA-XXXXXXXXX-Y
+   - Where X represents 9 digits
+   - Y is a check digit
+   - Example: GHA-123456789-1
+
+Both formats are validated for proper structure and the Ghana Card includes check digit validation.
+
 ### :black_flag: Rest of the world
 
 If a country or economic community is not listed here, provided tax identification numbers are ignored for those countries (considered as invalid — so do not rely on validation methods as a source of truth).
