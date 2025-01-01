@@ -829,7 +829,15 @@
   "SK": {
     "type": "vat",
     "currency": "EUR",
-    "rate": 0.2
+    "rate": 0.23,
+
+    "before": {
+      "2024-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "EUR",
+        "rate": 0.2
+      }
+    }
   },
 
   "SR": {
