@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## 2.17.0 (2025-01-01)
+
+### Tax Rate Updates
+
+* **Slovakia**: 20% to 23% (1st January 2025) [[@valeriansaliou](https://github.com/valeriansaliou), [f141689](https://github.com/valeriansaliou/node-sales-tax/commit/f141689fea598f199b0c7a6318cc6aa970d8ff75)].
+* Add tax entries for: Andorra [[@Kikobeats](https://github.com/Kikobeats), [#74](https://github.com/valeriansaliou/node-sales-tax/pull/74)].
+
 ## 2.16.0 (2024-09-18)
 
 ### Bug Fixes
