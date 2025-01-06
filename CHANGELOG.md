@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.18.0 (2025-01-06)
+
+### Tax Rate Updates
+
+* **Israel**: 17% to 18% (1st January 2025) [[@valeriansaliou](https://github.com/valeriansaliou), [46d696d](https://github.com/valeriansaliou/node-sales-tax/commit/46d696d1ed2da701cac049c23c9bf2e51db1b1f7)].
+
 ## 2.17.0 (2025-01-01)
 
 ### Tax Rate Updates
