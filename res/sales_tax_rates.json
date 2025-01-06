@@ -451,7 +451,15 @@
   "IL": {
     "type": "vat",
     "currency": "ILS",
-    "rate": 0.17
+    "rate": 0.18,
+
+    "before": {
+      "2024-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "ILS",
+        "rate": 0.17
+      }
+    }
   },
 
   "IM": {
