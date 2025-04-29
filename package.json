@@ -33,7 +33,7 @@
   "dependencies": {
     "cross-fetch": "4.0.0",
     "validate-vat": "0.9.0",
-    "jsvat": "2.5.3",
+    "jsvat-next": "3.0.2",
     "ein-validator": "1.0.1"
   },
   "devDependencies": {
