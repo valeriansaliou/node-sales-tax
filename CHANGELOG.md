@@ -1,6 +1,17 @@
 Changelog
 =========
 
+## 2.19.0 (2025-07-01)
+
+### Breaking Changes
+
+* **Great Britain**: GB VAT numbers are not fraud-checked anymore against HMRC APIs, since the API now requires authentication [[@valeriansaliou](https://github.com/valeriansaliou), [c2b6448](https://github.com/valeriansaliou/node-sales-tax/commit/c2b64483e4fae9c8fddda3366fee5110c46a72ff)].
+
+### Tax Rate Updates
+
+* **Kansas, United States**: 6.3% to 6.5% [[@valeriansaliou](https://github.com/valeriansaliou), [20922b4](https://github.com/valeriansaliou/node-sales-tax/commit/20922b4ee16b26b8b12f1e5642c27154fd47d478)].
+* **Estonia**: 22% to 24% (1st July 2025) [[@viljark](https://github.com/viljark), [#84](https://github.com/valeriansaliou/node-sales-tax/pull/84)].
+
 ## 2.18.0 (2025-01-06)
 
 ### Tax Rate Updates
