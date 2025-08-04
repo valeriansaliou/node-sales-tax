@@ -775,7 +775,15 @@
   "RO": {
     "type": "vat",
     "currency": "RON",
-    "rate": 0.19
+    "rate": 0.21,
+
+    "before": {
+      "2025-08-01T21:00:00.000Z": {
+        "type": "vat",
+        "currency": "RON",
+        "rate": 0.19
+      }
+    }
   },
 
   "RS": {
