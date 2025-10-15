@@ -174,8 +174,16 @@
       },
 
       "NS": {
-        "rate": 0.1,
-        "type": "hst"
+        "rate": 0.09,
+        "type": "hst",
+        
+        "before": {
+          "2025-04-01T00:00:00.000Z": {
+            "type": "hst",
+            "currency": "CAD",
+            "rate": 0.1
+          }
+        }
       },
 
       "ON": {
