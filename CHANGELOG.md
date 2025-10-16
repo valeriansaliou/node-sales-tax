@@ -1,6 +1,17 @@
 Changelog
 =========
 
+## 2.20.0 (2025-10-16)
+
+### Tax Rate Updates
+
+* **Romania**: 19% to 21% (1st August 2025) [[@diacu](https://github.com/diacu), [#86](https://github.com/valeriansaliou/node-sales-tax/pull/86)].
+* **Nova Scotia, Canada**: 10% to 9% (1st April 2025) [[@WolfeCub](https://github.com/WolfeCub), [#87](https://github.com/valeriansaliou/node-sales-tax/pull/87)].
+
+### Non-Breaking Changes
+
+* Migrate to NPMJS OIDC publishing tokens (since Classic Tokens will be removed in November 2025) [[@valeriansaliou](https://github.com/valeriansaliou), [64a6886](https://github.com/valeriansaliou/node-sales-tax/commit/64a68869675fb7b33679b26bce1696ec9276f777)].
+
 ## 2.19.0 (2025-07-01)
 
 ### Breaking Changes
