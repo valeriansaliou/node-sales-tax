@@ -25,7 +25,7 @@
   "main": "lib/sales_tax.js",
   "types": "types/sales_tax.d.ts",
   "engines": {
-    "node": ">= 6.4.0"
+    "node": ">= 10.0.0"
   },
   "scripts": {
     "test": "check-build && tsc && istanbul cover _mocha"
