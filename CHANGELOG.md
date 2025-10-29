@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## 2.21.0 (2025-10-29)
+
+### Bug Fixes
+
+* Pull `MC` (Monaco) and `IM` (Isle of Man) from the `EU` region, as they should never have been included in the first place [[@valeriansaliou](https://github.com/valeriansaliou), [2be5f39](https://github.com/valeriansaliou/node-sales-tax/commit/2be5f396480bf22894230dae868ce54b6ff1c74c)].
+* Fix broken tests, due to France national VAT database being consistently down over the last few months, breaking EU VIES [[@valeriansaliou](https://github.com/valeriansaliou), [1cb7f89](https://github.com/valeriansaliou/node-sales-tax/commit/1cb7f8987f7c2f0d32d3ed1cbe3bfa9f2ee2ea14)].
+
 ## 2.20.0 (2025-10-16)
 
 ### Tax Rate Updates
