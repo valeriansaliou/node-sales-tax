@@ -355,7 +355,7 @@ describe("node-sales-tax", function() {
       // Disable online validations, since France national VAT number database \
       //   is known to be offline VERY often (breaking our tests). This, even \
       //   through EU VIES API.
-      SalesTax.toggleEnabledTaxNumberValidation(false);
+      SalesTax.toggleEnabledTaxNumberFraudCheck(false);
 
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
@@ -405,7 +405,7 @@ describe("node-sales-tax", function() {
       // Disable online validations, since France national VAT number database \
       //   is known to be offline VERY often (breaking our tests). This, even \
       //   through EU VIES API.
-      SalesTax.toggleEnabledTaxNumberValidation(false);
+      SalesTax.toggleEnabledTaxNumberFraudCheck(false);
 
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
@@ -449,7 +449,7 @@ describe("node-sales-tax", function() {
       // Disable online validations, since France national VAT number database \
       //   is known to be offline VERY often (breaking our tests). This, even \
       //   through EU VIES API.
-      SalesTax.toggleEnabledTaxNumberValidation(false);
+      SalesTax.toggleEnabledTaxNumberFraudCheck(false);
 
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
@@ -540,7 +540,7 @@ describe("node-sales-tax", function() {
       // Disable online validations, since France national VAT number database \
       //   is known to be offline VERY often (breaking our tests). This, even \
       //   through EU VIES API.
-      SalesTax.toggleEnabledTaxNumberValidation(false);
+      SalesTax.toggleEnabledTaxNumberFraudCheck(false);
 
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
@@ -1674,7 +1674,7 @@ describe("node-sales-tax", function() {
       // Disable online validations, since France national VAT number database \
       //   is known to be offline VERY often (breaking our tests). This, even \
       //   through EU VIES API.
-      SalesTax.toggleEnabledTaxNumberValidation(false);
+      SalesTax.toggleEnabledTaxNumberFraudCheck(false);
 
       return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "FR50833085806")
         .then(function(tax) {
@@ -1934,7 +1934,7 @@ describe("node-sales-tax", function() {
       // Disable online validations, since France national VAT number database \
       //   is known to be offline VERY often (breaking our tests). This, even \
       //   through EU VIES API.
-      SalesTax.toggleEnabledTaxNumberValidation(false);
+      SalesTax.toggleEnabledTaxNumberFraudCheck(false);
 
       return SalesTax.getTaxExchangeStatus("FR", null, "FR50833085806")
         .then(function(exchangeStatus) {
