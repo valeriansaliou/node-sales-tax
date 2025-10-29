@@ -352,6 +352,11 @@ describe("node-sales-tax", function() {
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number [French tax origin]", function() {
       SalesTax.setTaxOriginCountry("FR");
 
+      // Disable online validations, since France national VAT number database \
+      //   is known to be offline VERY often (breaking our tests). This, even \
+      //   through EU VIES API.
+      SalesTax.toggleEnabledTaxNumberValidation(false);
+
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
@@ -397,6 +402,11 @@ describe("node-sales-tax", function() {
     });
 
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number [no tax origin]", function() {
+      // Disable online validations, since France national VAT number database \
+      //   is known to be offline VERY often (breaking our tests). This, even \
+      //   through EU VIES API.
+      SalesTax.toggleEnabledTaxNumberValidation(false);
+
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
           assert.equal(
@@ -435,6 +445,11 @@ describe("node-sales-tax", function() {
 
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number [Spanish tax origin]", function() {
       SalesTax.setTaxOriginCountry("ES");
+
+      // Disable online validations, since France national VAT number database \
+      //   is known to be offline VERY often (breaking our tests). This, even \
+      //   through EU VIES API.
+      SalesTax.toggleEnabledTaxNumberValidation(false);
 
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
@@ -521,6 +536,11 @@ describe("node-sales-tax", function() {
 
     it("🇫🇷 should succeed acquiring France sales tax with a tax-exempt tax number and no regional tax [Hungary tax origin]", function() {
       SalesTax.setTaxOriginCountry("HR", false);
+
+      // Disable online validations, since France national VAT number database \
+      //   is known to be offline VERY often (breaking our tests). This, even \
+      //   through EU VIES API.
+      SalesTax.toggleEnabledTaxNumberValidation(false);
 
       return SalesTax.getSalesTax("FR", null, "FR50833085806")
         .then(function(tax) {
@@ -1651,6 +1671,11 @@ describe("node-sales-tax", function() {
     });
 
     it("🇫🇷 should succeed processing France amount including sales tax (tax-exempt tax number) [no tax origin]", function() {
+      // Disable online validations, since France national VAT number database \
+      //   is known to be offline VERY often (breaking our tests). This, even \
+      //   through EU VIES API.
+      SalesTax.toggleEnabledTaxNumberValidation(false);
+
       return SalesTax.getAmountWithSalesTax("FR", null, 1000.00, "FR50833085806")
         .then(function(tax) {
           assert.equal(
@@ -1787,8 +1812,8 @@ describe("node-sales-tax", function() {
   });
 
   describe("validateTaxNumber", function() {
-    it("🇫🇷 should check France tax number as valid", function() {
-      return SalesTax.validateTaxNumber("FR", "FR50833085806")
+    it("🇳🇱 should check Netherlands tax number as valid", function() {
+      return SalesTax.validateTaxNumber("NL", "NL853746333B01")
         .then(function(isValid) {
           assert.ok(
             isValid, "Tax number should be valid"
@@ -1796,8 +1821,8 @@ describe("node-sales-tax", function() {
         });
     });
 
-    it("🇫🇷 should check France tax number with spaces as valid", function() {
-      return SalesTax.validateTaxNumber("FR", "FR 875241726 99")
+    it("🇫🇷 should check Netherlands tax number with spaces as valid", function() {
+      return SalesTax.validateTaxNumber("NL", "NL 8537 46333 B01")
         .then(function(isValid) {
           assert.ok(
             isValid, "Tax number should be valid"
@@ -1906,6 +1931,11 @@ describe("node-sales-tax", function() {
     });
 
     it("🇫🇷 should check valid France tax number as tax-exempt", function() {
+      // Disable online validations, since France national VAT number database \
+      //   is known to be offline VERY often (breaking our tests). This, even \
+      //   through EU VIES API.
+      SalesTax.toggleEnabledTaxNumberValidation(false);
+
       return SalesTax.getTaxExchangeStatus("FR", null, "FR50833085806")
         .then(function(exchangeStatus) {
           assert.ok(
@@ -1922,8 +1952,8 @@ describe("node-sales-tax", function() {
         });
     });
 
-    it("🇫🇷 should check invalid France tax number as non tax-exempt", function() {
-      return SalesTax.getTaxExchangeStatus("FR", null, "NON_EXEMPT_TAX_NUMBER")
+    it("🇪🇪 should check invalid Estonia tax number as non tax-exempt", function() {
+      return SalesTax.getTaxExchangeStatus("EE", null, "NON_EXEMPT_TAX_NUMBER")
         .then(function(exchangeStatus) {
           assert.ok(
             exchangeStatus.exchange, "consumer", "Tax exchange should be CONSUMER"
