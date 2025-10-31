@@ -76,7 +76,8 @@ SalesTax.setTaxOriginCountry("FR")
 :fr: **Charge customers from France** if not liable to VAT MOSS (thus `worldwide`, `regional` and `national` VAT gets calculated from a French point of view):
 
 ```javascript
-// Set the 'useRegionalTax' argument to false if not liable to VAT MOSS (eg. not enough turnover in another regional country)
+// Set the 'useRegionalTax' argument to false if not liable to VAT MOSS (eg. not enough turnover in another EU country)
+// For the EU, you are liable to VAT MOSS on B2C invoices if the yearly turnover in all other EU countries > 10k EUR
 SalesTax.setTaxOriginCountry("FR", false)
 ```
 
