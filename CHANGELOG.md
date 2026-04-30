@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.22.0 (2026-04-30)
+
+### Bug Fixes
+
+* Disable `validate-vat` dependency on the browser, since it causes build issues with certain bundlers [[@valeriansaliou](https://github.com/valeriansaliou), [51c9804](https://github.com/valeriansaliou/node-sales-tax/commit/51c980426268a00c6ef0212bd49d7537d41dcd3d)].
+
 ## 2.21.0 (2025-10-29)
 
 ### Bug Fixes
