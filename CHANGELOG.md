@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 2.23.0 (2026-05-19)
+
+### Non-Breaking Changes
+
+* Migrate `jsvat` to `jsvat-next` [[@baptistejamin](https://github.com/baptistejamin), [#90](https://github.com/valeriansaliou/node-sales-tax/pull/90)].
+
 ## 2.22.0 (2026-04-30)
 
 ### Bug Fixes
