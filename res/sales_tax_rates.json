@@ -93,8 +93,16 @@
 
   "BG": {
     "type": "vat",
-    "currency": "BGN",
-    "rate": 0.2
+    "currency": "EUR",
+    "rate": 0.2,
+
+    "before": {
+      "2025-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "BGN",
+        "rate": 0.2
+      }
+    }
   },
 
   "BH": {
@@ -176,7 +184,7 @@
       "NS": {
         "rate": 0.09,
         "type": "hst",
-        
+
         "before": {
           "2025-04-01T00:00:00.000Z": {
             "type": "hst",
