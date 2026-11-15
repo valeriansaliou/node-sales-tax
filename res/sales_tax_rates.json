@@ -108,7 +108,15 @@
   "BH": {
     "type": "vat",
     "currency": "BHD",
-    "rate": 0.05
+    "rate": 0.1,
+
+    "before": {
+      "2021-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "BHD",
+        "rate": 0.05
+      }
+    }
   },
 
   "BO": {
@@ -313,7 +321,15 @@
   "EC": {
     "type": "vat",
     "currency": "USD",
-    "rate": 0.12
+    "rate": 0.15,
+
+    "before": {
+      "2024-03-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "USD",
+        "rate": 0.12
+      }
+    }
   },
 
   "EE": {
@@ -388,6 +404,12 @@
         "rate": 0.24
       }
     }
+  },
+
+  "FO": {
+    "type": "vat",
+    "currency": "DKK",
+    "rate": 0.25
   },
 
   "FR": {
@@ -547,7 +569,15 @@
   "KZ": {
     "type": "vat",
     "currency": "KZT",
-    "rate": 0.12
+    "rate": 0.16,
+
+    "before": {
+      "2025-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "KZT",
+        "rate": 0.12
+      }
+    }
   },
 
   "LB": {
@@ -622,6 +652,12 @@
     "type": "vat",
     "currency": "MDL",
     "rate": 0.2
+  },
+
+  "ME": {
+    "type": "vat",
+    "currency": "EUR",
+    "rate": 0.21
   },
 
   "MG": {
@@ -811,7 +847,15 @@
   "RU": {
     "type": "vat",
     "currency": "RUB",
-    "rate": 0.2
+    "rate": 0.22,
+
+    "before": {
+      "2025-12-31T22:00:00.000Z": {
+        "type": "vat",
+        "currency": "RUB",
+        "rate": 0.2
+      }
+    }
   },
 
   "RW": {
