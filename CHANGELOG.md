@@ -1,6 +1,22 @@
 Changelog
 =========
 
+## 2.24.0 (2026-11-15)
+
+### Breaking Changes
+
+* Drop support for NodeJS version 10 [[@valeriansaliou](https://github.com/valeriansaliou), [d18ec6d](https://github.com/valeriansaliou/node-sales-tax/commit/d18ec6d2efbb4fd6cdec9eb0c3b3505bd1713fd0)].
+
+### Tax Rate Updates
+
+* **Kazakhstan**: 12% to 16% (1st January 2026) [[@joergmoenke](https://github.com/joergmoenke), [#91](https://github.com/valeriansaliou/node-sales-tax/pull/91)].
+* **Russia**: 20% to 22% (1st January 2026) [[@joergmoenke](https://github.com/joergmoenke), [#91](https://github.com/valeriansaliou/node-sales-tax/pull/91)].
+* **Bahrain**: 5% to 10% (1st January 2026) [[@joergmoenke](https://github.com/joergmoenke), [#91](https://github.com/valeriansaliou/node-sales-tax/pull/91)].
+* **Ecuador**: 12% to 15% (1st April 2024) [[@joergmoenke](https://github.com/joergmoenke), [#91](https://github.com/valeriansaliou/node-sales-tax/pull/91)].
+* **Faroe Islands**: added 25% [[@joergmoenke](https://github.com/joergmoenke), [#91](https://github.com/valeriansaliou/node-sales-tax/pull/91)].
+* **Montenegro**: added 21% [[@joergmoenke](https://github.com/joergmoenke), [#91](https://github.com/valeriansaliou/node-sales-tax/pull/91)].
+* **Bulgaria**: currency `BGN` is now `EUR` (1st January 2026) [[@valeriansaliou](https://github.com/valeriansaliou), [d4448b1](https://github.com/valeriansaliou/node-sales-tax/commit/d4448b1ba14652f18cf480be73950822cdb89c98)].
+
 ## 2.23.0 (2026-05-19)
 
 ### Non-Breaking Changes
